@@ -1,0 +1,27 @@
+fuzzy-match = false
+anchor = top
+width = 100%
+height = 25
+horizontal = true
+font-size = 10
+prompt-text = " run: "
+# on the next patch it would be implemented and also there propably be a way to extend the background color to top and bottom with padding
+# https://github.com/catppuccin/dmenu
+#prompt-background = #f38ba8 
+font = monospace bold
+outline-width = 0
+border-width = 0
+
+text-color = #cdd6f4
+background-color = #1e1e2e
+selection-color = #1e1e2e 
+selection-background = #89dceb 
+selection-padding = 5
+
+
+min-input-width = 120
+result-spacing = 15
+padding-top = 4
+padding-bottom = 0
+padding-left = 0
+padding-right = 0
