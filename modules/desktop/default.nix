@@ -4,6 +4,6 @@
     [(import ./hyprland)] ++
     [(import ./dunst)] ++
     [(import ./waybar)] ++
-    [(import ./wofi)] ++
+    [(import ./tofi)] ++
     [(import ./variables.nix)];
 }
