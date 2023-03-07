@@ -59,7 +59,7 @@
   users.users.zaluru.description = "zaluru";
   users.users.zaluru.initialPassword = "zaq12wsx";
   users.users.zaluru.extraGroups = [ "networkmanager" "wheel" ];
-  users.users.zaluru.shell = pkgs.zsh;
+  users.users.zaluru.shell = pkgs.fish;
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
     git
