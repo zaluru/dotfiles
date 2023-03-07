@@ -4,12 +4,14 @@
 , ...
 }: {
   home.packages = with pkgs; [
+    keepassxc
     grim
     slurp
     libnotify
     swww
     kitty
     dunst
+    tealdeer
     rnix-lsp
     ranger
     ueberzug
@@ -21,6 +23,7 @@
     firefox
     ungoogled-chromium
     tangram
+    authenticator
     wf-recorder
     glib
     vlc
@@ -29,7 +32,6 @@
     gparted
     ncmpcpp
     mpd
-    wofi
     tofi
     wlogout
     tty-clock
@@ -41,6 +43,9 @@
     libsForQt5.dolphin
     cmatrix
     shotcut
+    #libreoffice
+    gimp
+    inkscape
     cava
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     git
