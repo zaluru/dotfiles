@@ -9,6 +9,7 @@
     gcc
     nix-prefetch-github
     vscodium-fhs
+    godot_4
     
     neovim
     typescript
