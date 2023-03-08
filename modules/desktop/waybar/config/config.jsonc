@@ -34,7 +34,8 @@
     "max-length": 20
   },
   "wlr/workspaces": {
-    "all-outputs": true
+    "all-outputs": true,
+    "active-only": false
 },
   "cpu": {
     "interval": 10,
