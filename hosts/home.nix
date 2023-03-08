@@ -1,4 +1,4 @@
-{ username, ... }:
+{ username, config, ... }:
 
 {
   imports =
@@ -18,4 +18,19 @@
   programs.git.enable = true;
   programs.git.userName = "zaluru";
   programs.git.userEmail = "zaluru@tutamail.com";
+
+  # xdg-user-dirs
+  xdg.userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "${config.home.homeDirectory}/";
+      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/downloads";
+      music = "${config.home.homeDirectory}/music";
+      pictures = "${config.home.homeDirectory}/pictures";
+      videos = "${config.home.homeDirectory}/videos";
+      templates = "${config.xdg.userDirs.documents}/templates";
+      publicShare = "${config.xdg.userDirs.documents}/public";
+    };
+
 }
