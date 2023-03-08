@@ -27,6 +27,15 @@
   # programs
   programs.dconf.enable = true;
 
+  # xdg-desktop-portals
+  # this should be managed by hyprland desktop portals, but i don't know how to set it up on nix
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    gtkUsePortal = true;
+  };
+
 
   # security
   security.sudo.enable = false;
@@ -44,6 +53,7 @@
   services.gvfs.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.dbus.enable = true;
+  services.flatpak.enable = true;
 
 
 
