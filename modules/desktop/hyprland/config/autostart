@@ -3,7 +3,7 @@ dunst &
 waybar &
 # swaybg -i $HOME/.config/hypr/wallpaper.jpg &
 swww init &
-swww img $HOME/.local/share/wallpapers/4.gif &
+swww img $HOME/.local/share/wallpapers/11.gif &
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
