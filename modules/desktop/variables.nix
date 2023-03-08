@@ -2,7 +2,8 @@
 
 {
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR="emacsclient -t -a ''";
+    VISUAL="emacsclient -c -a emacs";
     BROWSER = "firefox";
     TERMINAL = "kitty";
     QT_QPA_PLATFORMTHEME = "gtk3";
@@ -15,5 +16,6 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
+    _JAVA_AWT_WM_NONREPARENTING=1;
   };
 }
