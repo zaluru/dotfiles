@@ -13,9 +13,20 @@
   time.timeZone = "Europe/Warsaw";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   i18n.defaultLocale = "en_US.UTF-8";
-  sound.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "22.11";
+
+  # Pipewire
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
 
   # networking
