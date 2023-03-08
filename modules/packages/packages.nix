@@ -15,6 +15,8 @@
     rnix-lsp
     ranger
     ueberzug
+    htop
+    bottom
     pamixer
     xfce.thunar
     wl-clipboard
