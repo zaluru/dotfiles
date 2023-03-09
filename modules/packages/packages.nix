@@ -12,6 +12,7 @@
     kitty
     dunst
     tealdeer
+    adw-gtk3
     rnix-lsp
     ranger
     ueberzug
@@ -30,7 +31,6 @@
     glib
     vlc
     unzip
-    discord
     gparted
     ncmpcpp
     mpd
