@@ -4,6 +4,9 @@
 , ...
 }: {
   home.packages = with pkgs; [
+    skim
+    ripgrep
+    bat
     keepassxc
     grim
     slurp
