@@ -18,6 +18,7 @@
   programs.git.enable = true;
   programs.git.userName = "zaluru";
   programs.git.userEmail = "zaluru@tutamail.com";
+  programs.direnv.enable = true;
 
   # xdg-user-dirs
   xdg.userDirs = {
