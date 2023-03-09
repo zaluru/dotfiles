@@ -20,6 +20,7 @@
     "pulseaudio#microphone",
     "disk",
     "network",
+    "battery",
     "clock"
   ],
   "temperature": {
@@ -73,7 +74,16 @@
     "format-alt": " {bandwidthUpBytes}   {bandwidthDownBytes}",
     "interval": 2
   },
-
+  "battery":{
+    "states": {
+        "critical": 97,
+        "warning": 30
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "format-charging": " {icon} {capacity}%",
+    "format-full": ""
+  },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "tooltip": false,

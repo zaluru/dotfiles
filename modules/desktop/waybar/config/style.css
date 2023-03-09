@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     border: none;
     border-radius: 0;
     font-family: Operator Mono;
@@ -9,9 +11,7 @@
 }
 
 window#waybar {
-    /* background: transparent; */
-    background: #181825; 
-    color: #f5e0dc;
+    background: #11111b; 
 }
 
 
@@ -29,7 +29,6 @@ window#waybar {
 #temperature,
 #taskbar,
 #disk {
-    background: #11111b;
     padding: 2px 8px;
     /* box-shadow: inset 0px 0px 4px 11px rgba(194, 226, 214, 0.195); */
     background-size: 200% 300%;
@@ -46,11 +45,71 @@ window#waybar {
 }
 
 #workspaces button {
-    color: #45475a;
+    /* For some reason the button has spacing on top and bottom even if set to 0 */
+    margin-top: -2px;
+    margin-bottom: -2px;
+    padding: 2px 8px;
+    color: #cba6f7;
+    border-bottom: 3px solid #11111b; /* when switching focus it would bump becouse of the border-bottom on .active */ 
 }
 
 #workspaces button.active {
     color: #d9e0ee;
+    /*box-shadow:inset 0px -3px 0px 0px #cba6f7;*/
+    border-bottom: 3px solid #cba6f7;
+}
+
+#temperature {
+    border-bottom: 3px solid #f38ba8; 
+}
+
+#memory {
+    border-bottom: 3px solid #a6e3a1; 
+}
+
+#cpu {
+    border-bottom: 3px solid #F9F06B;
+}
+
+#clock {
+    border-bottom: 3px solid #C061CB;
+}
+
+#disk {
+    border-bottom: 3px solid #A6DA95;
+}
+
+#network {
+    border-bottom: 3px solid #f38ba8; 
+}
+
+#battery {
+    border-bottom: 3px solid #A6DA95;
+}
+
+#battery.warning:not(.charging) {
+  border-bottom: 3px solid #ffa34b; 
+}
+
+@keyframes blink {
+    to {
+        background: #f38ba8;
+        color: #000
+    }
+}
+
+#battery.critical:not(.charging) {
+  border-bottom: 3px solid #f38ba8; 
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#pulseaudio {
+    border-bottom: 3px solid #74c7ec;
 }
 
 #temperature.critical {
