@@ -33,4 +33,14 @@
       publicShare = "${config.xdg.userDirs.documents}/public";
     };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+        gtk-theme = "adw-gtk3-dark";
+        color-scheme = "prefer-dark";
+      };
+#    "org/gnome/desktop/wm/preferences" = {
+#        button-layout = '';
+#      };
+  };
+
 }
