@@ -51,6 +51,7 @@
     cava
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     git
+    qbittorrent
     swww
   ];
 }
