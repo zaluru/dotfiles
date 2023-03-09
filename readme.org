@@ -1,0 +1,11 @@
+#+title: My nix based setup
+I used to run gnu Guix for a few months, but got filtered by Guile and switched to Fedora :)
+
+
+When I find some free time to study, I will definitely try Guix again, it seems to be the best declarative operating system currently available.
+
+
+But because of the amount of people using nix, sharing their configurations and maintaining packages, I decided to give it a try, and after the short time of using it, I like it. 
+
+* Credits
+I was looking for a nixos configuration from hyprland, the first one that caught my eye was [[https://github.com/samiulbasirfahim/nixos][]]
