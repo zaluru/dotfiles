@@ -47,14 +47,18 @@
     imv
     libsForQt5.dolphin
     cmatrix
-    shotcut
     #libreoffice
-    gimp
-    inkscape
     cava
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     git
     qbittorrent
     swww
+
+    libsForQt5.kdenlive
+    blender
+    shotcut
+    gimp
+    inkscape
+
   ];
 }
