@@ -64,7 +64,7 @@
     "format": " {percentage_used}%"
   },
   "clock": {
-     "format": "{: %I:%M %p}",
+     "format": "{: %H:%M}",
      "format-alt": "{: %a,%Y-%m-%d}",
      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
