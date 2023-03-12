@@ -12,8 +12,7 @@
     "temperature"
   ],
   "modules-center": [
-    "hyprland/window",
-    "tray"
+    "hyprland/window"
   ],
   "modules-right": [
     "pulseaudio",
@@ -21,6 +20,7 @@
     "disk",
     "network",
     "battery",
+    "tray",
     "clock"
   ],
   "temperature": {
