@@ -53,6 +53,8 @@
     git
     qbittorrent
     swww
+    thunderbird
+    android-file-transfer
 
     libsForQt5.kdenlive
     blender
