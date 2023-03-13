@@ -69,6 +69,8 @@
   services.gnome.gnome-keyring.enable = true;
   services.dbus.enable = true;
   services.flatpak.enable = true;
+  # Firmware updates
+  services.fwupd.enable = true;
 
 
 
