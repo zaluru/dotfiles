@@ -72,7 +72,9 @@
   # Firmware updates
   services.fwupd.enable = true;
 
-
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # nix setting
   nix.settings.allowed-users = ["zaluru"];
@@ -85,11 +87,18 @@
   users.users.zaluru.isNormalUser = true;
   users.users.zaluru.description = "zaluru";
   users.users.zaluru.initialPassword = "zaq12wsx";
-  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" ];
+  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   users.users.zaluru.shell = pkgs.fish;
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
     git
+    libvirt
+    pciutils
+    virt-manager
+    qemu
+    kmod
+    quickemu
+    spice-gtk
   ];
 
   fonts.fonts = with pkgs; [
