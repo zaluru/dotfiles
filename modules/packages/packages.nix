@@ -61,6 +61,7 @@
     shotcut
     gimp
     inkscape
+    drawio
 
   ];
 }
