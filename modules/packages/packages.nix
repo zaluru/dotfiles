@@ -55,6 +55,7 @@
     swww
     thunderbird
     android-file-transfer
+    nebula
 
     libsForQt5.kdenlive
     blender
