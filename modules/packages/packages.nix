@@ -56,6 +56,7 @@
     thunderbird
     android-file-transfer
     nebula
+    remmina
 
     libsForQt5.kdenlive
     blender
