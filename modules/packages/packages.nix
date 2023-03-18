@@ -57,6 +57,7 @@
     android-file-transfer
     nebula
     remmina
+    croc
 
     libsForQt5.kdenlive
     blender
