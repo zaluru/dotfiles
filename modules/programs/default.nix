@@ -7,5 +7,6 @@
     [(import ./neovim)] ++
     [(import ./fish)] ++
     [(import ./starship)] ++
+    [(import ./direnv)] ++
     [(import ./cava)];
 }
