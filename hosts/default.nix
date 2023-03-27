@@ -31,4 +31,25 @@ in
         }
       ];
   };
+  aurora = nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit self inputs username; };
+    modules = [ (import ./aurora) ] ++
+      [
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+            extraSpecialArgs = { inherit inputs username; };
+            users.zaluru = (./home.nix);
+          };
+          nixpkgs = {
+            overlays =
+              [
+                self.overlays.default
+              ];
+          };
+        }
+      ];
+  };
 }
