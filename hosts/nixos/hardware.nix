@@ -10,4 +10,6 @@
   #hardware.opengl.extraPackages = with pkgs; [
   #  amdvlk
   #];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.modesetting.enable = true;
 }
