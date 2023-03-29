@@ -104,6 +104,11 @@
     quickemu
     spice-gtk
   ];
+  
+  # Environment variables for nvidia
+  environment.sessionVariables = rec {
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" ]; })
