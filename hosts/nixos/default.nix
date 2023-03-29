@@ -72,9 +72,13 @@
   # Firmware updates
   services.fwupd.enable = true;
 
-  # Virtualization
+  # Virtualisation
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
 
   # nix setting
   nix.settings.allowed-users = ["zaluru"];
@@ -87,7 +91,7 @@
   users.users.zaluru.isNormalUser = true;
   users.users.zaluru.description = "zaluru";
   users.users.zaluru.initialPassword = "zaq12wsx";
-  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
   users.users.zaluru.shell = pkgs.fish;
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
