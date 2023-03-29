@@ -15,4 +15,5 @@
 
   # For my razer mouse
   hardware.openrazer.enable = true;
+  hardware.openrazer.users = [ "zaluru" ];
 }
