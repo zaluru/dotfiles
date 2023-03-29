@@ -10,4 +10,7 @@
   #hardware.opengl.extraPackages = with pkgs; [
   #  amdvlk
   #];
+
+  # For my razer mouse
+  hardware.openrazer.enable = true;
 }

@@ -91,7 +91,7 @@
   users.users.zaluru.isNormalUser = true;
   users.users.zaluru.description = "zaluru";
   users.users.zaluru.initialPassword = "zaq12wsx";
-  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "plugdev" ];
   users.users.zaluru.shell = pkgs.fish;
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
