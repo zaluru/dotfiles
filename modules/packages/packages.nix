@@ -58,6 +58,7 @@
     nebula
     remmina
     croc
+    exa
 
     libsForQt5.kdenlive
     blender
