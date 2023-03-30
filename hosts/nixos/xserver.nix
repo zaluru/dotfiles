@@ -17,5 +17,8 @@
         wayland = true;
       };
     };
+    desktopManager = {
+        cinnamon.enable = true;
+    };
   };
 }
