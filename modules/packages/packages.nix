@@ -27,6 +27,7 @@
     pavucontrol
     wget
     firefox
+    tor-browser-bundle-bin
     ungoogled-chromium
     tangram
     authenticator
