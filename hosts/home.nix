@@ -1,4 +1,4 @@
-{ username, config, ... }:
+{ username, config, pkgs, ... }:
 
 {
   imports =
@@ -18,6 +18,12 @@
   programs.git.enable = true;
   programs.git.userName = "zaluru";
   programs.git.userEmail = "zaluru@tutamail.com";
+
+  # Cursor theme
+  home.pointerCursor = {
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors";
+  };
 
   # xdg-user-dirs
   xdg.userDirs = {
