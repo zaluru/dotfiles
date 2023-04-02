@@ -12,5 +12,6 @@
   boot.kernelModules = [ "kvm-intel" "vfio-pci" ];
   boot.kernelParams = [ "intel_iommu=on" "iommu=pt" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "ntfs" ];
   #boot.kernelPackages = ;
 }
