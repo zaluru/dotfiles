@@ -8,5 +8,6 @@
     [(import ./fish)] ++
     [(import ./starship)] ++
     [(import ./direnv)] ++
+    [(import ./imv)] ++
     [(import ./cava)];
 }
