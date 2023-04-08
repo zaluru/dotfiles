@@ -51,6 +51,7 @@
     #libreoffice
     cava
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+    #inputs.davinciresolve.packages.${pkgs.system}.davinci-resolve
     git
     qbittorrent
     swww
