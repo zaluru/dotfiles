@@ -7,6 +7,7 @@
     [ (import ./fileSystem.nix) ] ++
     [ (import ./xserver.nix) ] ++
     [ (import ./vpn.nix) ] ++
+    [ (import ./containers.nix) ] ++
     [ (import ./../../modules/packages/python.nix ) ] ++
     [ (import ./hardware.nix) ];
 
