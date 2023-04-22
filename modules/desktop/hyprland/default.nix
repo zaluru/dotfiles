@@ -9,7 +9,7 @@
       enable = true;
       hidpi = true;
     };
-    nvidiaPatches = false;
+    nvidiaPatches = true;
     systemdIntegration = true;
   };
   xdg.configFile."hypr".source = ./config;
