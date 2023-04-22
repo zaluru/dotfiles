@@ -72,6 +72,7 @@
   services.flatpak.enable = true;
   # Firmware updates
   services.fwupd.enable = true;
+  services.cockpit.enable = true;
 
   # Virtualisation
   virtualisation.libvirtd.enable = true;
