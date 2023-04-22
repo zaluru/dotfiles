@@ -61,6 +61,8 @@
     remmina
     croc
     exa
+    jetbrains.phpstorm
+    jetbrains.datagrip
 
     libsForQt5.kdenlive
     blender
