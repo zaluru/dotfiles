@@ -63,6 +63,7 @@
     exa
     jetbrains.phpstorm
     jetbrains.datagrip
+    vagrant
 
     libsForQt5.kdenlive
     blender
