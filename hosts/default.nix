@@ -10,9 +10,9 @@ let
 
 in
 {
-  nixos = nixpkgs.lib.nixosSystem {
+  nebula = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit self inputs username; };
-    modules = [ (import ./nixos) ] ++
+    modules = [ (import ./nebula) ] ++
       [
         inputs.home-manager.nixosModules.home-manager
         {
