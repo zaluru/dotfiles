@@ -7,7 +7,7 @@ let
     config.allowUnfree = true;
   };
   lib = nixpkgs.lib;
-  bootloader = ../modules/core/bootloader.nix
+  bootloader = ../modules/core/bootloader.nix;
 
 in
 {
