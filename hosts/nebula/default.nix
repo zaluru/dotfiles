@@ -3,7 +3,6 @@
 {
   imports =
     [ (import ./plymouth.nix) ] ++
-    [ (import ./bootloader.nix) ] ++
     [ (import ./fileSystem.nix) ] ++
     [ (import ./xserver.nix) ] ++
     [ (import ./vpn.nix) ] ++
