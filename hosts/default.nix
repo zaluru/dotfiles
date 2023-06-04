@@ -7,6 +7,7 @@ let
     config.allowUnfree = true;
   };
   lib = nixpkgs.lib;
+  bootloader = ../modules/core/bootloader.nix
 
 in
 {
@@ -29,6 +30,7 @@ in
               ];
           };
         }
+        bootloader
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {
@@ -50,6 +52,7 @@ in
               ];
           };
         }
+        bootloader
       ];
   };
 }
