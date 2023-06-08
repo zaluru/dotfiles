@@ -8,7 +8,7 @@ let
   };
   lib = nixpkgs.lib;
   bootloader = ../modules/core/bootloader.nix;
-
+  razer = ../modules/razer/default.nix;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -31,6 +31,7 @@ in
           };
         }
         bootloader
+        razer
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {
