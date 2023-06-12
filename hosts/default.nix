@@ -10,7 +10,7 @@ let
   bootloader = ../modules/core/bootloader.nix;
   razer = ../modules/razer;
   nvidia = ../modules/nvidia;
-  core = ../modules/core
+  core = ../modules/core;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -32,6 +32,7 @@ in
               ];
           };
         }
+        core
         bootloader
         razer
         # nvidia # Curently broken
