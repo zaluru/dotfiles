@@ -16,7 +16,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 
   # Pipewire
   # TODO there is some crackling noise in discord, propably related to those:
@@ -41,6 +41,7 @@
 
   # programs
   programs.dconf.enable = true;
+  programs.fish.enable = true;
 
   # xdg-desktop-portals
   # this should be managed by hyprland desktop portals, but i don't know how to set it up on nix
