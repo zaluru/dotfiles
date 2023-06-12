@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # bootloader configuration
@@ -21,7 +21,8 @@
     ];
     extraModulePackages = [ ];
     supportedFilesystems = [ "ntfs" ];
-    #kernelPackages = ;
+    # Changes from default kernel to xanmod
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
     consoleLogLevel = 0;
     loader = {
       systemd-boot.enable = false;
