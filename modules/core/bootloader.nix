@@ -3,7 +3,7 @@
 {
   # bootloader configuration
   boot = {
-    cleanTmpDir = true;
+    tmp.cleanOnBoot = true;
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "rtsx_usb_sdmmc" ];
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" "vfio-pci" ];
