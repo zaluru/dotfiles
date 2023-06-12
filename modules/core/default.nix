@@ -5,5 +5,6 @@
 }: {
   imports = [
     ./users.nix
+    ./openssh.nix
   ];
 }
