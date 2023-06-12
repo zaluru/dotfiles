@@ -10,6 +10,7 @@
     extraGroups = [
       "wheel"
       "docker"
+      "podman"
       "systemd-journal"
       "vboxusers"
       "libvirtd"
