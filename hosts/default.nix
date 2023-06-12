@@ -8,8 +8,9 @@ let
   };
   lib = nixpkgs.lib;
   bootloader = ../modules/core/bootloader.nix;
-  razer = ../modules/razer/default.nix;
-  nvidia = ../modules/nvidia/default.nix;
+  razer = ../modules/razer;
+  nvidia = ../modules/nvidia;
+  core = ../modules/core
 in
 {
   nebula = nixpkgs.lib.nixosSystem {

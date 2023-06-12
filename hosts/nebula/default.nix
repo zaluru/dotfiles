@@ -41,7 +41,6 @@
 
   # programs
   programs.dconf.enable = true;
-  programs.fish.enable = true;
 
   # xdg-desktop-portals
   # this should be managed by hyprland desktop portals, but i don't know how to set it up on nix
@@ -89,12 +88,6 @@
   nix.gc.automatic = true;
   nix.gc.dates = "weekly";
   nix.gc.options = "--delete-older-than 7d";
-  # users
-  users.users.zaluru.isNormalUser = true;
-  users.users.zaluru.description = "zaluru";
-  users.users.zaluru.initialPassword = "zaq12wsx";
-  users.users.zaluru.extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
-  users.users.zaluru.shell = pkgs.fish;
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
     git
