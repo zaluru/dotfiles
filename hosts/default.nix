@@ -9,6 +9,7 @@ let
   lib = nixpkgs.lib;
   bootloader = ../modules/core/bootloader.nix;
   razer = ../modules/razer/default.nix;
+  nvidia = ../modules/nvidia/default.nix;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -32,6 +33,7 @@ in
         }
         bootloader
         razer
+        # nvidia # Curently broken
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {
