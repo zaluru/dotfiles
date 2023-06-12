@@ -73,14 +73,6 @@
   services.fwupd.enable = true;
   services.cockpit.enable = true;
 
-  # Virtualisation
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  # Docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
-
   # nix setting
   nix.settings.allowed-users = ["zaluru"];
   nix.settings.auto-optimise-store = true;
