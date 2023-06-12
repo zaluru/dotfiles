@@ -7,10 +7,22 @@
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "rtsx_usb_sdmmc" ];
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" "vfio-pci" ];
-    kernelParams = [ "intel_iommu=on" "iommu=pt" ];
+    kernelParams = [ 
+      "intel_iommu=on"
+      "iommu=pt"
+      "loglevel=7"
+      "quiet"
+      "logo.nologo"
+      "rootflags=noatime"
+      "usbcore.autosuspend=-1"
+      "rd.systemd.show_status=auto"
+      "rd.udev.log_priority=3"
+      "rd.udev.log_level=3"
+    ];
     extraModulePackages = [ ];
     supportedFilesystems = [ "ntfs" ];
     #kernelPackages = ;
+    consoleLogLevel = 0;
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
