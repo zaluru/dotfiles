@@ -27,6 +27,7 @@
     pavucontrol
     wget
     firefox
+    mullvad-browser
     tor-browser-bundle-bin
     ungoogled-chromium
     tangram
@@ -71,6 +72,7 @@
     gimp
     inkscape
     drawio
+    webcord
 
   ];
 }
