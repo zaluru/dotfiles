@@ -5,6 +5,15 @@
   inputs,
   ...
 }: {
+
+  # faster rebuilding
+  documentation = {
+    enable = true;
+    doc.enable = false;
+    man.enable = true;
+    dev.enable = false;
+  };
+
   nix = {
     gc = {
       automatic= true;
