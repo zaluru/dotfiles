@@ -6,6 +6,10 @@
   ...
 }: {
 
+  environment = {
+    defaultPackages = [];
+  };
+
   # faster rebuilding
   documentation = {
     enable = true;
