@@ -9,6 +9,7 @@
     gcc
     nix-prefetch-github
     vscodium-fhs
+    devbox
 
     # Game dev
     godot_4
