@@ -15,7 +15,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.05";
 
   # Pipewire

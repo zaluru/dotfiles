@@ -10,6 +10,26 @@
     defaultPackages = [];
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = false;
+      allowBroken = true;
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          "steam-run"
+          "steam"
+          "steam-original"
+          "nvidia-x11"
+          "nvidia-settings"
+          "davinci-resolve"
+          "reaper"
+          "jetbrains.rider"
+          "jetbrains.phpstorm"
+          "jetbrains.datagrip"
+        ];
+    };
+  };
+
   # faster rebuilding
   documentation = {
     enable = true;
