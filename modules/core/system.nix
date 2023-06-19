@@ -33,4 +33,13 @@
       LC_TIME = pl;
     };
   };
+
+  systemd = let
+    extraConfig = ''
+      DefaultTimeoutStopSec=15s
+    '';
+  in {
+    inherit extraConfig;
+    user = {inherit extraConfig;};
+  };
 }
