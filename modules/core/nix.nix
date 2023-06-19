@@ -23,9 +23,9 @@
           "nvidia-settings"
           "davinci-resolve"
           "reaper"
-          "jetbrains.rider"
-          "jetbrains.phpstorm"
-          "jetbrains.datagrip"
+          "rider"
+          "phpstorm"
+          "datagrip"
         ];
     };
   };
