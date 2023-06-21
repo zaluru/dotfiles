@@ -15,6 +15,12 @@
         enable = true;
         dates = "weekly";
       };
+      defaultNetwork.settings = {
+        dns_enabled = true;
+      };
     };
   };
+  # TODO learn more about this option
+  # This enables rootles podman from what i have found
+  #security.unprivilegedUsernsClone = true;
 }
