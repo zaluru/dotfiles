@@ -1,4 +1,5 @@
 { lib, username, hostname, pkgs, inputs, ... }:
+{
   environment.systemPackages = with pkgs; [
     polychromatic
   ];

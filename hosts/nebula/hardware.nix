@@ -11,8 +11,4 @@
   #];
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   hardware.nvidia.modesetting.enable = true;
-
-  # For my razer mouse
-  hardware.openrazer.enable = true;
-  hardware.openrazer.users = [ "zaluru" ];
 }
