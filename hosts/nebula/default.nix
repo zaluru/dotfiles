@@ -5,7 +5,6 @@
     [ (import ./fileSystem.nix) ] ++
     [ (import ./xserver.nix) ] ++
     [ (import ./vpn.nix) ] ++
-    [ (import ./containers.nix) ] ++
     [ (import ./../../modules/packages/python.nix ) ] ++
     [ (import ./hardware.nix) ];
 
@@ -45,18 +44,6 @@
     extraPortals = [ inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland ];
     #gtkUsePortal = true;
   };
-
-
-  # security
-  security.sudo.enable = false;
-  security.doas.enable = true;
-  security.doas.extraRules = [{
-    users = ["zaluru"];
-    keepEnv = true;
-    persist = true;
-  }];
-
-
 
   # services
   services.getty.autologinUser = "zaluru";
