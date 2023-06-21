@@ -11,6 +11,11 @@
     algorithm = "zstd";
   };
 
+  time = {
+    timeZone = "Europe/Warsaw";
+    hardwareClockInLocalTime = true;
+  };
+
   i18n = let
     defaultLocale = "en_US.UTF-8";
     pl = "pl_PL.UTF-8";

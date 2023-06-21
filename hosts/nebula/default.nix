@@ -10,9 +10,7 @@
     [ (import ./hardware.nix) ];
 
   # basic configuration
-  time.timeZone = "Europe/Warsaw";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  i18n.defaultLocale = "en_US.UTF-8";
 
   system.stateVersion = "23.05";
 
