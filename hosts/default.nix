@@ -17,6 +17,7 @@ in
     specialArgs = { inherit self inputs username; };
     modules = [ (import ./nebula) ] ++
       [
+        {networking.hostName = "nebula";}
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -43,6 +44,7 @@ in
     specialArgs = { inherit self inputs username; };
     modules = [ (import ./aurora) ] ++
       [
+        {networking.hostName = "aurora";}
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
