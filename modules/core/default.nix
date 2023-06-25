@@ -8,5 +8,6 @@
     ./users.nix
     ./openssh.nix
     ./system.nix
+    ./network.nix
   ];
 }
