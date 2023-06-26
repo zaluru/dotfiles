@@ -55,4 +55,7 @@
       enableUserServices = true;
     };
   };
+  programs = {
+    steam.enable = true;
+  };
 }
