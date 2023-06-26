@@ -6,6 +6,17 @@
 }:
 {
   security = {
+    pam = {
+      services = {
+        gdm.enableGnomeKeyring = true;
+        #swaylock = {
+        #  text = ''
+        #    auth include login
+        #  '';
+        #};
+      };
+    };
+
     doas = {
       enable = true;
       extraRules = [
