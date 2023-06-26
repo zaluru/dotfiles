@@ -65,6 +65,7 @@
     jetbrains.phpstorm
     jetbrains.datagrip
     vagrant
+    termscp
 
     libsForQt5.kdenlive
     blender
