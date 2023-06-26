@@ -5,7 +5,7 @@
     [ (import ./fileSystem.nix) ] ++
     [ (import ./xserver.nix) ] ++
     [ (import ./vpn.nix) ] ++
-    [ (import ./../../modules/packages/python.nix ) ] ++
+    [ (import ./../../modules/home/packages/python.nix ) ] ++
     [ (import ./hardware.nix) ];
 
   # basic configuration
