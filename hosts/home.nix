@@ -2,15 +2,6 @@
 
 {
   imports =
-    # Import all personal modules
-    # TODO do it in one line liek hlissner https://github.com/hlissner/dotfiles/blob/master/default.nix
-    [ (import ./../modules/desktop) ] ++
-    [ (import ./../modules/gtk) ] ++
-    [ (import ./../modules/packages) ] ++
-    [ (import ./../modules/wallpapers) ] ++
-    [ (import ./../modules/scripts) ] ++
-    #[ (import ./../modules/editors) ] ++
-    [ (import ./../modules/programs) ] ++
     [ (import ./../modules/home)];
   home.username = "zaluru";
   home.homeDirectory = "/home/zaluru";
