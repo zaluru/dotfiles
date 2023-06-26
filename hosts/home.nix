@@ -11,7 +11,7 @@
     [ (import ./../modules/scripts) ] ++
     #[ (import ./../modules/editors) ] ++
     [ (import ./../modules/programs) ] ++
-    [ (import ./../modules/home)]
+    [ (import ./../modules/home)];
   home.username = "zaluru";
   home.homeDirectory = "/home/zaluru";
   home.stateVersion = "23.05";
