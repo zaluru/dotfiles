@@ -65,6 +65,7 @@
     jetbrains.datagrip
     vagrant
     termscp
+    zellij
 
     libsForQt5.kdenlive
     blender
