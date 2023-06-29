@@ -4,6 +4,15 @@
   ...
 }: {
   environment.systemPackages = [pkgs.podman-compose];
+  users.users.zaluru = {
+    extraGroups = [
+      "lxd"
+      "docker"
+      "podman"
+      "vboxusers"
+      "libvirtd"
+    ];
+  };
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
@@ -18,6 +27,10 @@
       defaultNetwork.settings = {
         dns_enabled = true;
       };
+    };
+    lxd = {
+      enable = true;
+      recommendedSysctlSettings = true;
     };
   };
   # TODO learn more about this option
