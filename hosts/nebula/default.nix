@@ -36,16 +36,6 @@
   # programs
   programs.dconf.enable = true;
 
-  # xdg-desktop-portals
-  # this should be managed by hyprland desktop portals, but i don't know how to set it up on nix
-  xdg.portal = {
-    enable = true;
-    # Should be disabled when using hyprland portals
-    #wlr.enable = true;
-    extraPortals = [ inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland ];
-    #gtkUsePortal = true;
-  };
-
   # services
   services.getty.autologinUser = "zaluru";
   services.gvfs.enable = true;
