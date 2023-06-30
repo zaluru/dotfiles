@@ -11,7 +11,7 @@ let
   nvidia = ../modules/nvidia;
   core = ../modules/core;
   virtualisation = ../modules/virtualisation;
-  desktop = ../modules/desktop
+  desktop = ../modules/desktop;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
