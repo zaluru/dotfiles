@@ -11,6 +11,7 @@ let
   nvidia = ../modules/nvidia;
   core = ../modules/core;
   virtualisation = ../modules/virtualisation;
+  desktop = ../modules/desktop
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -37,6 +38,7 @@ in
         bootloader
         virtualisation
         razer
+        desktop
         # nvidia # Curently broken
       ];
   };
@@ -64,6 +66,7 @@ in
         bootloader
         virtualisation
         razer
+        desktop
         # nvidia # Curently broken
       ];
   };
