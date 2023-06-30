@@ -60,7 +60,11 @@ in
               ];
           };
         }
+        core
         bootloader
+        virtualisation
+        razer
+        # nvidia # Curently broken
       ];
   };
 }
