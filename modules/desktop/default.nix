@@ -15,6 +15,7 @@
   environment = {
     variables = {
       # TODO those should be desktop specific variables, have to look into them
+      # TODO have to check out how to set the env variables for apps launched from an app launcher like toffi https://github.com/nix-community/home-manager/issues/1011
       #XDG_CACHE_HOME = "/home/zaluru/.local/cache";
       #EDITOR="emacsclient -t -a ''";
       #VISUAL="emacsclient -c -a emacs";
