@@ -9,8 +9,6 @@
   #hardware.opengl.extraPackages = with pkgs; [
   #  amdvlk
   #];
-
-  # For my razer mouse
-  hardware.openrazer.enable = true;
-  hardware.openrazer.users = [ "zaluru" ];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.modesetting.enable = true;
 }
