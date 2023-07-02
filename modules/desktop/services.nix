@@ -19,17 +19,16 @@
 
   services = {
     mullvad-vpn.enable = false; # too broke rn :(
-    # Currently using gdm
-#    greetd = {
-#      enable = true;
-#      settings = rec {
-#        initial_session = {
-#          command = "Hyprland";
-#          user = "zaluru";
-#        };
-#        default_session = initial_session;
-#      };
-#    };
+    greetd = {
+      enable = true;
+      settings = rec {
+        initial_session = {
+          command = "Hyprland";
+          user = "zaluru";
+        };
+        default_session = initial_session;
+      };
+    };
 
     gnome = {
       glib-networking.enable = true;
