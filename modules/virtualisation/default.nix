@@ -3,7 +3,10 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = [pkgs.podman-compose];
+  environment.systemPackages = with pkgs; [
+    podman-compose
+    docker-compose
+  ];
   users.users.zaluru = {
     extraGroups = [
       "lxd"
@@ -16,10 +19,13 @@
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
+    docker = {
+      enable = true;
+    };
     podman = {
       enable = true;
-      dockerSocket.enable = true;
-      dockerCompat = true;
+      #dockerSocket.enable = true;
+      #dockerCompat = true;
       autoPrune = {
         enable = true;
         dates = "weekly";
