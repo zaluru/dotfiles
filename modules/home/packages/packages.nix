@@ -66,6 +66,7 @@
     vagrant
     termscp
     zellij
+    dbeaver
 
     libsForQt5.kdenlive
     blender
