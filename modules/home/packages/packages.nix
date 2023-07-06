@@ -67,6 +67,7 @@
     zellij
     dbeaver
     tutanota-desktop
+    yt-dlp
 
     libsForQt5.kdenlive
     blender
