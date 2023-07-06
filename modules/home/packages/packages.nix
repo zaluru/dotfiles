@@ -63,7 +63,6 @@
     exa
     jetbrains.phpstorm
     jetbrains.datagrip
-    vagrant
     termscp
     zellij
     dbeaver

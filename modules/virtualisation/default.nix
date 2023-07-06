@@ -3,6 +3,11 @@
   pkgs,
   ...
 }: {
+
+  imports = [
+    ./vagrant.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     podman-compose
     docker-compose
