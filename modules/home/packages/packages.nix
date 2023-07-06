@@ -67,6 +67,7 @@
     termscp
     zellij
     dbeaver
+    tutanota-desktop
 
     libsForQt5.kdenlive
     blender
