@@ -1,9 +1,9 @@
+{ config
+, pkgs
+, lib
+, ... }:
+
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
   networking = {
     # dns
     networkmanager = {

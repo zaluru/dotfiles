@@ -1,4 +1,5 @@
-{pkgs, ...}:
+{ pkgs
+, ... }:
 
 let
   my-python-packages = p: with p; [

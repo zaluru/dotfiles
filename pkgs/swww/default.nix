@@ -3,9 +3,8 @@
 , fetchFromGitHub
 , rustPlatform
 , pkg-config
-, libxkbcommon
-,
-}:
+, libxkbcommon }:
+
 rustPlatform.buildRustPackage rec {
   pname = "swww";
   version = "0.7.1";

@@ -2,7 +2,9 @@
 ,inputs
 , xdg-hyprland
 , ...
-}: {
+}:
+
+{
   home.packages = with pkgs; [
     skim
     ripgrep

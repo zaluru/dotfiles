@@ -1,4 +1,7 @@
-{ inputs,pkgs,username, ... }:
+{ inputs
+, pkgs
+, username
+, ... }:
 
 {
   # xserver configuration

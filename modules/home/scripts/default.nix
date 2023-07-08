@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-
+{ pkgs
+, ... }:
 
 let
   my-swaylock = pkgs.writeShellScriptBin "my-swaylock" ''

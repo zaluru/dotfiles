@@ -1,4 +1,9 @@
-{ username, hostname, inputs, self, nixpkgs, ... }:
+{ username
+, hostname
+, inputs
+, self
+, nixpkgs
+, ... }:
 
 let
   system = "x86_64-linux";

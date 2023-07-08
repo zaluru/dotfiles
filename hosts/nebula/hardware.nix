@@ -1,4 +1,7 @@
-{ lib, config, pkgs, ... }:
+{ lib
+, config
+, pkgs
+, ... }:
 
 {
   hardware.pulseaudio.enable = false;

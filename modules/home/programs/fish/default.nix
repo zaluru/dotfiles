@@ -1,4 +1,7 @@
-{ hostname,... }: {
+{ hostname
+, ... }:
+
+{
   programs.fish = {
     enable = true;
     # loginShellInit = ''

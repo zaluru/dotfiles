@@ -1,8 +1,8 @@
+{ config
+, pkgs
+, ... }:
+
 {
-  config,
-  pkgs,
-  ...
-}: {
   users.users.root.initialPassword = "zaq1@WSX";
   programs.fish.enable = true;
   users.users.zaluru = {

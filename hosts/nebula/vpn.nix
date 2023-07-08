@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:{
+{ config
+, pkgs
+, lib
+, ... }:
+
+{
   networking.firewall = {
    # if packets are still dropped, they will show up in dmesg
    logReversePathDrops = true;

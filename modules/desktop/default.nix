@@ -1,10 +1,10 @@
+{ config
+, pkgs
+, inputs
+, lib
+, ... }:
+
 {
-  config,
-  pkgs,
-  inputs,
-  lib,
-  ...
-}: {
   #imports = [./fonts.nix ./services.nix ./pipewire.nix];
   imports = [./services.nix];
   # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];

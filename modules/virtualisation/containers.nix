@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:{
+{ config
+, pkgs
+, lib
+, ... }:
+
+{
   virtualisation.oci-containers.containers = {
     "gluetun" = {
       image = "ghcr.io/qdm12/gluetun";

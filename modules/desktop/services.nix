@@ -1,8 +1,8 @@
+{ config
+, pkgs
+, ...}:
+
 {
-  config,
-  pkgs,
-  ...
-}: {
   systemd.services = {
     seatd = {
       enable = true;
