@@ -18,5 +18,6 @@
     ./programs
     #./editors
     ./bottom
+    ./stylix
   ];
 }
