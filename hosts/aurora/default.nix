@@ -71,4 +71,10 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" ]; })
   ];
+
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+    algorithm = "zstd";
+  };
 }
