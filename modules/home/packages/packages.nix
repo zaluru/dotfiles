@@ -71,6 +71,7 @@
     tutanota-desktop
     yt-dlp
     flyctl
+    distrobox
 
     libsForQt5.kdenlive
     blender
