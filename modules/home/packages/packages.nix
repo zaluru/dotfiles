@@ -70,6 +70,7 @@
     dbeaver
     tutanota-desktop
     yt-dlp
+    flyctl
 
     libsForQt5.kdenlive
     blender
