@@ -72,6 +72,7 @@
     yt-dlp
     flyctl
     distrobox
+    fzf
 
     libsForQt5.kdenlive
     blender
