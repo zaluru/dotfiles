@@ -54,5 +54,6 @@
 
     # allow users to mount fuse filesystems with allow_other
     fuse.userAllowOther = true;
+    adb.enable = true;
   };
 }
