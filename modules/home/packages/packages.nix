@@ -66,7 +66,6 @@
     jetbrains.phpstorm
     jetbrains.datagrip
     termscp
-    zellij
     dbeaver
     tutanota-desktop
     yt-dlp

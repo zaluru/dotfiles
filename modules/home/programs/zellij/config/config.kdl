@@ -1,0 +1,19 @@
+themes {
+  oxocarbon {
+    bg "#262626" // Surface2
+    fg "#dde1e6"
+    red "#da1e28"
+    green "#42be65"
+    blue "#33b1ff"
+    yellow "#FFAB91"
+    magenta "#ff7eb6" // Pink
+    orange "#FF6F00" // Peach
+    cyan "#3ddbd9" // Sky
+    black "#161616" // Mantle
+    white "#ffffff"
+  }
+}
+
+theme "oxocarbon"
+
+pane_frames false
