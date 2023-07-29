@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/catpuccin-mocha.yml
+  - ~/.config/alacritty/themes/oxocarbon-dark.yml
 
 font:
   normal:
@@ -15,13 +15,17 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
 
-  size: 8.0
+  size: 10.0
 
   offset:
     x: 1
     y: 1
 
+cursor:
+  style:
+    shape: Beam
+
 window:
   padding:
-    x: 2
-    y: 2
+    x: 10
+    y: 10 

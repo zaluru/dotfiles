@@ -20,7 +20,7 @@
       #EDITOR="emacsclient -t -a ''";
       #VISUAL="emacsclient -c -a emacs";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
       NIXOS_OZONE_WL = "1";
       QT_SCALE_FACTOR = "1";
       MOZ_ENABLE_WAYLAND = "1";
