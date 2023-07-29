@@ -25,6 +25,7 @@
           "rider"
           "phpstorm"
           "datagrip"
+          "nvidia-persistenced"
         ];
     };
   };

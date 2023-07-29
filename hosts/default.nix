@@ -13,7 +13,7 @@ let
   lib = nixpkgs.lib;
   bootloader = ../modules/core/bootloader.nix;
   razer = ../modules/razer;
-  nvidia = ../modules/nvidia;
+  nvidiaPrime = ../modules/nvidia;
   core = ../modules/core;
   virtualisation = ../modules/virtualisation;
   desktop = ../modules/desktop;
@@ -44,7 +44,7 @@ in
         virtualisation
         razer
         desktop
-        # nvidia # Curently broken
+        # nvidiaPrime 
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {
@@ -72,7 +72,7 @@ in
         virtualisation
         razer
         desktop
-        # nvidia # Curently broken
+        nvidiaPrime
       ];
   };
 }

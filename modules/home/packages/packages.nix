@@ -73,7 +73,7 @@
     flyctl
     distrobox
     fzf
-
+    glxinfo
     libsForQt5.kdenlive
     blender
     shotcut
