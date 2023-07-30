@@ -18,6 +18,9 @@
       record = "wf-recorder -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
       ls = "exa -la -s type";
     };
-    
+    functions = {
+      # Disables the default greeting on new interactive shell
+      fish_greeting = "";
+    };
   };
 }
