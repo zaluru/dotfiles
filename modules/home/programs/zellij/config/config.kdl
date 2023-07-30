@@ -17,3 +17,5 @@ themes {
 theme "oxocarbon"
 
 pane_frames false
+
+simplified_ui true
