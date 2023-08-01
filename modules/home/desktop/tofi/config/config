@@ -12,10 +12,10 @@ font = monospace bold
 outline-width = 0
 border-width = 0
 
-text-color = #cdd6f4
-background-color = #11111b
-selection-color = #11111b 
-selection-background = #cba6f7
+text-color = #ffffff
+background-color = #161616
+selection-color = #161616
+selection-background = #78a9ff
 selection-padding = 5
 
 
