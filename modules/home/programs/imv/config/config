@@ -6,11 +6,11 @@
 # config file.
 suppress_default_binds = true
 
-background = 1e1e2e
+background = 161616
 overlay = true
 overlay_font = Monospace:10
-overlay_background_color = 11111b
-overlay_text_color = cdd6f4
+overlay_background_color = 161616
+overlay_text_color = ffffff
 overlay_position_bottom = true
 
 [aliases]

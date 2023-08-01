@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-    background: #11111b; 
+    background: #161616; 
 }
 
 
@@ -33,7 +33,7 @@ window#waybar {
     /* box-shadow: inset 0px 0px 4px 11px rgba(194, 226, 214, 0.195); */
     background-size: 200% 300%;
     animation-duration: 750ms;
-    color: #d9e0ee;
+    color: #ffffff;
     /* border: 1px solid #17A7C6; */
     /* margin: 4px 0px; */
     margin-right: 10px;
@@ -50,7 +50,7 @@ window#waybar {
     margin-bottom: -2px;
     padding: 2px 8px;
     color: #cba6f7;
-    border-bottom: 3px solid #11111b; /* when switching focus it would bump becouse of the border-bottom on .active */ 
+    border-bottom: 3px solid #161616; /* when switching focus it would bump becouse of the border-bottom on .active */ 
 }
 
 #workspaces button.active {
