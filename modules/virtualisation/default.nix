@@ -11,6 +11,7 @@
     podman-compose
     docker-compose
   ];
+
   users.users.zaluru = {
     extraGroups = [
       "lxd"
@@ -46,6 +47,7 @@
       enable = true;
       recommendedSysctlSettings = true;
     };
+    virtualbox.host.enable = true;
   };
   # TODO learn more about this option
   # This enables rootles podman from what i have found
