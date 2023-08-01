@@ -4,6 +4,10 @@
 , ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    doas-sudo-shim
+  ];
+
   security = {
     pam = {
       services = {
