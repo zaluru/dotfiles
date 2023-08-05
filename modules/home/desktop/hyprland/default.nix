@@ -3,9 +3,12 @@
 , ... }:
 
 {
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-  ];
+  imports = 
+    [ inputs.hyprland.homeManagerModules.default ] ++
+    [(import ../programs/dunst)] ++
+    [(import ../programs/waybar)] ++
+    [(import ../programs/tofi)];
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {

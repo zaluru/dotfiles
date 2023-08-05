@@ -10,7 +10,7 @@
   config.home.stateVersion = "23.05";
   config.home.extraOutputsToInstall = ["doc" "devdoc"];
   imports = [
-    ./desktop
+    #./desktop
     ./gtk
     ./packages
     ./wallpapers
