@@ -10,16 +10,30 @@
   stylix = {
     base16Scheme = ./themes/base16-oxocarbon-dark.yml; 
     image = ../wallpapers/Hydrogen_Remixed.png; 
-    autoEnable = true;
+    autoEnable = false;
 
     fonts = {
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
       monospace = {
         name = "JetBrainsMono Nerd Font";
         package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
       };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
     };
 
     targets = {
+      kde.enable = true;
+      gtk.enable = true;
       gtk.extraCss = ''
         // Remove rounded corners
         window.background { border-radius: 0; }
