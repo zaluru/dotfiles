@@ -1,5 +1,6 @@
 { config
 , pkgs
+, inputs
 , ...}:
 
 {
@@ -17,14 +18,24 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    greetd.tuigreet
+  ];
+  
+  # Required for tuigreet remembering last users and sessions
+  # TODO figure out how to add that to the tuigreet package
+  systemd.tmpfiles.rules = [
+    "d /var/cache/tuigreet 0700 greeter greeter "
+  ];
   services = {
     mullvad-vpn.enable = false; # too broke rn :(
     greetd = {
       enable = true;
       settings = rec {
         initial_session = {
-          command = "Hyprland";
-          user = "zaluru";
+          # TODO Change default X_SESSIONS and WAYLAND_SESSIONS in https://github.com/apognu/tuigreet/blob/599d8d5d3657e6c25b3877f84a09979a79256600/src/info.rs#L15-L16
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --remember-user-session --sessions /run/current-system/sw/share/xsessions:/run/current-system/sw/share/wayland-sessions:/run/booted-system/etc/profiles/per-user/zaluru/share/wayland-sessions:/run/booted-system/etc/profiles/per-user/zaluru/share/xsessions";
+          user = "greeter";
         };
         default_session = initial_session;
       };
