@@ -50,7 +50,7 @@
     imv
     libsForQt5.dolphin
     cmatrix
-    #libreoffice
+    libreoffice
     cava
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     #inputs.davinciresolve.packages.${pkgs.system}.davinci-resolve
