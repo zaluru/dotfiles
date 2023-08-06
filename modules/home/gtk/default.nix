@@ -3,9 +3,6 @@
 , ... }:
 
 {
-  imports = 
-    [(import ./fonts)];
-    #[(import ./themes)];
   gtk = {
     enable = true;
     font.name = "Operator Mono";

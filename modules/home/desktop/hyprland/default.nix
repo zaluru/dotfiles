@@ -5,6 +5,7 @@
 {
   imports = 
     [ inputs.hyprland.homeManagerModules.default ] ++
+    [(import ../default.nix)] ++
     [(import ../programs/dunst)] ++
     [(import ../programs/waybar)] ++
     [(import ../programs/tofi)];

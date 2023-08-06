@@ -11,13 +11,13 @@
   config.home.extraOutputsToInstall = ["doc" "devdoc"];
   imports = [
     #./desktop
-    ./gtk
+    #./gtk
     ./packages
     ./wallpapers
     ./scripts
     ./programs
     #./editors
     ./bottom
-    #./stylix
+    ./stylix
   ];
 }
