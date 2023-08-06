@@ -15,10 +15,6 @@
         enable = false;
         user = "zaluru";
       };
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
     };
     desktopManager = {
         cinnamon.enable = true;
