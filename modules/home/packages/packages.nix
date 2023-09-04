@@ -65,6 +65,7 @@
     exa
     jetbrains.phpstorm
     jetbrains.datagrip
+    jetbrains.rider
     termscp
     dbeaver
     tutanota-desktop
@@ -80,6 +81,6 @@
     inkscape
     drawio
     webcord
-
+    dig # Tools for diagnosing DNS-related issuse 
   ];
 }
