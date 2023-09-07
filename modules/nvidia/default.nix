@@ -14,7 +14,7 @@
     vulkan-validation-layers
     vulkan-tools
   ];
-
+  programs.atop.atopgpu.enable = true;
   hardware = {
     nvidia = {
       prime = {
