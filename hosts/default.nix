@@ -34,7 +34,11 @@ in
             useUserPackages = true;
             useGlobalPkgs = true;
             extraSpecialArgs = { inherit inputs username; };
-            users.zaluru = (./home-hyprland.nix);
+            users.zaluru = {
+              imports =
+                  [ (import ./home-zaluru.nix)] ++
+                  [ hyprland ];
+            };
           };
           nixpkgs = {
             overlays =
