@@ -10,8 +10,6 @@
   stylix = {
     base16Scheme = ./themes/base16-oxocarbon-dark.yml; 
     image = ../wallpapers/Hydrogen_Remixed.png; 
-    autoEnable = false;
-
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
@@ -30,7 +28,7 @@
         name = "Noto Color Emoji";
       };
     };
-
+    autoEnable = true;
     targets = {
       kde.enable = true;
       gtk.enable = true;
@@ -38,6 +36,9 @@
         // Remove rounded corners
         window.background { border-radius: 0; }
       '';
+      alacritty.enable = false;
+      fish.enable = false;
+      waybar.enable = false;
     };
   }; 
 }
