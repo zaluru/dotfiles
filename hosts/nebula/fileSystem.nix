@@ -13,6 +13,8 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  
+  networking.hostid = "add3b19b"; # For ZFS
 
   boot.initrd.luks.devices."ssd".device = "/dev/disk/by-label/nebula-cryptroot";
   

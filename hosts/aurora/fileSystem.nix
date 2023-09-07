@@ -14,6 +14,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  networking.hostId = "4f757602"; # For ZFS
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3bad852e-c283-4dd6-b620-46788cecbbd4";
       fsType = "btrfs";

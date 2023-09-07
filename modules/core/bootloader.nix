@@ -22,7 +22,8 @@
       "rd.udev.log_level=3"
     ];
     extraModulePackages = [ ];
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = [ "ntfs" "zfs" ];
+    zfs.forceImportRoot = false;
     # Changes from default kernel to xanmod
     kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
     consoleLogLevel = 0;
