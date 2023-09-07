@@ -23,7 +23,7 @@
   hardware.nvidia.prime = {
     # You can find the gpu BusId with:
     # nix-shell -p pciutils --run "lspci | grep -E 'VGA|3D'"
-    intelBusId = "0@0:2:0";
-    nvidiaBusId = "4@0:0:0";
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:4:0:0";
   };
 }
