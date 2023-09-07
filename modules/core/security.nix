@@ -11,7 +11,7 @@
   security = {
     pam = {
       services = {
-        gdm.enableGnomeKeyring = true;
+        #gdm.enableGnomeKeyring = true;
         #swaylock = {
         #  text = ''
         #    auth include login
