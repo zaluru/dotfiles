@@ -11,6 +11,7 @@
   vscodium-fhs
   devbox
   just
+  asdf-vm
 
   # Game dev
   godot_4
