@@ -11,5 +11,6 @@
     [(import ./starship)] ++
     [(import ./direnv)] ++
     [(import ./imv)] ++
+    [(import ./nyxt)] ++
     [(import ./cava)];
 }
