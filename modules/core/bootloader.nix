@@ -22,8 +22,10 @@
       "rd.udev.log_level=3"
     ];
     extraModulePackages = [ ];
-    supportedFilesystems = [ "ntfs" "zfs" ];
-    zfs.forceImportRoot = false;
+    supportedFilesystems = [ "ntfs" ];
+    # I'm currently not using ZFS, and the latest Xanmod kernel version is not yet supported by OpenZFS
+    #supportedFilesystems = [ "ntfs" "zfs" ];
+    #zfs.forceImportRoot = false;
     # Changes from default kernel to xanmod
     kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
     consoleLogLevel = 0;
