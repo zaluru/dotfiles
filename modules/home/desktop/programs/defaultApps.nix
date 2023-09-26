@@ -1,12 +1,15 @@
 { pkgs
 , ... }:
 
+let
+  terminalApp = "${pkgs.alacritty}/bin/alacritty -e";
+in
 {
   xdg = {
     desktopEntries = {
       file = {
       	name = "File Manager";
-	exec = "${pkgs.thunar}/bin/thunar %u";
+	exec = "${pkgs.xfce.thunar}/bin/thunar %u";
 	categories = [ "Application" ];
       };
       img = {
@@ -26,9 +29,8 @@
       };
       text = {
       	name = "Text Editor";
-	exec = "${pkgs.nvim}/bin/nvim %u";
+	exec = "${terminalApp} ${pkgs.neovim}/bin/nvim %u";
 	categories = [ "Application" ];
-	terminal = true;
       };
       torrent = {
       	name = "Torrent";
@@ -36,26 +38,29 @@
 	categories = [ "Application" ];
       };
       video = {
-      	name = "File Manager";
-	exec = "thunar %f";
+      	name = "Video Player";
+	exec = "${pkgs.mpv}/bin/mpv %f";
 	categories = [ "Application" ];
       };
     };
     mimeApps = {
-      "text/x-shellscript" = [ "text.desktop" ];
-      "x-scheme-handler/magnet" = [ "torrent.desktop" ];
-      "application/x-bittorrent" = [ "torrent.desktop" ];
-      "x-scheme-handler/mailto" = [ "mail.desktop" ];
-      "text/plain" = [ "text.desktop" ];
-      "application/postscript" = [ "pdf.desktop" ];
-      "application/pdf" = [ "pdf.desktop" ];
-      "image/png" = [ "img.desktop" ];
-      "image/jpeg" = [ "img.desktop" ];
-      "image/gif" = [ "img.desktop" ];
-      "video/x-matroska" = [ "video.desktop" ];
-      "video/mp4" = [ "video.desktop" ];
-      "x-scheme-handler/lbry" = [ "lbry.desktop" ];
-      "inode/directory" = [ "file.desktop" ];
+      enable = true;
+      defaultApplications = {
+        "text/x-shellscript" = [ "text.desktop" ];
+        "x-scheme-handler/magnet" = [ "torrent.desktop" ];
+        "application/x-bittorrent" = [ "torrent.desktop" ];
+        "x-scheme-handler/mailto" = [ "mail.desktop" ];
+        "text/plain" = [ "text.desktop" ];
+        "application/postscript" = [ "pdf.desktop" ];
+        "application/pdf" = [ "pdf.desktop" ];
+        "image/png" = [ "img.desktop" ];
+        "image/jpeg" = [ "img.desktop" ];
+        "image/gif" = [ "img.desktop" ];
+        "video/x-matroska" = [ "video.desktop" ];
+        "video/mp4" = [ "video.desktop" ];
+        "x-scheme-handler/lbry" = [ "lbry.desktop" ];
+        "inode/directory" = [ "file.desktop" ];
+      };
     };
   };
 }
