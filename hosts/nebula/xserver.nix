@@ -10,7 +10,7 @@
     videoDrivers = [ "nvidia" ];
     displayManager = {
       defaultSession = "hyprland";
-      sessionPackages = [ inputs.hyprland.packages.${pkgs.system}.default ];
+      #sessionPackages = [ inputs.hyprland.packages.${pkgs.system}.default ];
       autoLogin = {
         enable = false;
         user = "zaluru";
