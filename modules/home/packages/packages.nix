@@ -36,6 +36,7 @@
     wf-recorder
     glib
     vlc
+    mpv
     unzip
     gparted
     ncmpcpp
