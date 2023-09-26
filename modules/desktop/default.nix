@@ -71,11 +71,11 @@
   xdg.portal = {
     enable = true;
     wlr.enable = false;
-    extraPortals = [
+    #extraPortals = [
       # TODO conflicts with the hyprland portal
       #pkgs.xdg-desktop-portal-gtk
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
-    ];
+      #inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
+    #];
   };
 
   sound = {
@@ -84,11 +84,17 @@
     mediaKeys.enable = true;
   };
 
-  programs. thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-media-tags-plugin
-    ];
+  programs = {
+    # From what I read the system module should be enabled, but i set the package to null, so hyprland will use the home manager package
+    hyprland = {
+      enable = true;
+    };
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-media-tags-plugin
+      ];
+    };
   };
 }

@@ -39,6 +39,7 @@
       alacritty.enable = false;
       fish.enable = false;
       waybar.enable = false;
+      hyprland.enable = false;
     };
   }; 
 }
