@@ -8,6 +8,7 @@
     };
     emacs-overlay.url  = "github:nix-community/emacs-overlay";
     stylix.url = "github:danth/stylix";
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {self, nixpkgs, ... }@inputs:

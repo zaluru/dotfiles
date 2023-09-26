@@ -21,6 +21,7 @@ let
   # Home Manager modules - for desktop environments
   hyprland = ../modules/home/desktop/hyprland;
   qtile = ../modules/home/desktop/qtile;
+  agenix = inputs.agenix.nixosModules.default;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -52,6 +53,8 @@ in
         virtualisation
         razer
         desktop
+	# Secrets management
+	agenix
         # nvidiaPrime 
       ];
   };
@@ -85,6 +88,8 @@ in
         razer
         desktop
         nvidiaPrime
+	# Secrets management
+	agenix
       ];
   };
 
@@ -119,6 +124,8 @@ in
         razer
         desktop
         nvidiaPrime
+	# Secrets management
+	agenix
       ];
   };
 }

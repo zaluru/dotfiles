@@ -1,11 +1,13 @@
 { config
 , pkgs
 , lib
+, inputs
 , ... }:
 
 {
   environment.systemPackages = with pkgs; [
     doas-sudo-shim
+    inputs.agenix.packages."${system}".default
   ];
 
   security = {
