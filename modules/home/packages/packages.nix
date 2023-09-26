@@ -56,13 +56,12 @@
     #inputs.davinciresolve.packages.${pkgs.system}.davinci-resolve
     git
     qbittorrent
-    swww
     thunderbird
     android-file-transfer
     nebula
     remmina
     croc
-    exa
+    eza
     jetbrains.phpstorm
     jetbrains.datagrip
     jetbrains.rider
