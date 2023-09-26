@@ -12,5 +12,6 @@
     [(import ./direnv)] ++
     [(import ./imv)] ++
     [(import ./nyxt)] ++
+    [(import ./zathura)] ++
     [(import ./cava)];
 }
