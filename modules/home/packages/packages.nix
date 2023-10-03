@@ -62,7 +62,6 @@
     nebula
     remmina
     croc
-    eza
     jetbrains.phpstorm
     jetbrains.datagrip
     jetbrains.rider
