@@ -17,7 +17,6 @@
     ./scripts
     ./programs
     #./editors
-    ./bottom
     ./stylix
   ];
 }

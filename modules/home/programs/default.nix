@@ -13,5 +13,6 @@
     [(import ./imv)] ++
     [(import ./nyxt)] ++
     [(import ./zathura)] ++
+    [(import ./bottom)] ++
     [(import ./cava)];
 }
