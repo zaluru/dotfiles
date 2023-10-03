@@ -8,6 +8,7 @@
     #[(import ./neovim)] ++
     [(import ./zellij)] ++
     [(import ./fish)] ++
+    [(import ./nushell)] ++
     [(import ./starship)] ++
     [(import ./direnv)] ++
     [(import ./imv)] ++
