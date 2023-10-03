@@ -15,8 +15,8 @@
       v = "nvim";
       vi = "nvim";
       vim = "nvim";
-      record = "wf-recorder -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
-      ls = "exa -la -s type";
+      record = "wf-recorder -f $HOME/videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
+      ls = "eza -la -s type --icons --git";
     };
     functions = {
       # Disables the default greeting on new interactive shell
