@@ -15,5 +15,6 @@
     [(import ./nyxt)] ++
     [(import ./zathura)] ++
     [(import ./bottom)] ++
+    [(import ./eza)] ++
     [(import ./cava)];
 }
