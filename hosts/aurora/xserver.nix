@@ -16,9 +16,6 @@
         user = "zaluru";
       };
     };
-    desktopManager = {
-        cinnamon.enable = true;
-    };
   };
   hardware.nvidia.prime = {
     # You can find the gpu BusId with:

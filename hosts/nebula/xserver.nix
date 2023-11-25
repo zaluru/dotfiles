@@ -16,8 +16,5 @@
         user = "zaluru";
       };
     };
-    desktopManager = {
-        cinnamon.enable = true;
-    };
   };
 }
