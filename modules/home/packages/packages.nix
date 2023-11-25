@@ -75,11 +75,13 @@
     glxinfo
     libsForQt5.kdenlive
     blender
+    reaper
     shotcut
     gimp
     inkscape
     drawio
     webcord
     dig # Tools for diagnosing DNS-related issuse 
+    rsync
   ];
 }
