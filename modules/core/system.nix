@@ -56,4 +56,6 @@
     fuse.userAllowOther = true;
     adb.enable = true;
   };
+
+  environment.localBinInPath = true;
 }
