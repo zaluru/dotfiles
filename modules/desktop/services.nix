@@ -30,7 +30,7 @@
   services = {
     mullvad-vpn.enable = false; # too broke rn :(
     greetd = {
-      enable = true;
+      enable = false;
       settings = rec {
         initial_session = {
           # TODO Change default X_SESSIONS and WAYLAND_SESSIONS in https://github.com/apognu/tuigreet/blob/599d8d5d3657e6c25b3877f84a09979a79256600/src/info.rs#L15-L16
@@ -39,6 +39,11 @@
         };
         default_session = initial_session;
       };
+    };
+
+    xserver.displayManager.gdm = {
+      enable = true;
+      wayland = true; 
     };
 
     tailscale.enable = true;
