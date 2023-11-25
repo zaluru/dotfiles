@@ -14,12 +14,6 @@
   programs.git.userName = "zaluru";
   programs.git.userEmail = "zaluru@tutamail.com";
 
-  # Cursor theme
-  home.pointerCursor = {
-    package = pkgs.phinger-cursors;
-    name = "phinger-cursors";
-  };
-
   # xdg-user-dirs
   xdg.userDirs = {
       enable = true;

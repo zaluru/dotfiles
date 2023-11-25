@@ -10,6 +10,10 @@
   stylix = {
     base16Scheme = ./themes/base16-oxocarbon-dark.yml; 
     image = ../wallpapers/Hydrogen_Remixed.png; 
+    cursor = {
+    	name = "phinger-cursors";
+	    package = pkgs.phinger-cursors;
+    };
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
