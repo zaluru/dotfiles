@@ -20,6 +20,7 @@ let
   desktop = ../modules/desktop;
   # Home Manager modules - for desktop environments
   hyprland = ../modules/home/desktop/hyprland;
+  gnome = ../modules/home/desktop/gnome;
   qtile = ../modules/home/desktop/qtile;
   agenix = inputs.agenix.nixosModules.default;
 in
@@ -53,6 +54,7 @@ in
         virtualisation
         razer
         desktop
+        gnome
 	# Secrets management
 	agenix
         # nvidiaPrime 
