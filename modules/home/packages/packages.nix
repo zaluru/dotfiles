@@ -22,7 +22,6 @@
     ranger
     ueberzug
     bottom
-    pamixer
     xfce.thunar
     wl-clipboard
     pavucontrol
