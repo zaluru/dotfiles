@@ -44,6 +44,7 @@
       fish.enable = false;
       waybar.enable = false;
       hyprland.enable = false;
+      zellij.enable = false;
     };
   }; 
 }
