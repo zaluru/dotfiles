@@ -8,7 +8,7 @@
     [ (import ./../modules/home)];
   home.username = "zaluru";
   home.homeDirectory = "/home/zaluru";
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
   programs.home-manager.enable = true;
   programs.git.enable = true;
   programs.git.userName = "zaluru";
