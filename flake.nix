@@ -9,9 +9,15 @@
     emacs-overlay.url  = "github:nix-community/emacs-overlay";
     stylix.url = "github:danth/stylix";
     agenix.url = "github:ryantm/agenix";
+
+    nix-on-droid = {
+      url = "github:t184256/nix-on-droid/testing";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = {self, nixpkgs, ... }@inputs:
+  outputs = {self, nixpkgs, nix-on-droid, ... }@inputs:
     let
       username = "zaluru";
       hostname = "andromeda";
@@ -24,5 +30,13 @@
           inherit self inputs nixpkgs username hostname;
         }
       );
+      nixOnDroidConfigurations = {
+        luna = nix-on-droid.lib.nixOnDroidConfiguration {
+	  modules = [ ./hosts/luna/nix-on-droid.nix ];
+	  pkgs = import nixpkgs {
+            system = "aarch64-linux";
+	  };
+	};
+      };
     };
 }
