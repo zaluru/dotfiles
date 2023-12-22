@@ -16,5 +16,6 @@
     [(import ./zathura)] ++
     [(import ./bottom)] ++
     [(import ./eza)] ++
-    [(import ./cava)];
+    [(import ./cava)] ++
+    [(import ./ssh)];
 }
