@@ -1,17 +1,18 @@
 { username
 , config
 , pkgs
+, lib
 , ... }:
 
 {
   imports =
     [ (import ./../modules/home)];
-  home.username = "zaluru";
-  home.homeDirectory = "/home/zaluru";
+  home.username = "${username}";
+  home.homeDirectory = lib.mkDefault "/home/zaluru";
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  programs.git.userName = "zaluru";
+  programs.git.userName = "${username}";
   programs.git.userEmail = "zaluru@tutamail.com";
 
   # xdg-user-dirs

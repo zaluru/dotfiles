@@ -33,6 +33,9 @@
       nixOnDroidConfigurations = {
         luna = nix-on-droid.lib.nixOnDroidConfiguration {
 	  modules = [ ./hosts/luna/nix-on-droid.nix ];
+	  extraSpecialArgs = {
+            inherit self inputs nixpkgs username hostname;
+	  };
 	  pkgs = import nixpkgs {
             system = "aarch64-linux";
 	  };
