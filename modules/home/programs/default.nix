@@ -5,7 +5,7 @@
     [(import ./kitty)] ++
     [(import ./alacritty)] ++
     [(import ./neofetch)] ++
-    #[(import ./neovim)] ++
+    [(import ./astronvim)] ++
     [(import ./zellij)] ++
     [(import ./fish)] ++
     [(import ./nushell)] ++

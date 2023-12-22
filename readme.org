@@ -11,3 +11,5 @@ But because of the amount of people using nix, sharing their configurations and 
 [[https://github.com/samiulbasirfahim/nixos][samiulbasirfahimn]] - The first nix configuration using Hyprland that captured my attention and inspired me to explore NixOS.
 
 [[https://github.com/sioodmy/dotfiles][sioodmy]] from whom I yanked a lot of code to make my config more modular.
+
+[[https://github.com/ryan4yin/nix-config][ryan4yin]] copied his astronvim config.

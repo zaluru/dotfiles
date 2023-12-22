@@ -7,6 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay.url  = "github:nix-community/emacs-overlay";
+    astronvim = {
+      url = "github:AstroNvim/AstroNvim/v3.40.3";
+      flake = false;
+    };
     stylix.url = "github:danth/stylix";
     agenix.url = "github:ryantm/agenix";
 
@@ -17,7 +21,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, nix-on-droid, ... }@inputs:
+  outputs = {self, nixpkgs, nix-on-droid, astronvim, ... }@inputs:
     let
       username = "zaluru";
       hostname = "andromeda";
@@ -27,14 +31,14 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username hostname;
+          inherit self inputs nixpkgs username hostname astronvim;
         }
       );
       nixOnDroidConfigurations = {
         luna = nix-on-droid.lib.nixOnDroidConfiguration {
 	  modules = [ ./hosts/luna/nix-on-droid.nix ];
 	  extraSpecialArgs = {
-            inherit self inputs nixpkgs username hostname;
+            inherit self inputs nixpkgs username hostname astronvim;
 	  };
 	  pkgs = import nixpkgs {
             system = "aarch64-linux";

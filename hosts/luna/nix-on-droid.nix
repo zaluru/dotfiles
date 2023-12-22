@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, astronvim, ... }:
 
 let
   username = "nix-on-droid";
@@ -7,7 +7,6 @@ in
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
-    neovim # or some other editor, e.g. nano or neovim
 
     # Some common stuff that people expect to have
     diffutils
@@ -54,7 +53,7 @@ in
   home-manager = {
     backupFileExtension = "hm-bak";
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username; };
+    extraSpecialArgs = { inherit inputs username astronvim; };
     
     config = {
       imports =
