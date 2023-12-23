@@ -16,9 +16,6 @@ return {
     "AstroNvim/astrocommunity",
     -- colorscheme -oxocarbon
     { import = "astrocommunity.colorscheme.oxocarbon-nvim" },
-    -- Highly experimental plugin that completely replaces
-    -- the UI for messages, cmdline and the popupmenu.
-    { import = "astrocommunity.utility.noice-nvim" },
     -- Fully featured & enhanced replacement for copilot.vim
     -- <Tab> work with both auto completion in cmp and copilot
     { import = "astrocommunity.motion.leap-nvim" },
