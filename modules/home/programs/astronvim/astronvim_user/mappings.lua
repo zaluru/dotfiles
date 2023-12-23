@@ -18,6 +18,13 @@ return {
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
+    -- disable <leader>b mappings - tabline
+    ["<leader>b"] = false,
+    ["<leader>bb"] = false,
+    ["<leader>bd"] = false,
+    ["<leader>b\\"] = false,
+    ["<leader>b|"] = false,
+
     -- Terminal
     -- NOTE: https://neovim.io/doc/user/builtin.html#jobstart()
     --   1. If {cmd} is a List it runs directly (no 'shell')

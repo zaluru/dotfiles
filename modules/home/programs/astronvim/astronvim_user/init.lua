@@ -8,6 +8,7 @@ return {
       spell = false,      -- Spell checking
       swapfile = false,   -- Swapfile
       smartindent = false, -- fix https://github.com/ryan4yin/nix-config/issues/4
+      showtabline = 0,
     },
   },
 
@@ -68,6 +69,14 @@ return {
           yaml = true,
           markdown = true,
         }
+      end,
+    },
+
+    {
+      "rebelot/heirline.nvim",
+      opts = function(_, opts)
+        opts.tabline = nil -- remove tabline
+        return opts
       end,
     },
 
