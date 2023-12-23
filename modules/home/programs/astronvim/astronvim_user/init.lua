@@ -20,7 +20,6 @@ return {
     -- <Tab> work with both auto completion in cmp and copilot
     { import = "astrocommunity.motion.leap-nvim" },
     { import = "astrocommunity.motion.flit-nvim" },
-    { import = "astrocommunity.scrolling.nvim-scrollbar" },
     { import = "astrocommunity.editing-support.todo-comments-nvim" },
     -- Language Support
     ---- Frontend & NodeJS
