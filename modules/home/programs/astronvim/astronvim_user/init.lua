@@ -165,6 +165,13 @@ return {
       },
     },
 
+    {
+      "rcarriga/nvim-notify",
+      opts = {
+        stages = "static",
+      },
+    },
+
     -- Enhanced matchparen.vim plugin for Neovim to highlight the outer pair.
     {
       "utilyre/sentiment.nvim",
