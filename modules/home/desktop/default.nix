@@ -2,6 +2,7 @@
 
 {
   imports =
-    [(import ./fonts)];
+    [(import ./fonts)] ++
+    [(import ./packages)];
     #[(import ./themes)];
 }

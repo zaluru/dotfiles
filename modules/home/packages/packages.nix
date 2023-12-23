@@ -1,6 +1,4 @@
 { pkgs
-,inputs
-, xdg-hyprland
 , ...
 }:
 
@@ -9,28 +7,18 @@
     skim
     ripgrep
     bat
-    keepassxc
     grim
     slurp
     libnotify
     swww
-    kitty
-    dunst
     tealdeer
-    adw-gtk3
     rnix-lsp
     ranger
     ueberzug
     bottom
-    xfce.thunar
     wl-clipboard
     pavucontrol
     wget
-    firefox
-    mullvad-browser
-    tor-browser-bundle-bin
-    ungoogled-chromium
-    tangram
     authenticator
     wf-recorder
     glib
@@ -40,46 +28,19 @@
     gparted
     ncmpcpp
     mpd
-    tofi
-    wlogout
     tty-clock
     playerctl
-    qalculate-gtk
-    swaylock-effects
     bleachbit
-    imv
-    libsForQt5.dolphin
     cmatrix
-    libreoffice
     cava
-    hyprpicker
-    #inputs.davinciresolve.packages.${pkgs.system}.davinci-resolve
     git
-    qbittorrent
-    thunderbird
-    android-file-transfer
-    nebula
-    remmina
     croc
-    jetbrains.phpstorm
-    jetbrains.datagrip
-    jetbrains.rider
     termscp
-    dbeaver
-    tutanota-desktop
     yt-dlp
     flyctl
     distrobox
     fzf
     glxinfo
-    libsForQt5.kdenlive
-    blender
-    reaper
-    shotcut
-    gimp
-    inkscape
-    drawio
-    webcord
     dig # Tools for diagnosing DNS-related issuse 
     rsync
   ];

@@ -12,12 +12,6 @@
   devbox
   just
   asdf-vm
-
-  # Game dev
-  godot_4
-  trenchbroom
-
-  neovim
   typescript
   rnix-lsp
   # rust
