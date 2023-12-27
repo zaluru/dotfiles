@@ -3,6 +3,7 @@
 , inputs
 , self
 , nixpkgs
+, astronvim
 , ... }:
 
 let
@@ -35,7 +36,7 @@ in
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username; };
+            extraSpecialArgs = { inherit inputs username astronvim; };
             users.zaluru = {
               imports =
                   [ (import ./home-zaluru.nix)] ++
@@ -70,7 +71,7 @@ in
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username; };
+            extraSpecialArgs = { inherit inputs username astronvim; };
             users.zaluru = {
               imports =
                   [ (import ./home-zaluru.nix)] ++
