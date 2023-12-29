@@ -41,5 +41,6 @@
     inkscape
     drawio
     webcord
+    itch
   ];
 }
