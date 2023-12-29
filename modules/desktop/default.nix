@@ -1,7 +1,4 @@
-{ config
-, pkgs
-, inputs
-, lib
+{ pkgs
 , ... }:
 
 {
@@ -48,7 +45,7 @@
 
     };
     loginShellInit = ''
-      dbus-update-activation-environment --systemd DISPLAY
+      dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     '';
   };
 
