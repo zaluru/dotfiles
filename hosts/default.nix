@@ -19,6 +19,7 @@ let
   core = ../modules/core;
   virtualisation = ../modules/virtualisation;
   desktop = ../modules/desktop;
+  server = ../modules/server;
   # Home Manager modules - for desktop environments
   hyprland = ../modules/home/desktop/hyprland;
   gnome = ../modules/home/desktop/gnome;
@@ -56,6 +57,7 @@ in
         razer
         desktop
         gnome
+        server
 	# Secrets management
 	agenix
         # nvidiaPrime 
@@ -91,8 +93,8 @@ in
         razer
         desktop
         nvidiaPrime
-	# Secrets management
-	agenix
+	      # Secrets management
+	      agenix
       ];
   };
 
@@ -127,8 +129,8 @@ in
         razer
         desktop
         nvidiaPrime
-	# Secrets management
-	agenix
+	      # Secrets management
+	      agenix
       ];
   };
 }
