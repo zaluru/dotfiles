@@ -19,7 +19,6 @@
     wl-clipboard
     pavucontrol
     wget
-    authenticator
     wf-recorder
     glib
     vlc
