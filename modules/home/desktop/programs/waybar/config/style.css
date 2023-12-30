@@ -21,6 +21,7 @@ window#waybar {
 #window,
 #clock,
 #battery,
+#mpd,
 #pulseaudio,
 #network,
 #tray,
@@ -110,6 +111,10 @@ window#waybar {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#mpd {
+    border-bottom: 3px solid #74c7ec;
 }
 
 #pulseaudio {

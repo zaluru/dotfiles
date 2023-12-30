@@ -17,6 +17,7 @@
   "modules-right": [
     "pulseaudio",
     "pulseaudio#microphone",
+    "mpd",
     "disk",
     "network",
     "battery",
@@ -111,5 +112,11 @@
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
     "scroll-step": 5
+  },
+  "mpd": {
+    "max-length": 20,
+    "state-icons": {
+      "playing": ""
+    }
   }
 }
