@@ -25,8 +25,6 @@
     mpv
     unzip
     gparted
-    ncmpcpp
-    mpd
     tty-clock
     playerctl
     bleachbit

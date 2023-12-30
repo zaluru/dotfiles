@@ -17,5 +17,7 @@
     [(import ./bottom)] ++
     [(import ./eza)] ++
     [(import ./cava)] ++
+    [(import ./mpd)] ++
+    [(import ./ncmpcpp)] ++
     [(import ./ssh)];
 }
