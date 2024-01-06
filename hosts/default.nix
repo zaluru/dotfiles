@@ -160,7 +160,7 @@ in
         core
         server
         disko.nixosModules.disko
-        agenix.nixosModule
+        agenix
       ];
   };
 }
