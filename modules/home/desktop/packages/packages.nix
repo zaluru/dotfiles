@@ -42,6 +42,6 @@
     drawio
     webcord
     itch
-    twitch-tui
+    chatterino2
   ];
 }
