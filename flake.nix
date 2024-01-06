@@ -19,9 +19,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    disko = {
+      url = "github:nix-community/disko"; 
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {self, nixpkgs, nix-on-droid, astronvim, ... }@inputs:
+  outputs = {self, nixpkgs, nix-on-droid, astronvim, disko, ... }@inputs:
     let
       username = "zaluru";
       hostname = "andromeda";
@@ -31,7 +35,7 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username hostname astronvim;
+          inherit self inputs nixpkgs username hostname astronvim disko;
         }
       );
       nixOnDroidConfigurations = {

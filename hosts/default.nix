@@ -4,6 +4,7 @@
 , self
 , nixpkgs
 , astronvim
+, disko
 , ... }:
 
 let
@@ -131,6 +132,35 @@ in
         nvidiaPrime
 	      # Secrets management
 	      agenix
+      ];
+  };
+  europa =  nixpkgs.lib.nixosSystem {
+    system = "aarch64-linux";
+    specialArgs = { inherit self inputs username; };
+    modules =  [ (import ./europa) ] ++
+      [
+        {networking.hostName = "europa";}
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+            extraSpecialArgs = { inherit inputs username astronvim; };
+            users.zaluru = {
+              imports = [ (import ./home-zaluru.nix)];
+            };
+          };
+          nixpkgs = {
+            overlays =
+              [
+                self.overlays.default
+              ];
+          };
+        }
+        core
+        server
+        disko.nixosModules.disko
+        agenix.nixosModule
       ];
   };
 }
