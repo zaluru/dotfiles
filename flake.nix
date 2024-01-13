@@ -29,7 +29,7 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username hostname astronvim disko;
+          inherit self inputs nixpkgs username astronvim disko;
         }
       );
     };
