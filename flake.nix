@@ -23,7 +23,6 @@
   outputs = {self, nixpkgs, astronvim, disko, ... }@inputs:
     let
       username = "zaluru";
-      hostname = "andromeda";
       selfPkgs = import ./pkgs;
     in
     {
