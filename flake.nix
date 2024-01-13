@@ -14,18 +14,13 @@
     stylix.url = "github:danth/stylix";
     agenix.url = "github:ryantm/agenix";
 
-    nix-on-droid = {
-      url = "github:t184256/nix-on-droid/testing";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
     disko = {
       url = "github:nix-community/disko"; 
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {self, nixpkgs, nix-on-droid, astronvim, disko, ... }@inputs:
+  outputs = {self, nixpkgs, astronvim, disko, ... }@inputs:
     let
       username = "zaluru";
       hostname = "andromeda";
@@ -38,16 +33,5 @@
           inherit self inputs nixpkgs username hostname astronvim disko;
         }
       );
-      nixOnDroidConfigurations = {
-        luna = nix-on-droid.lib.nixOnDroidConfiguration {
-	  modules = [ ./hosts/luna/nix-on-droid.nix ];
-	  extraSpecialArgs = {
-            inherit self inputs nixpkgs username hostname astronvim;
-	  };
-	  pkgs = import nixpkgs {
-            system = "aarch64-linux";
-	  };
-	};
-      };
     };
 }
