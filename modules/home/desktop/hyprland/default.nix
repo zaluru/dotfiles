@@ -14,7 +14,7 @@
       enable = true;
     };
     enableNvidiaPatches = true;
-    systemdIntegration = true;
+    systemd.enable = true;
   };
   xdg.configFile."hypr".source = ./config;
 }
