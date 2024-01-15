@@ -5,7 +5,7 @@
   programs.ssh = {
     enable = true;
     package = pkgs.openssh;
-    includes = [ "personal/config" ];
+    includes = [ "personal/config" "work/config" ];
   };
   programs.keychain = {
     enable = true;
