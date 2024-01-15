@@ -1,8 +1,6 @@
-{
-  pkgs,
-  astronvim,
-  ...
-}:
+{ pkgs
+, astronvim
+, ... }:
 ###############################################################################
 #
 #  AstroNvim's configuration and all its dependencies(lsp, formatter, etc.)

@@ -1,8 +1,5 @@
 { lib
-, username
-, hostname
 , pkgs
-, inputs
 , ... }:
 
 {

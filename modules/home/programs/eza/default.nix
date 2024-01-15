@@ -1,5 +1,4 @@
-{ hostname
-, ... }:
+{ ... }:
 
 {
   programs.eza = {

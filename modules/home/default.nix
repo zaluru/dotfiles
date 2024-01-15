@@ -1,9 +1,4 @@
-{ inputs
-, pkgs
-, config
-, lib
-, self
-, ... }:
+{ ... }:
 
 # glue all configs together
 {

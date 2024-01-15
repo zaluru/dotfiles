@@ -1,6 +1,5 @@
 { username
 , config
-, pkgs
 , lib
 , ... }:
 

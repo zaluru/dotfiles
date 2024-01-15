@@ -1,5 +1,4 @@
 { username
-, hostname
 , inputs
 , self
 , nixpkgs
