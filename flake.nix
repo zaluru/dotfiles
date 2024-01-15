@@ -13,14 +13,17 @@
     };
     stylix.url = "github:danth/stylix";
     agenix.url = "github:ryantm/agenix";
-
     disko = {
       url = "github:nix-community/disko"; 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {self, nixpkgs, astronvim, disko, ... }@inputs:
+  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, ... }@inputs:
     let
       username = "zaluru";
       selfPkgs = import ./pkgs;
@@ -32,5 +35,21 @@
           inherit self inputs nixpkgs username astronvim disko;
         }
       );
+      packages.x86_64-linux = {
+        proxmox = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          modules = [
+            ./configuration.nix
+          ];
+          format = "proxmox";
+        };
+        aws = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          modules = [
+            ./configuration.nix
+          ];
+          format = "amazon";
+        };
+      };
     };
 }
