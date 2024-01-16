@@ -1,11 +1,14 @@
 { ... }:
 
 {
+  imports = [ ./layouts.nix ];
+
   programs.zellij = { 
     enable = true;
     enableFishIntegration = true;
     settings = {
-      pane_frames = false;
+      default_layout = "default";
+      pane_frames = false; # TODO for some reasone changing default_layout ignores the pane_frames option, and i don't know how to set it in the layout.
       simplified_ui = true;
       theme = "oxocarbon";
       themes = {
@@ -25,5 +28,4 @@
       };
     };
   };
-  xdg.configFile."zellij/layouts".source = ./layouts;
 }

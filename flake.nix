@@ -21,9 +21,12 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
   };
 
-  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, ... }@inputs:
+  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, zjstatus, ... }@inputs:
     let
       username = "zaluru";
       selfPkgs = import ./pkgs;
@@ -32,7 +35,7 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username astronvim disko;
+          inherit self inputs nixpkgs username astronvim disko zjstatus;
         }
       );
       packages.x86_64-linux = {
