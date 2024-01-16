@@ -1,4 +1,5 @@
-{ ... }:
+{ pkgs
+, ... }:
 
 {
 
@@ -46,6 +47,9 @@
       enableUserServices = true;
     };
   };
+  environment.systemPackages = with pkgs; [
+    killall  
+  ];
   programs = {
     steam.enable = true;
 
