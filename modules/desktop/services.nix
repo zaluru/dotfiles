@@ -22,9 +22,9 @@
   
   # Required for tuigreet remembering last users and sessions
   # TODO figure out how to add that to the tuigreet package
-  systemd.tmpfiles.rules = [
-    "d /var/cache/tuigreet 0700 greeter greeter "
-  ];
+  #systemd.tmpfiles.rules = [
+  #  "d /var/cache/tuigreet 0700 greeter greeter "
+  #];
   services = {
     mullvad-vpn.enable = false; # too broke rn :(
     greetd = {
