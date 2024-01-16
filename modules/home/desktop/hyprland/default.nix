@@ -3,7 +3,7 @@
 {
   imports = 
     [(import ../default.nix)] ++
-    [(import ../programs/default.nix)]
+    [(import ../programs/default.nix)] ++
     [(import ../programs/dunst)] ++
     [(import ../programs/waybar)] ++
     [(import ../programs/defaultApps.nix)] ++
