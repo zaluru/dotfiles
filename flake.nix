@@ -24,9 +24,13 @@
     zjstatus = {
       url = "github:dj95/zjstatus";
     };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, zjstatus, ... }@inputs:
+  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, zjstatus, nixos-wsl, ... }@inputs:
     let
       username = "zaluru";
       selfPkgs = import ./pkgs;
@@ -35,7 +39,7 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username astronvim disko zjstatus;
+          inherit self inputs nixpkgs username astronvim disko zjstatus nixos-wsl;
         }
       );
       packages.x86_64-linux = {

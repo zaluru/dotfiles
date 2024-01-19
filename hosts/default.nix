@@ -4,6 +4,7 @@
 , nixpkgs
 , astronvim
 , disko
+, nixos-wsl
 , ... }:
 
 let
@@ -25,6 +26,7 @@ let
   gnome = ../modules/home/desktop/gnome;
   qtile = ../modules/home/desktop/qtile;
   agenix = inputs.agenix.nixosModules.default;
+  wsl = ../modules/core/wsl.nix;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -143,6 +145,37 @@ in
         server
         disko.nixosModules.disko
         agenix
+      ];
+  };
+  phobos = nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit self inputs username nixos-wsl; };
+    modules = [ (import ./phobos) ] ++
+      [
+        {networking.hostName = "phobos";}
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+            extraSpecialArgs = { inherit inputs username astronvim; };
+            users.zaluru = {
+            imports =
+                [ (import ./home-zaluru.nix)];
+            };
+
+          };
+          nixpkgs = {
+            overlays =
+              [
+                self.overlays.default
+              ];
+          };
+        }
+        nixos-wsl.nixosModules.wsl
+        core
+        virtualisation
+	      # Secrets management
+	      agenix
       ];
   };
 }
