@@ -6,6 +6,7 @@
     [(import ./alacritty)] ++
     [(import ./neofetch)] ++
     [(import ./astronvim)] ++
+    [(import ./helix)] ++
     [(import ./zellij)] ++
     [(import ./fish)] ++
     [(import ./nushell)] ++
