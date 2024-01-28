@@ -27,7 +27,10 @@
           "itch"
         ];
     };
-    overlays = import ../../overlays;
+    overlays = 
+      [
+        (import ../../overlays/mutt-wizard)
+      ];
   };
 
   # faster rebuilding
