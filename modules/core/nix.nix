@@ -27,7 +27,7 @@
           "itch"
         ];
     };
-    overlays = import ../overlays;
+    overlays = import ../../overlays;
   };
 
   # faster rebuilding
