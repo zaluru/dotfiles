@@ -27,6 +27,7 @@ let
   qtile = ../modules/home/desktop/qtile;
   agenix = inputs.agenix.nixosModules.default;
   wsl = ../modules/core/wsl.nix;
+  overlays = ../overlays/default.nix;
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
@@ -58,11 +59,12 @@ in
         virtualisation
         razer
         desktop
-        gnome
+        #gnome
         server
-	# Secrets management
-	agenix
+	      # Secrets management
+	      agenix
         # nvidiaPrime 
+        overlays
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {
