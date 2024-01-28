@@ -27,6 +27,7 @@
           "itch"
         ];
     };
+    overlays = import ../overlays;
   };
 
   # faster rebuilding
