@@ -36,12 +36,12 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       #QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
       #QT_STYLE_OVERRIDE = lib.mkForce "kvantum";
-      WLR_BACKEND = "vulkan";
-      WLR_RENDERER = "vulkan";
+      #WLR_BACKEND = "vulkan";
+      #WLR_RENDERER = "vulkan";
       WLR_NO_HARDWARE_CURSORS = "1";
       SDL_VIDEODRIVER = "wayland";
       CLUTTER_BACKEND = "wayland";
-      WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
+      #WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
 
     };
     loginShellInit = ''
