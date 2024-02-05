@@ -25,6 +25,7 @@
   #systemd.tmpfiles.rules = [
   #  "d /var/cache/tuigreet 0700 greeter greeter "
   #];
+  security.polkit.enable = true;
   services = {
     mullvad-vpn.enable = false; # too broke rn :(
     greetd = {
