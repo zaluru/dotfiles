@@ -56,17 +56,17 @@ return {
     -- Lua implementation of CamelCaseMotion, with extra consideration of punctuation.
     { import = "astrocommunity.motion.nvim-spider" },
     -- AI Assistant
-    { import = "astrocommunity.completion.copilot-lua-cmp" },
+--    { import = "astrocommunity.completion.copilot-lua-cmp" },
     -- Custom copilot-lua to enable filtypes: markdown
-    {
-      "zbirenbaum/copilot.lua",
-      opts = function(_, opts)
-        opts.filetypes = {
-          yaml = true,
-          markdown = true,
-        }
-      end,
-    },
+--    {
+--      "zbirenbaum/copilot.lua",
+--      opts = function(_, opts)
+--        opts.filetypes = {
+--          yaml = true,
+--          markdown = true,
+--        }
+--      end,
+--    },
 
     {
       "rebelot/heirline.nvim",
