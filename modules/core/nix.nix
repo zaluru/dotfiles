@@ -52,7 +52,11 @@
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
     registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
 
-
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs.outPath}"
+      "nixos-config=/etc/nixos/configuration.nix"
+      "/nix/var/nix/profiles/per-user/root/channels"
+    ];
 
     settings = {
       auto-optimise-store = true;
