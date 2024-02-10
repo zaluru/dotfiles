@@ -65,11 +65,9 @@
   xdg.portal = {
     enable = true;
     wlr.enable = false;
-    #extraPortals = [
-      # TODO conflicts with the hyprland portal
-      #pkgs.xdg-desktop-portal-gtk
-      #inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
-    #];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   sound = {
