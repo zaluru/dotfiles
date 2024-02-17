@@ -18,7 +18,7 @@ let
           --separator-color 00000000 \
           --fade-in 0.3
   '';
-  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./udev_on_bat.sh);
+  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./wall-change.sh.sh);
 in
 {
 
