@@ -18,9 +18,7 @@ let
           --separator-color 00000000 \
           --fade-in 0.3
   '';
-  wall-change = pkgs.writeShellScriptBin "wall-change" ''
-    swww img $1 --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3
-  '';
+  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./udev_on_bat.sh);
 in
 {
 
