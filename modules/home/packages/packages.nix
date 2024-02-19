@@ -40,6 +40,7 @@
     dig # Tools for diagnosing DNS-related issuse 
     rsync
     inetutils
+    scrcpy
     #mutt-wizard
   ];
 }
