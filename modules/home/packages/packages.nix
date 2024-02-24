@@ -42,5 +42,6 @@
     inetutils
     scrcpy
     #mutt-wizard
+    renoise
   ];
 }

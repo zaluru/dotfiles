@@ -25,6 +25,7 @@
           "datagrip"
           "nvidia-persistenced"
           "itch"
+          "renoise"
         ];
     };
     overlays = 
