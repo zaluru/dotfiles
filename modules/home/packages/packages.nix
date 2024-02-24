@@ -43,5 +43,6 @@
     scrcpy
     #mutt-wizard
     renoise
+    lsof
   ];
 }
