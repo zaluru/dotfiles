@@ -9,6 +9,5 @@
     devbox
     just
     asdf-vm
-    rnix-lsp
   ];
 }
