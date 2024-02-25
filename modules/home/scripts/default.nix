@@ -19,11 +19,13 @@ let
           --fade-in 0.3
   '';
   wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./wall-change.sh);
+  screenshoterino = pkgs.writeShellScriptBin "screenshoterino" (builtins.readFile ./screenshoterino.sh);
 in
 {
 
   home.packages = with pkgs; [
     wall-change
     my-swaylock
+    screenshoterino
   ];
 }
