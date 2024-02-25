@@ -11,7 +11,13 @@
       url = "github:AstroNvim/AstroNvim/v3.40.3";
       flake = false;
     };
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix/release-23.11";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
     agenix.url = "github:ryantm/agenix";
     disko = {
       url = "github:nix-community/disko"; 
