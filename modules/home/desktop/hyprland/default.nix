@@ -2,6 +2,7 @@
 
 {
   imports = 
+    [(import ./settings.nix)] ++
     [(import ../default.nix)] ++
     [(import ../programs/default.nix)] ++
     [(import ../programs/dunst)] ++
@@ -15,7 +16,9 @@
       enable = true;
     };
     enableNvidiaPatches = true;
-    systemd.enable = true;
+    systemd = {
+      variables = ["--all"];
+    };
   };
   xdg.configFile."hypr".source = ./config;
 }
