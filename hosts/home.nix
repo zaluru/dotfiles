@@ -12,7 +12,7 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
   programs.git.userName = "zaluru";
-  programs.git.userEmail = "zaluru@tutamail.com";
+  programs.git.userEmail = "zaluru@zaluru.com";
 
   # xdg-user-dirs
   xdg.userDirs = {
