@@ -1,9 +1,13 @@
 { pkgs
+, username
 , ... }:
 
 {
   #imports = [./fonts.nix ./services.nix ./pipewire.nix];
-  imports = [./services.nix];
+  imports = [
+    ./services.nix
+    ./dwm.nix  
+  ];
   # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
 
   environment = {
