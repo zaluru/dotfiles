@@ -59,11 +59,6 @@
     quickemu
     spice-gtk
   ];
-  
-  # Environment variables for nvidia
-  environment.sessionVariables = rec {
-    WLR_NO_HARDWARE_CURSORS = "1";
-  };
 
   # TODO move somewher else
   fonts.packages = with pkgs; [
