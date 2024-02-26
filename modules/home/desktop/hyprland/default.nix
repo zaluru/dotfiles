@@ -21,7 +21,6 @@ in
     xwayland = {
       enable = true;
     };
-    enableNvidiaPatches = true;
     systemd = {
       variables = ["--all"];
     };
