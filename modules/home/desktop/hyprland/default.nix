@@ -1,8 +1,14 @@
-{ ... }:
+{ pkgs
+, ... }:
 
+let 
+  autostart-hyprland = pkgs.writeShellScriptBin "autostart-hyprland" (builtins.readFile ./autostart-hyprland.sh);
+in
 {
   imports = 
     [(import ./settings.nix)] ++
+    [(import ./rules.nix)] ++
+    [(import ./binds.nix)] ++
     [(import ../default.nix)] ++
     [(import ../programs/default.nix)] ++
     [(import ../programs/dunst)] ++
@@ -20,5 +26,8 @@
       variables = ["--all"];
     };
   };
-  xdg.configFile."hypr".source = ./config;
+
+  home.packages = with pkgs; [
+    autostart-hyprland
+  ];
 }

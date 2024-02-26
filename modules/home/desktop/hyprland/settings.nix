@@ -2,6 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
+
     env = [
       "GDK_BACKEND,wayland,x11"
       "QT_QPA_PLATFORM,wayland;xcb"
@@ -20,5 +21,33 @@
       "WLR_DRM_NO_ATOMIC,1"
       "WLR_NO_HARDWARE_CURSORS,1"
     ];
+
+    exec-once = [
+      "autostart-hyprland"
+    ];
+
+    monitor = ",preferred,auto,1,bitdepth,10"; #why the fuck does that fix obs xdd
+
+    general = {
+      sensitivity = 1.0;
+      gaps_in = 5;
+      gaps_out = 10;
+      border_size = 2;
+      "col.active_border" = "rgba(78a9ffee)";
+      "col.inactive_border" = "rgba(262626ee)";
+      apply_sens_to_raw = 0;
+      layout = "dwindle";
+    };
+
+    dwindle = {
+      pseudotile = 1; # enable pseudotiling on dwindle
+      force_split = 0;
+    };
+
+    
+    master = {
+      new_is_master = true;
+      no_gaps_when_only = true;
+    };
   };
 }
