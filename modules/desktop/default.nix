@@ -1,5 +1,5 @@
 { pkgs
-, username
+, inputs
 , ... }:
 
 {
@@ -7,6 +7,7 @@
   imports = [
     ./services.nix
     ./dwm.nix  
+    inputs.hyprland.nixosModules.default
   ];
   # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
 

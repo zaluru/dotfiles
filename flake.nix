@@ -6,6 +6,9 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland?ref=v0.35.0";
+    };
     emacs-overlay.url  = "github:nix-community/emacs-overlay";
     astronvim = {
       url = "github:AstroNvim/AstroNvim/v3.40.3";
@@ -36,7 +39,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, zjstatus, nixos-wsl, ... }@inputs:
+  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, zjstatus, nixos-wsl, hyprland, ... }@inputs:
     let
       username = "zaluru";
       selfPkgs = import ./pkgs;
@@ -45,7 +48,7 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username astronvim disko zjstatus nixos-wsl;
+          inherit self inputs nixpkgs username astronvim hyprland disko zjstatus nixos-wsl;
         }
       );
       packages.x86_64-linux = {

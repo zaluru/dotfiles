@@ -3,6 +3,7 @@
 , self
 , nixpkgs
 , astronvim
+, hyprland
 , disko
 , nixos-wsl
 , ... }:
@@ -22,7 +23,7 @@ let
   desktop = ../modules/desktop;
   server = ../modules/server;
   # Home Manager modules - for desktop environments
-  hyprland = ../modules/home/desktop/hyprland;
+  hyprland-system = ../modules/home/desktop/hyprland; # need to change this to a configuration option or something
   gnome = ../modules/home/desktop/gnome;
   qtile = ../modules/home/desktop/qtile;
   agenix = inputs.agenix.nixosModules.default;
@@ -39,11 +40,11 @@ in
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username astronvim; };
+            extraSpecialArgs = { inherit inputs username astronvim hyprland; };
             users.zaluru = {
               imports =
                   [ (import ./home-zaluru.nix)] ++
-                  [ hyprland ];
+                  [ hyprland-system ];
             };
           };
           nixpkgs = {
@@ -75,11 +76,11 @@ in
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username astronvim; };
+            extraSpecialArgs = { inherit inputs username astronvim hyprland; };
             users.zaluru = {
               imports =
                   [ (import ./home-zaluru.nix)] ++
-                  [ hyprland ];
+                  [ hyprland-system ];
             };
           };
           nixpkgs = {

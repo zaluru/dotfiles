@@ -49,5 +49,9 @@
       new_is_master = true;
       no_gaps_when_only = true;
     };
+
+    input = {
+      kb_layout = "pl";
+    };
   };
 }

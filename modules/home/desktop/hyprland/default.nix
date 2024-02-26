@@ -1,21 +1,23 @@
 { pkgs
+, inputs
 , ... }:
 
 let 
   autostart-hyprland = pkgs.writeShellScriptBin "autostart-hyprland" (builtins.readFile ./autostart-hyprland.sh);
 in
 {
-  imports = 
-    [(import ./settings.nix)] ++
-    [(import ./rules.nix)] ++
-    [(import ./binds.nix)] ++
-    [(import ../default.nix)] ++
-    [(import ../programs/default.nix)] ++
-    [(import ../programs/dunst)] ++
-    [(import ../programs/waybar)] ++
-    [(import ../programs/defaultApps.nix)] ++
-    [(import ../programs/tofi)];
-
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+    ./settings.nix
+    ./rules.nix
+    ./binds.nix
+    ../default.nix
+    ../programs/default.nix
+    ../programs/dunst
+    ../programs/waybar
+    ../programs/defaultApps.nix
+    ../programs/tofi
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {
