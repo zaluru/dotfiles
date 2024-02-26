@@ -28,6 +28,11 @@
       publicShare = "${config.xdg.userDirs.documents}/public";
     };
 
+    xdg.dataHome = "${config.home.homeDirectory}/.local/share"; 
+    xdg.cacheHome = "${config.home.homeDirectory}/.cache/";
+    xdg.stateHome = "${config.home.homeDirectory}/.local/state";
+    xdg.configHome = "${config.home.homeDirectory}/.config";
+
 #  dconf.settings = {
 #   "org/gnome/desktop/interface" = {
 #       color-scheme = "prefer-dark";
