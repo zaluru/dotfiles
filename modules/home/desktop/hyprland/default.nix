@@ -17,7 +17,7 @@ in
     [(import ../programs/tofi)];
 
   wayland.windowManager.hyprland = {
-    #enable = true;
+    enable = true;
     xwayland = {
       enable = true;
     };
