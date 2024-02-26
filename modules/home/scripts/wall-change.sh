@@ -3,4 +3,6 @@ if [[ -z "$1" ]]; then
 else
   IMAGE=$1
 fi 
-swww img "$IMAGE" --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3
+
+ln -sf "$IMAGE" "${XDG_DATA_HOME:-$HOME/.local/share}"/bg
+swww img "${XDG_DATA_HOME:-$HOME/.local/share}"/bg --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3

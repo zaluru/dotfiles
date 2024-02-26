@@ -2,7 +2,7 @@
 dunst &
 waybar &
 swww init &&
-swww img $HOME/.local/share/wallpapers/11.gif &
+swww img "${XDG_DATA_HOME:-$HOME/.local/share}"/bg &
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
