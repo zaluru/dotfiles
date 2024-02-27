@@ -17,7 +17,7 @@
       "XDG_SESSION_DESKTOP,Hyprland"
 
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-      "QT_QPA_PLATFORMTHEME,qt5ct"
+      #"QT_QPA_PLATFORMTHEME,qt5ct" # TODO make it work properly, currently setting this variable breaks chromium based apps
       "WLR_DRM_NO_ATOMIC,1"
       "WLR_NO_HARDWARE_CURSORS,1"
     ];
