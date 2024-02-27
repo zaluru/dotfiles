@@ -13,5 +13,6 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
+    extraFlags = ["--quiet" "--ignore-missing"];
   };
 }
