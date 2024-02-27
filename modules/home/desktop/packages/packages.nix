@@ -42,5 +42,6 @@
     webcord
     itch
     chatterino2
+    discord
   ];
 }
