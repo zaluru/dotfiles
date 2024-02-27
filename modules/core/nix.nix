@@ -26,6 +26,7 @@
           "nvidia-persistenced"
           "itch"
           "renoise"
+          "discord"
         ];
     };
     overlays = 
