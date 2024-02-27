@@ -52,6 +52,7 @@
 
     input = {
       kb_layout = "pl";
+      follow_mouse = 0;
     };
   };
 }
