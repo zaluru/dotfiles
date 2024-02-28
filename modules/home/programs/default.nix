@@ -1,24 +1,26 @@
 { ... }: 
 
 {
-  imports = 
-    [(import ./kitty)] ++
-    [(import ./alacritty)] ++
-    [(import ./neofetch)] ++
-    [(import ./astronvim)] ++
-    [(import ./helix)] ++
-    [(import ./zellij)] ++
-    [(import ./fish)] ++
-    [(import ./nushell)] ++
-    [(import ./starship)] ++
-    [(import ./direnv)] ++
-    [(import ./imv)] ++
-    [(import ./nyxt)] ++
-    [(import ./zathura)] ++
-    [(import ./bottom)] ++
-    [(import ./eza)] ++
-    [(import ./cava)] ++
-    [(import ./mpd)] ++
-    [(import ./ncmpcpp)] ++
-    [(import ./ssh)];
+  imports = [
+    ./kitty
+    ./alacritty
+    ./neofetch
+    ./astronvim
+    ./helix
+    ./zellij
+    ./fish
+    ./nushell
+    ./starship
+    ./direnv
+    ./imv
+    ./nyxt
+    ./zathura
+    ./bottom
+    ./eza
+    ./cava
+    ./mpd
+    ./ncmpcpp
+    ./ssh
+    ./git
+  ];
 }
