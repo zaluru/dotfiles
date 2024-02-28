@@ -54,5 +54,10 @@
       kb_layout = "pl";
       follow_mouse = 0;
     };
+
+    misc = {
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
+    };
   };
 }
