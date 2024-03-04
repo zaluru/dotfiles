@@ -1,18 +1,14 @@
-{ inputs
-, pkgs
-, ... }:
+{ inputs, pkgs, ... }:
 
 {
-  imports = [
-    inputs.stylix.homeManagerModules.stylix
-  ];
+  imports = [ inputs.stylix.homeManagerModules.stylix ];
 
   stylix = {
-    base16Scheme = ./themes/base16-oxocarbon-dark.yml; 
-    image = ../wallpapers/Hydrogen_Remixed.png; 
+    base16Scheme = ./themes/base16-oxocarbon-dark.yml;
+    image = ../wallpapers/Hydrogen_Remixed.png;
     cursor = {
-    	name = "phinger-cursors";
-	    package = pkgs.phinger-cursors;
+      name = "phinger-cursors";
+      package = pkgs.phinger-cursors;
     };
     fonts = {
       serif = {
@@ -46,6 +42,5 @@
       hyprland.enable = false;
       zellij.enable = false;
     };
-  }; 
+  };
 }
-

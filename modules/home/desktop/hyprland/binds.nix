@@ -20,7 +20,6 @@
 
       "SUPER, G, togglesplit"
 
-
       ",Print,exec,screenshoterino"
       "SUPER,Print,exec,screenshoterino select"
 

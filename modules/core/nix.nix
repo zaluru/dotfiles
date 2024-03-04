@@ -1,17 +1,16 @@
-{ lib
-, inputs
-, ... }:
+{ lib, inputs, ... }:
 
 {
   environment = {
-    defaultPackages = [];
+    defaultPackages = [ ];
   };
 
   nixpkgs = {
     config = {
       allowUnfree = false;
       allowBroken = true;
-      allowUnfreePredicate = pkg:
+      allowUnfreePredicate =
+        pkg:
         builtins.elem (lib.getName pkg) [
           "steam-run"
           "steam"
@@ -29,10 +28,7 @@
           "discord"
         ];
     };
-    overlays = 
-      [
-        (import ../../overlays/mutt-wizard)
-      ];
+    overlays = [ (import ../../overlays/mutt-wizard) ];
   };
 
   # faster rebuilding
@@ -45,14 +41,14 @@
 
   nix = {
     gc = {
-      automatic= true;
+      automatic = true;
       dates = "daily";
       options = "--delete-older-than 7d";
     };
 
     # TODO have to learn how this works exactly
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
-    registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
+    registry = lib.mapAttrs (_: v: { flake = v; }) inputs;
 
     nixPath = [
       "nixpkgs=${inputs.nixpkgs.outPath}"
@@ -63,11 +59,14 @@
     settings = {
       auto-optimise-store = true;
       # allow sudo users to mark the following values as trusted
-      allowed-users = ["@wheel"];
+      allowed-users = [ "@wheel" ];
       # only allow sudo users to manage the nix store
-      trusted-users = ["@wheel"];
-      
-      experimental-features = ["nix-command" "flakes"];
+      trusted-users = [ "@wheel" ];
+
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
 
       # use binary cache
       builders-use-substitutes = true;
@@ -88,7 +87,6 @@
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nixpkgs-unfree.cachix.org-1:hqvoInulhbV4nJ9yJOEr+4wxhDV4xq2d1DK7S6Nj6rs="
       ];
-
     };
   };
 }

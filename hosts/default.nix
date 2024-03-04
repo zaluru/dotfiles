@@ -1,18 +1,18 @@
-{ username
-, inputs
-, self
-, nixpkgs
-, astronvim
-, hyprland
-, disko
-, nixos-wsl
-, ... }:
+{
+  username,
+  inputs,
+  self,
+  nixpkgs,
+  astronvim,
+  hyprland,
+  disko,
+  nixos-wsl,
+  ...
+}:
 
 let
   system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-  };
+  pkgs = import nixpkgs { inherit system; };
   lib = nixpkgs.lib;
   # Nixos modules
   bootloader = ../modules/core/bootloader.nix;
@@ -31,27 +31,32 @@ let
 in
 {
   nebula = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs username; };
-    modules = [ (import ./nebula) ] ++
-      [
-        {networking.hostName = "nebula";}
+    specialArgs = {
+      inherit self inputs username;
+    };
+    modules =
+      [ (import ./nebula) ]
+      ++ [
+        { networking.hostName = "nebula"; }
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username astronvim hyprland; };
+            extraSpecialArgs = {
+              inherit
+                inputs
+                username
+                astronvim
+                hyprland
+                ;
+            };
             users.zaluru = {
-              imports =
-                  [ (import ./home-zaluru.nix)] ++
-                  [ hyprland-system ];
+              imports = [ (import ./home-zaluru.nix) ] ++ [ hyprland-system ];
             };
           };
           nixpkgs = {
-            overlays =
-              [
-                self.overlays.default
-              ];
+            overlays = [ self.overlays.default ];
           };
         }
         core
@@ -61,33 +66,38 @@ in
         desktop
         #gnome
         server
-	      # Secrets management
-	      agenix
+        # Secrets management
+        agenix
         # nvidiaPrime 
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs username; };
-    modules = [ (import ./aurora) ] ++
-      [
-        {networking.hostName = "aurora";}
+    specialArgs = {
+      inherit self inputs username;
+    };
+    modules =
+      [ (import ./aurora) ]
+      ++ [
+        { networking.hostName = "aurora"; }
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username astronvim hyprland; };
+            extraSpecialArgs = {
+              inherit
+                inputs
+                username
+                astronvim
+                hyprland
+                ;
+            };
             users.zaluru = {
-              imports =
-                  [ (import ./home-zaluru.nix)] ++
-                  [ hyprland-system ];
+              imports = [ (import ./home-zaluru.nix) ] ++ [ hyprland-system ];
             };
           };
           nixpkgs = {
-            overlays =
-              [
-                self.overlays.default
-              ];
+            overlays = [ self.overlays.default ];
           };
         }
         core
@@ -96,34 +106,33 @@ in
         razer
         desktop
         nvidiaPrime
-	      # Secrets management
-	      agenix
+        # Secrets management
+        agenix
       ];
   };
 
   aurora-qtile = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs username; };
-    modules = [ (import ./aurora) ] ++
-      [
-        {networking.hostName = "aurora";}
+    specialArgs = {
+      inherit self inputs username;
+    };
+    modules =
+      [ (import ./aurora) ]
+      ++ [
+        { networking.hostName = "aurora"; }
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username; };
-            users.zaluru = {
-            imports =
-                [ (import ./home-zaluru.nix)] ++
-                [ qtile ];
+            extraSpecialArgs = {
+              inherit inputs username;
             };
-
+            users.zaluru = {
+              imports = [ (import ./home-zaluru.nix) ] ++ [ qtile ];
+            };
           };
           nixpkgs = {
-            overlays =
-              [
-                self.overlays.default
-              ];
+            overlays = [ self.overlays.default ];
           };
         }
         core
@@ -132,16 +141,19 @@ in
         razer
         desktop
         nvidiaPrime
-	      # Secrets management
-	      agenix
+        # Secrets management
+        agenix
       ];
   };
-  europa =  nixpkgs.lib.nixosSystem {
+  europa = nixpkgs.lib.nixosSystem {
     system = "aarch64-linux";
-    specialArgs = { inherit self inputs username; };
-    modules =  [ (import ./europa) ] ++
-      [
-        {networking.hostName = "europa";}
+    specialArgs = {
+      inherit self inputs username;
+    };
+    modules =
+      [ (import ./europa) ]
+      ++ [
+        { networking.hostName = "europa"; }
         core
         server
         disko.nixosModules.disko
@@ -149,34 +161,39 @@ in
       ];
   };
   phobos = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs username nixos-wsl; };
-    modules = [ (import ./phobos) ] ++
-      [
-        {networking.hostName = "phobos";}
+    specialArgs = {
+      inherit
+        self
+        inputs
+        username
+        nixos-wsl
+        ;
+    };
+    modules =
+      [ (import ./phobos) ]
+      ++ [
+        { networking.hostName = "phobos"; }
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            extraSpecialArgs = { inherit inputs username astronvim; };
-            users.zaluru = {
-            imports =
-                [ (import ./home-zaluru.nix)];
+            extraSpecialArgs = {
+              inherit inputs username astronvim;
             };
-
+            users.zaluru = {
+              imports = [ (import ./home-zaluru.nix) ];
+            };
           };
           nixpkgs = {
-            overlays =
-              [
-                self.overlays.default
-              ];
+            overlays = [ self.overlays.default ];
           };
         }
         nixos-wsl.nixosModules.wsl
         core
         virtualisation
-	      # Secrets management
-	      agenix
+        # Secrets management
+        agenix
       ];
   };
 }

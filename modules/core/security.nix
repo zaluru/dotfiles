@@ -1,6 +1,4 @@
-{ pkgs
-, inputs
-, ... }:
+{ pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -24,27 +22,27 @@
       enable = true;
       extraRules = [
         {
-          groups = ["wheel"];
+          groups = [ "wheel" ];
           persist = true;
           keepEnv = false;
         }
         {
-          groups = ["power"];
+          groups = [ "power" ];
           noPass = true;
           cmd = "${pkgs.systemd}/bin/poweroff";
         }
         {
-          groups = ["power"];
+          groups = [ "power" ];
           noPass = true;
           cmd = "${pkgs.systemd}/bin/reboot";
         }
         {
-          groups = ["nix"];
+          groups = [ "nix" ];
           cmd = "nix-collect-garbage";
           noPass = true;
         }
         {
-          groups = ["nix"];
+          groups = [ "nix" ];
           cmd = "nixos-rebuild";
           keepEnv = true;
         }

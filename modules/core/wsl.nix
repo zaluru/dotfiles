@@ -1,6 +1,4 @@
-{ username
-, inputs
-, ... }:
+{ username, inputs, ... }:
 
 {
   wsl = {

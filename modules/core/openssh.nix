@@ -1,5 +1,4 @@
-{ lib
-, ... }:
+{ lib, ... }:
 
 {
   services.openssh = {
@@ -12,7 +11,7 @@
       KbdInteractiveAuthentication = false;
     };
     openFirewall = true;
-    ports = [22];
+    ports = [ 22 ];
     hostKeys = [
       {
         bits = 4096;

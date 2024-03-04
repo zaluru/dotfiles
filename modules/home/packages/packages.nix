@@ -1,5 +1,4 @@
-{ pkgs
-, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -37,7 +36,7 @@
     distrobox
     fzf
     glxinfo
-    dig # Tools for diagnosing DNS-related issuse 
+    dig # Tools for diagnosing DNS-related issuse
     rsync
     inetutils
     scrcpy

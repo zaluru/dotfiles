@@ -1,15 +1,24 @@
-{ pkgs
-, lib
-, ... }:
+{ pkgs, lib, ... }:
 
 {
   # bootloader configuration
   boot = {
     tmp.cleanOnBoot = true;
-    initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "rtsx_usb_sdmmc" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "ehci_pci"
+      "ahci"
+      "usbhid"
+      "usb_storage"
+      "sd_mod"
+      "rtsx_usb_sdmmc"
+    ];
     initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-intel" "vfio-pci" ];
-    kernelParams = [ 
+    kernelModules = [
+      "kvm-intel"
+      "vfio-pci"
+    ];
+    kernelParams = [
       "intel_iommu=on"
       "iommu=pt"
       "loglevel=7"

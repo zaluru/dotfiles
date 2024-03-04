@@ -10,10 +10,10 @@
         "border, 1, 10, simple"
         "fade, 1, 0.98, simple"
         "workspaces, 1, 3, simple, slide"
-      ]; 
+      ];
     };
 
-    decoration = { 
+    decoration = {
       rounding = 0;
       drop_shadow = 0;
       shadow_range = 30;
@@ -21,8 +21,8 @@
       "col.shadow" = "0xffed8796 0xfff4dbd6 0xffeed49f 0xff8aadf4 10deg";
       "col.shadow_inactive" = "0xaa45475a";
       blur = {
-	      size = 1;
-	      passes = 1;
+        size = 1;
+        passes = 1;
       };
       active_opacity = 1;
       inactive_opacity = 1;

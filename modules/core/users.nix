@@ -1,5 +1,4 @@
-{ pkgs
-, ... }:
+{ pkgs, ... }:
 
 {
   users.users.root.initialPassword = "zaq1@WSX";

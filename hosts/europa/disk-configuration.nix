@@ -1,4 +1,7 @@
-{ disks ? [ "/dev/sda" ], ... }:
+{
+  disks ? [ "/dev/sda" ],
+  ...
+}:
 {
   disk = {
     main = {
@@ -8,7 +11,7 @@
         type = "table";
         format = "gpt";
         partitions = [
-        {
+          {
             name = "boot";
             start = "0";
             end = "1M";
@@ -26,10 +29,16 @@
                   mountpoint = "/";
                 };
                 "/nix" = {
-                  mountOptions = [ "compress=zstd" "noatime" ];
+                  mountOptions = [
+                    "compress=zstd"
+                    "noatime"
+                  ];
                 };
                 "/swap" = {
-                  mountOptions = [ "noatime" "nodatacow" ];
+                  mountOptions = [
+                    "noatime"
+                    "nodatacow"
+                  ];
                 };
                 "/varlib" = {
                   mountpoint = "/var/lib";

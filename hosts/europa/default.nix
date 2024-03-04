@@ -1,7 +1,9 @@
-{ pkgs
-, lib
-, modulesPath
-, ... }:
+{
+  pkgs,
+  lib,
+  modulesPath,
+  ...
+}:
 
 {
   imports = [
@@ -11,14 +13,14 @@
 
   system.stateVersion = "23.11";
 
-  disko.devices = import ./disk-configuration.nix {
-    inherit lib;
-  };
+  disko.devices = import ./disk-configuration.nix { inherit lib; };
 
-  swapDevices = [{
-    device = "/swap/swapfile";
-    size = 2048;
-  }];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 2048;
+    }
+  ];
 
   boot = {
     supportedFilesystems = [ "btrfs" ];
@@ -34,7 +36,7 @@
     hostName = "europa";
     firewall = {
       enable = true;
-      allowedTCPPorts = [80];
+      allowedTCPPorts = [ 80 ];
     };
   };
 
@@ -51,7 +53,7 @@
   ];
 
   users = {
-    groups.minecraft = {};
+    groups.minecraft = { };
 
     users = {
       root.openssh.authorizedKeys.keys = [
@@ -83,6 +85,5 @@
 
     # this comes with SSH jail by default
     fail2ban.enable = true;
-
   };
 }

@@ -22,11 +22,9 @@
       "WLR_NO_HARDWARE_CURSORS,1"
     ];
 
-    exec-once = [
-      "autostart-hyprland"
-    ];
+    exec-once = [ "autostart-hyprland" ];
 
-    monitor = ",preferred,auto,1,bitdepth,10"; #why the fuck does that fix obs xdd
+    monitor = ",preferred,auto,1,bitdepth,10"; # why the fuck does that fix obs xdd
 
     general = {
       sensitivity = 1.0;
@@ -44,7 +42,6 @@
       force_split = 0;
     };
 
-    
     master = {
       new_is_master = true;
       no_gaps_when_only = true;

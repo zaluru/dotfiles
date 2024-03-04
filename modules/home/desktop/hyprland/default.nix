@@ -1,9 +1,9 @@
-{ pkgs
-, inputs
-, ... }:
+{ pkgs, inputs, ... }:
 
-let 
-  autostart-hyprland = pkgs.writeShellScriptBin "autostart-hyprland" (builtins.readFile ./autostart-hyprland.sh);
+let
+  autostart-hyprland = pkgs.writeShellScriptBin "autostart-hyprland" (
+    builtins.readFile ./autostart-hyprland.sh
+  );
 in
 {
   imports = [
@@ -24,11 +24,15 @@ in
       enable = true;
     };
     systemd = {
-      variables = ["--all"];
+      variables = [ "--all" ];
+
+      # TODO read more why this might be usefull, left for future reference
+      #extraCommands = [
+      #  "systemctl --user stop graphical-session.target"
+      #  "systemctl --user start hyprland-session.target"
+      #];
     };
   };
 
-  home.packages = with pkgs; [
-    autostart-hyprland
-  ];
+  home.packages = with pkgs; [ autostart-hyprland ];
 }

@@ -1,8 +1,6 @@
-{ ... }: 
+{ ... }:
 
 {
-  imports =
-    [(import ./fonts)] ++
-    [(import ./packages)];
-    #[(import ./themes)];
+  imports = [ (import ./fonts) ] ++ [ (import ./packages) ];
+  #[(import ./themes)];
 }

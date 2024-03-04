@@ -1,9 +1,7 @@
-{ ... }: 
+{ ... }:
 
 {
-  imports =
-    [(import ./emacs.nix)] ++
-    [(import ./vim.nix)];
+  imports = [ (import ./emacs.nix) ] ++ [ (import ./vim.nix) ];
 }
 
 #{ config, options, lib, pkgs, ... }:

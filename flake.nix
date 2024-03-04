@@ -9,7 +9,7 @@
     hyprland = {
       url = "github:hyprwm/Hyprland?ref=v0.35.0";
     };
-    emacs-overlay.url  = "github:nix-community/emacs-overlay";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     astronvim = {
       url = "github:AstroNvim/AstroNvim/v3.40.3";
       flake = false;
@@ -23,7 +23,7 @@
     };
     agenix.url = "github:ryantm/agenix";
     disko = {
-      url = "github:nix-community/disko"; 
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-generators = {
@@ -39,7 +39,18 @@
     };
   };
 
-  outputs = {self, nixpkgs, astronvim, disko, nixos-generators, zjstatus, nixos-wsl, hyprland, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      astronvim,
+      disko,
+      nixos-generators,
+      zjstatus,
+      nixos-wsl,
+      hyprland,
+      ...
+    }@inputs:
     let
       username = "zaluru";
       selfPkgs = import ./pkgs;
@@ -48,22 +59,28 @@
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = (
         import ./hosts {
-          inherit self inputs nixpkgs username astronvim hyprland disko zjstatus nixos-wsl;
+          inherit
+            self
+            inputs
+            nixpkgs
+            username
+            astronvim
+            hyprland
+            disko
+            zjstatus
+            nixos-wsl
+            ;
         }
       );
       packages.x86_64-linux = {
         proxmox = nixos-generators.nixosGenerate {
           system = "x86_64-linux";
-          modules = [
-            ./configuration.nix
-          ];
+          modules = [ ./configuration.nix ];
           format = "proxmox";
         };
         aws = nixos-generators.nixosGenerate {
           system = "x86_64-linux";
-          modules = [
-            ./configuration.nix
-          ];
+          modules = [ ./configuration.nix ];
           format = "amazon";
         };
       };

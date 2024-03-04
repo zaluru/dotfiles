@@ -1,11 +1,7 @@
-{ config
-, pkgs
-, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [
-    ./vagrant.nix
-  ];
+  imports = [ ./vagrant.nix ];
 
   environment.systemPackages = with pkgs; [
     podman-compose

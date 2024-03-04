@@ -1,6 +1,4 @@
-{ pkgs
-, astronvim
-, ... }:
+{ pkgs, astronvim, ... }:
 ###############################################################################
 #
 #  AstroNvim's configuration and all its dependencies(lsp, formatter, etc.)
@@ -36,7 +34,8 @@
       # ];
 
       # Extra packages only available to nvim(won't pollute the global home environment)
-      extraPackages = with pkgs;
+      extraPackages =
+        with pkgs;
         [
           #-- c/c++
           cmake
@@ -52,16 +51,15 @@
           python3Packages.black # python formatter
           python3Packages.ruff-lsp
           (python3.withPackages (
-            ps:
-              with ps; [
-                pynvim # Python client and plugin host for Nvim
+            ps: with ps; [
+              pynvim # Python client and plugin host for Nvim
 
-                ipython
-                pandas
-                requests
-                pyquery
-                pyyaml
-              ]
+              ipython
+              pandas
+              requests
+              pyquery
+              pyyaml
+            ]
           ))
 
           #-- rust
@@ -141,13 +139,14 @@
           ripgrep # fast search tool, required by AstroNvim's '<leader>fw'(<leader> is space key)
         ]
         ++ (
-          if pkgs.stdenv.isDarwin
-          then []
-          else [
-            #-- verilog / systemverilog
-            verible
-            gdb
-          ]
+          if pkgs.stdenv.isDarwin then
+            [ ]
+          else
+            [
+              #-- verilog / systemverilog
+              verible
+              gdb
+            ]
         );
     };
   };

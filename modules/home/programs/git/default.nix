@@ -1,5 +1,4 @@
-{ username
-, ... }:
+{ username, ... }:
 
 {
   programs.git = {
@@ -14,5 +13,4 @@
       }
     ];
   };
-
 }

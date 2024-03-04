@@ -4,7 +4,11 @@
   virtualisation.oci-containers.containers = {
     "gluetun" = {
       image = "ghcr.io/qdm12/gluetun";
-      extraOptions = ["-it" "--rm" "--cap-add=NET_ADMIN"];
+      extraOptions = [
+        "-it"
+        "--rm"
+        "--cap-add=NET_ADMIN"
+      ];
       environment = {
         VPN_SERVICE_PROVIDER = "mullvad";
         VPN_TYPE = "wireguard";

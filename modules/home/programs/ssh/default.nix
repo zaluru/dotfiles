@@ -1,11 +1,13 @@
-{ pkgs 
-, ... }:
+{ pkgs, ... }:
 
 {
   programs.ssh = {
     enable = true;
     package = pkgs.openssh;
-    includes = [ "personal/config" "work/config" ];
+    includes = [
+      "personal/config"
+      "work/config"
+    ];
   };
   programs.keychain = {
     enable = true;
@@ -13,6 +15,9 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
-    extraFlags = ["--quiet" "--ignore-missing"];
+    extraFlags = [
+      "--quiet"
+      "--ignore-missing"
+    ];
   };
 }

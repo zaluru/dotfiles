@@ -1,6 +1,4 @@
-{ inputs
-, pkgs
-, ... }:
+{ inputs, pkgs, ... }:
 {
   xdg.configFile."zellij/layouts/default.kdl".text = ''
     layout {
@@ -9,7 +7,9 @@
         }
 
         pane size=1 borderless=true {
-            plugin location="file:${inputs.zjstatus.packages.${pkgs.system}.default}/bin/zjstatus.wasm" {
+            plugin location="file:${
+              inputs.zjstatus.packages.${pkgs.system}.default
+            }/bin/zjstatus.wasm" {
                 format_left  "{mode} #[fg=#89B4FA,bold]{session} {tabs}"
                 format_right "{command_git_branch} {datetime}"
                 format_space ""

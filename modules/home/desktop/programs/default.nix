@@ -1,6 +1,5 @@
-{ ... }: 
+{ ... }:
 
 {
-  imports = 
-    [(import ./obs)];
+  imports = [ (import ./obs) ];
 }

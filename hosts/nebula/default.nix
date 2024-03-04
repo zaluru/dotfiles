@@ -1,14 +1,12 @@
-{ lib
-, pkgs
-, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports =
-    [ (import ./fileSystem.nix) ] ++
-    [ (import ./xserver.nix) ] ++
-    [ (import ./vpn.nix) ] ++
-    [ (import ./../../modules/home/packages/python.nix ) ] ++
-    [ (import ./hardware.nix) ];
+    [ (import ./fileSystem.nix) ]
+    ++ [ (import ./xserver.nix) ]
+    ++ [ (import ./vpn.nix) ]
+    ++ [ (import ./../../modules/home/packages/python.nix) ]
+    ++ [ (import ./hardware.nix) ];
 
   # basic configuration
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -29,11 +27,9 @@
     jack.enable = true;
   };
 
-
   # networking
   networking.networkmanager.enable = true;
   networking.useDHCP = lib.mkDefault true;
-
 
   # programs
   programs.dconf.enable = true;

@@ -1,11 +1,10 @@
-{ pkgs
-, ... }:
+{ pkgs, ... }:
 
 {
-#  environment.variables = {
-#    GBM_BACKEND = "nvidia-drm";
-#    LIBVA_DRIVER_NAME = "nvidia";
-#  };
+  #  environment.variables = {
+  #    GBM_BACKEND = "nvidia-drm";
+  #    LIBVA_DRIVER_NAME = "nvidia";
+  #  };
 
   environment.systemPackages = with pkgs; [
     vulkan-loader
@@ -26,12 +25,12 @@
           enableOffloadCmd = true;
         };
       };
-      nvidiaPersistenced = true; 
+      nvidiaPersistenced = true;
       # open = true;
       powerManagement.enable = true;
       modesetting.enable = true;
       nvidiaSettings = true;
     };
-    opengl.extraPackages = with pkgs; [nvidia-vaapi-driver];
+    opengl.extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
 }

@@ -1,12 +1,10 @@
-{ pkgs
-, inputs
-, ... }:
+{ pkgs, inputs, ... }:
 
 {
   #imports = [./fonts.nix ./services.nix ./pipewire.nix];
   imports = [
     ./services.nix
-    ./dwm.nix  
+    ./dwm.nix
     inputs.hyprland.nixosModules.default
   ];
   # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
@@ -22,7 +20,7 @@
       TERMINAL = "alacritty";
       QT_SCALE_FACTOR = "1";
       MOZ_WEBRENDER = "1";
-      _JAVA_AWT_WM_NONREPARENTING= "1";
+      _JAVA_AWT_WM_NONREPARENTING = "1";
       __GL_GSYNC_ALLOWED = "0";
       __GL_VRR_ALLOWED = "0";
       _JAVA_AWT_WM_NONEREPARENTING = "1";
@@ -34,7 +32,6 @@
       #WLR_BACKEND = "vulkan";
       #WLR_RENDERER = "vulkan";
       #WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
-
     };
     loginShellInit = ''
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -57,9 +54,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   sound = {
