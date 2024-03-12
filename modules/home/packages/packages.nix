@@ -10,7 +10,6 @@
     libnotify
     swww
     tealdeer
-    rnix-lsp
     ranger
     ueberzug
     bottom
