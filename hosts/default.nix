@@ -189,7 +189,7 @@ in
             overlays = [ self.overlays.default ];
           };
         }
-        nixos-wsl.nixosModules.wsl
+        wsl
         core
         virtualisation
         # Secrets management

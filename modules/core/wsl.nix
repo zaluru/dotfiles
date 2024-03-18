@@ -1,6 +1,8 @@
 { username, inputs, ... }:
 
 {
+  imports = [ inputs.nixos-wsl.nixosModules.wsl ];
+
   wsl = {
     enable = true;
     wslConf.automount.root = "/mnt";
@@ -12,5 +14,4 @@
     # Enable integration with Docker Desktop (needs to be installed)
     docker-desktop.enable = false;
   };
-  modules = [ inputs.nixos-wsl.nixosModules.wsl ];
 }
