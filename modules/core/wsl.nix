@@ -8,6 +8,7 @@
     wslConf.automount.root = "/mnt";
     wslConf.interop.appendWindowsPath = false;
     wslConf.network.generateHosts = false;
+    wslConf.user.default = username;
     defaultUser = username;
     startMenuLaunchers = true;
 
