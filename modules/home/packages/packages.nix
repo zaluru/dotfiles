@@ -5,10 +5,7 @@
     skim
     ripgrep
     bat
-    grim
-    slurp
     libnotify
-    swww
     tealdeer
     ranger
     ueberzug
@@ -16,12 +13,8 @@
     wl-clipboard
     pavucontrol
     wget
-    wf-recorder
     glib
-    vlc
-    mpv
     unzip
-    gparted
     tty-clock
     playerctl
     bleachbit
@@ -40,7 +33,6 @@
     inetutils
     scrcpy
     #mutt-wizard
-    renoise
     lsof
   ];
 }

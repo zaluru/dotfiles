@@ -42,5 +42,13 @@
     itch
     chatterino2
     discord
+    renoise
+    gparted
+    mpv
+    vlc
+    wf-recorder
+    swww
+    grim
+    slurp
   ];
 }
