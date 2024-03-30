@@ -3,6 +3,11 @@
 
 add_newline = false
 
+format = """
+$directory\
+$shell\
+$all"""
+
 [package]
 disabled = true
 
@@ -20,3 +25,9 @@ modified = ''
 untracked = ''
 staged = ''
 
+[shell]
+disabled = false
+format = '[$indicator](#cba6f7 bold) '
+fish_indicator = '󰈺 '
+bash_indicator = ' '
+powershell_indicator = '󰨊 '
