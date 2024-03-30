@@ -10,6 +10,7 @@
     ./zellij
     ./fish
     ./nushell
+    ./bash
     ./starship
     ./direnv
     ./imv
