@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.37.1";
+      url = "github:hyprwm/Hyprland?ref=v0.40.0";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     astronvim = {
