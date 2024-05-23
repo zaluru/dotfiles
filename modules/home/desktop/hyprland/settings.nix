@@ -24,7 +24,7 @@
 
     exec-once = [ "autostart-hyprland" ];
 
-    monitor = ",preferred,auto,1,bitdepth,10"; # why the fuck does that fix obs xdd
+    #monitor = ",preferred,auto,1,bitdepth,10"; # why the fuck does that fix obs xdd
 
     general = {
       sensitivity = 1.0;
@@ -57,4 +57,8 @@
       disable_splash_rendering = true;
     };
   };
+  wayland.windowManager.hyprland.extraConfig = ''
+    monitor = DP-2,1920x1080,1920x-400,1,transform,3,bitdepth,10
+    monitor = DP-3,1920x1080,0x0,1,transform,0,bitdepth,10
+  '';
 }
