@@ -2,7 +2,7 @@
 
 # glue all configs together
 {
-  config.home.stateVersion = "23.11";
+  config.home.stateVersion = "24.05";
   config.home.extraOutputsToInstall = [
     "doc"
     "devdoc"

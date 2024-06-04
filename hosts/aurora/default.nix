@@ -11,7 +11,7 @@
   # basic configuration
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   # Pipewire
   # TODO there is some crackling noise in discord, propably related to those:

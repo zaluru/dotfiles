@@ -11,7 +11,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   disko.devices = import ./disk-configuration.nix { inherit lib; };
 
