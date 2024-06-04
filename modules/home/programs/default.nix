@@ -3,7 +3,7 @@
 {
   imports = [
     ./kitty
-    ./alacritty
+    ./alacritty.nix
     ./neofetch
     ./astronvim
     ./helix
