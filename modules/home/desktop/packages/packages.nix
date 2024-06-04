@@ -29,7 +29,7 @@
     jetbrains.phpstorm
     jetbrains.datagrip
     jetbrains.rider
-    dbeaver
+    dbeaver-bin
     tutanota-desktop
     libsForQt5.kdenlive
     blender
