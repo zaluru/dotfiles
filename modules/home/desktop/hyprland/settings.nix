@@ -66,5 +66,6 @@
   wayland.windowManager.hyprland.extraConfig = ''
     monitor = DP-2,1920x1080,1920x-400,1,transform,3,bitdepth,10
     monitor = DP-3,1920x1080,0x0,1,transform,0,bitdepth,10
+    monitor = Unknown-1,disabled
   '';
 }
