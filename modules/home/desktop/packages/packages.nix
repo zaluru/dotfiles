@@ -39,10 +39,10 @@
     inkscape
     drawio
     webcord
-    itch
+    #itch
     chatterino2
     discord
-    renoise
+    #renoise
     gparted
     mpv
     vlc
