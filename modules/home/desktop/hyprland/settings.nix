@@ -20,6 +20,12 @@
       #"QT_QPA_PLATFORMTHEME,qt5ct" # TODO make it work properly, currently setting this variable breaks chromium based apps
       "WLR_DRM_NO_ATOMIC,1"
       "WLR_NO_HARDWARE_CURSORS,1"
+      # TODO: move to an option
+      # NVIDIA SPECIFIC
+      "LIBVA_DRIVER_NAME,nvidia"
+      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+      "GBM_BACKEND,nvidia_drm"
+      "XWAYLAND_NO_GLAMOR,1"
     ];
 
     exec-once = [ "autostart-hyprland" ];
