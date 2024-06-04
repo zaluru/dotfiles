@@ -1,5 +1,5 @@
 SCREENSHOT_DIR="${XDG_PICTURES_DIR:-$HOME/pictures}"/screenshots
-SCREENSHOT_FILE=$(date +'%Y%m%d%H%M%S_1.png')
+SCREENSHOT_FILE=$(date +'%Y-%m-%d-%H-%M-%S-%s.png')
 
 if [[ -z $1 ]]; then
   grim "$SCREENSHOT_DIR/$SCREENSHOT_FILE"  
