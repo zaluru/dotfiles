@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "output": "DP-3",
   "position": "top",
   "mod": "dock",
   "exclusive": true,
@@ -65,8 +66,8 @@
     "format": " {percentage_used}%"
   },
   "clock": {
-     "format": "{: %H:%M}",
-     "format-alt": "{: %a,%Y-%m-%d}",
+     "format": " {:%H:%M}",
+     "format-alt": " {:%a,%Y-%m-%d}",
      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
  "network":{
