@@ -170,6 +170,8 @@ in
       ++ [
         { networking.hostName = "proteus"; }
         core
+        bootloader
+        virtualisation
         server
         agenix
       ];
