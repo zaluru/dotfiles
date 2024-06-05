@@ -160,6 +160,20 @@ in
         agenix
       ];
   };
+  proteus = nixpkgs.lib.nixosSystem {
+    system = "aarch64-linux";
+    specialArgs = {
+      inherit self inputs username;
+    };
+    modules =
+      [ (import ./europa) ]
+      ++ [
+        { networking.hostName = "proteus"; }
+        core
+        server
+        agenix
+      ];
+  };
   phobos = nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
