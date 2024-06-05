@@ -166,7 +166,7 @@ in
       inherit self inputs username;
     };
     modules =
-      [ (import ./europa) ]
+      [ (import ./proteus) ]
       ++ [
         { networking.hostName = "proteus"; }
         core
