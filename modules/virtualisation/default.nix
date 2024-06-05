@@ -3,9 +3,11 @@
 {
   imports = [ ./vagrant.nix ];
 
+  programs.virt-manager.enable = true;
   environment.systemPackages = with pkgs; [
     podman-compose
     docker-compose
+    guestfs-tools
   ];
 
   users.users.zaluru = {
