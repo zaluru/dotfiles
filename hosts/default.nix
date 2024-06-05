@@ -169,6 +169,27 @@ in
       [ (import ./proteus) ]
       ++ [
         { networking.hostName = "proteus"; }
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+            extraSpecialArgs = {
+              inherit
+                inputs
+                username
+                astronvim
+                hyprland
+                ;
+            };
+            users.zaluru = {
+              imports = [ (import ./home-zaluru.nix) ] ++ [ hyprland-system ];
+            };
+          };
+          nixpkgs = {
+            overlays = [ self.overlays.default ];
+          };
+        }
         core
         bootloader
         virtualisation
