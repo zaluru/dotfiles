@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./vagrant.nix ];
+  #imports = [ ./vagrant.nix ];
 
   programs.virt-manager.enable = true;
   environment.systemPackages = with pkgs; [
