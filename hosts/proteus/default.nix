@@ -25,6 +25,9 @@
   services.fwupd.enable = true;
   services.cockpit.enable = true;
 
+  # Disable sleep when the laptop lid is closed
+  services.logind.lidSwitch = "ignore";
+
   environment.systemPackages = with pkgs; [
     git
     libvirt
