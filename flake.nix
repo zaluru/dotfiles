@@ -7,7 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.40.0";
+      url = "https://github.com/hyprwm/Hyprland";
+      type = "git";
+      ref = "refs/tags/v0.46.0";
+      submodules = true;
     };
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
