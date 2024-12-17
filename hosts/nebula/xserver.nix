@@ -6,7 +6,7 @@
     enable = true;
     videoDrivers = [ "amd" ];
     displayManager = {
-      defaultSession = "hyprland";
+      #defaultSession = "hyprland";
       #sessionPackages = [ inputs.hyprland.packages.${pkgs.system}.default ];
       autoLogin = {
         enable = false;
