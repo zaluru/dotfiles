@@ -25,6 +25,8 @@ let
   # Home Manager modules - for desktop environments
   hyprland-system = ../modules/home/desktop/hyprland; # need to change this to a configuration option or something
   gnome = ../modules/home/desktop/gnome;
+  plasma = ../modules/desktop/plasma.nix;
+  plasma-manager-config = ../modules/home/desktop/plasma;
   qtile = ../modules/home/desktop/qtile;
   agenix = inputs.agenix.nixosModules.default;
   wsl = ../modules/core/wsl.nix;
@@ -35,6 +37,8 @@ in
       inherit self inputs username;
     };
     modules =
+            sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+        plasma
       [ (import ./nebula) ]
       ++ [
         { networking.hostName = "nebula"; }
@@ -43,6 +47,7 @@ in
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
+            sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
             extraSpecialArgs = {
               inherit
                 inputs
@@ -65,6 +70,7 @@ in
         razer
         desktop
         #gnome
+        plasma
         server
         # Secrets management
         agenix

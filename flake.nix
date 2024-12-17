@@ -9,6 +9,11 @@
     hyprland = {
       url = "github:hyprwm/Hyprland?ref=v0.40.0";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     astronvim = {
@@ -76,6 +81,7 @@
             username
             astronvim
             hyprland
+            plasma-manager
             nix-flatpak
             disko
             zjstatus
@@ -99,6 +105,7 @@
               disko
               zjstatus
               nixos-wsl;
+                plasma-manager
                 nix-flatpak
           };
           modules = [ (import ./hosts/phobos) ]
