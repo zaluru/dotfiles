@@ -44,7 +44,6 @@
     discord
     #renoise
     gparted
-    mpv
     vlc
     wf-recorder
     swww

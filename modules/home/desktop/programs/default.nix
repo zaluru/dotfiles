@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ (import ./obs) ];
+  imports = [
+    ./obs
+    ./mpv
+  ];
 }
