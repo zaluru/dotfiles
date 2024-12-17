@@ -10,7 +10,6 @@
     firefox
     mullvad-browser
     tor-browser-bundle-bin
-    ungoogled-chromium
     tangram
     tofi
     wlogout
