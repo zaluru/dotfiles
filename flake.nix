@@ -10,6 +10,7 @@
       url = "github:hyprwm/Hyprland?ref=v0.40.0";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     astronvim = {
       url = "github:AstroNvim/AstroNvim/v3.40.3";
       flake = false;
