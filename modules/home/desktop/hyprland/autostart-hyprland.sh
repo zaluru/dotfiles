@@ -8,6 +8,10 @@ wl-paste --type image --watch cliphist store &
 
 #discord --start-minimized &
 
+# polkit
+polkit-agent-helper-1 &
+systemctl start --user polkit-gnome-authentication-agent-1 &
+
 # other
 notify-send -a aurora "hello $(whoami)" &
 

@@ -47,8 +47,31 @@
 
     windowrulev2 = [
       "opacity 0.95 0.95,class:^(Alacritty)$"
-      "float, class:^(firefox)$, title:^(Firefox — Sharing Indicator)$"
-      "noanim,floating:1" # Disables animations on floating windows
+
+      # make Firefox PiP window floating and sticky
+      "float, title:^(Picture-in-Picture)$"
+      "pin, title:^(Picture-in-Picture)$"
+
+      # Make the hyprland share picker window floating and sticky
+      "float, title:^(MainPicker)$"
+      "pin, title:^(MainPicker)$"
+
+      # throw sharing indicators away
+      "workspace special silent, title:^(Firefox — Sharing Indicator)$"
+      "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
+
+      "workspace 2, class:^(firefox)$"
+      "workspace 2, class:^(chromium-browser)"
+      "workspace 7, class:^(discord)$"
+      "workspace 7, class:^(Signal)$"
+      "workspace 7, class:^(thunderbird)$"
+      "workspace 8, class:^(com.obsproject.Studio)$"
+      "workspace 8, class:^(com.chatterino.)$"
+      "workspace 9, class:^(org.keepassxc.KeePassXC)"
+      "workspace 9, class:^(Bitwarden)"
+
+      # Disables animations on floating windows
+      "noanim,floating:1"
     ];
   };
 }

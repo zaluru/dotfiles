@@ -18,8 +18,10 @@
 
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       #"QT_QPA_PLATFORMTHEME,qt5ct" # TODO make it work properly, currently setting this variable breaks chromium based apps
+      # TODO: check if i need this and what is the replacement in future versions based on aquamarine rather than wlr
       "WLR_DRM_NO_ATOMIC,1"
       "WLR_NO_HARDWARE_CURSORS,1"
+
       # TODO: move to an option
       # NVIDIA SPECIFIC
       #"LIBVA_DRIVER_NAME,nvidia"
@@ -49,7 +51,7 @@
     };
 
     master = {
-      new_is_master = true;
+      new_status = "master";
       no_gaps_when_only = true;
     };
 
@@ -64,8 +66,18 @@
     };
   };
   wayland.windowManager.hyprland.extraConfig = ''
-    monitor = DP-2,1920x1080,1920x-400,1,transform,3,bitdepth,10
-    monitor = DP-3,1920x1080,0x0,1,transform,0,bitdepth,10
-    monitor = Unknown-1,disabled
+    monitor = DP-1,1920x1080,0x0,1,transform,0
+    monitor = DP-2,1920x1080,1920x-400,1,transform,3
+
+    workspace = 1, monitor:DP-1
+    workspace = 2, monitor:DP-1
+    workspace = 3, monitor:DP-1
+    workspace = 4, monitor:DP-1
+    workspace = 5, monitor:DP-1
+    workspace = 6, monitor:DP-2
+    workspace = 7, monitor:DP-2
+    workspace = 8, monitor:DP-2
+    workspace = 9, monitor:DP-2
+    workspace = 10, monitor:DP-2
   '';
 }

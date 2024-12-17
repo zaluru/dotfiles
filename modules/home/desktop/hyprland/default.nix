@@ -8,6 +8,7 @@ in
 {
   imports = [
     inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.nixosModules.default
     ./settings.nix
     ./rules.nix
     ./binds.nix
@@ -32,6 +33,7 @@ in
       #  "systemctl --user start hyprland-session.target"
       #];
     };
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
   home.packages = with pkgs; [ autostart-hyprland ];
