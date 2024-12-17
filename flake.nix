@@ -76,6 +76,7 @@
             username
             astronvim
             hyprland
+            nix-flatpak
             disko
             zjstatus
             nixos-wsl
@@ -98,6 +99,7 @@
               disko
               zjstatus
               nixos-wsl;
+                nix-flatpak
           };
           modules = [ (import ./hosts/phobos) ]
           ++ [
