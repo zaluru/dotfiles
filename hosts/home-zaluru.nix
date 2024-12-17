@@ -9,7 +9,7 @@
   imports = [ (import ./../modules/home) ];
   home.username = "${username}";
   home.homeDirectory = lib.mkDefault "/home/zaluru";
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
   # xdg-user-dirs
