@@ -23,5 +23,6 @@
     ./ncmpcpp
     ./ssh
     ./git
+    ./doom-emacs
   ];
 }
