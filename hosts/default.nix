@@ -74,7 +74,6 @@ in
         server
         # Secrets management
         agenix
-        # nvidiaPrime 
       ];
   };
   aurora = nixpkgs.lib.nixosSystem {

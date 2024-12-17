@@ -22,10 +22,10 @@
       "WLR_NO_HARDWARE_CURSORS,1"
       # TODO: move to an option
       # NVIDIA SPECIFIC
-      "LIBVA_DRIVER_NAME,nvidia"
-      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-      "GBM_BACKEND,nvidia_drm"
-      "XWAYLAND_NO_GLAMOR,1"
+      #"LIBVA_DRIVER_NAME,nvidia"
+      #"__GLX_VENDOR_LIBRARY_NAME,nvidia"
+      #"GBM_BACKEND,nvidia_drm"
+      #"XWAYLAND_NO_GLAMOR,1"
     ];
 
     exec-once = [ "autostart-hyprland" ];
