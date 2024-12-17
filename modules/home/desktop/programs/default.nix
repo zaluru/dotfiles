@@ -5,5 +5,6 @@
     ./obs
     ./mpv
     ./chromium
+    ./mangohud
   ];
 }
