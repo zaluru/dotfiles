@@ -36,7 +36,7 @@
     #supportedFilesystems = [ "ntfs" "zfs" ];
     #zfs.forceImportRoot = false;
     # Changes from default kernel to xanmod
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
+    #kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
     consoleLogLevel = 0;
     loader = {
       systemd-boot.enable = false;
