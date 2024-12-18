@@ -7,6 +7,7 @@
       fonts = [
         "JetBrainsMono"
         "DroidSansMono"
+        "NerdFontsSymbolsOnly"
       ];
     })
   ];
