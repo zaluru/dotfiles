@@ -81,62 +81,66 @@
             self
             inputs
             nixpkgs
+            nixpkgs-unstable
             username
             astronvim
             hyprland
             plasma-manager
             nix-flatpak
+            klogg
             disko
             zjstatus
             nixos-wsl
+            pkgs-unstable
             ;
         }
       );
-      packages = forAllVMs ({ system, pkgs }: {
-        vm = nixos-generators.nixosGenerate {
-          system = system;
-          specialArgs = {
-            diskSize = 50 * 1024;
-            inherit
-              system
-              self
-              inputs
-              nixpkgs
-              username
-              astronvim
-              hyprland
-              disko
-              zjstatus
-              nixos-wsl;
+      packages = forAllVMs (
+        { system, pkgs }:
+        {
+          vm = nixos-generators.nixosGenerate {
+            system = system;
+                inputs
+                nixpkgs
+                username
+                astronvim
+                hyprland
                 plasma-manager
                 nix-flatpak
+                klogg
+                disko
+                zjstatus
+                nixos-wsl
+                ;
+            };
+            modules =
+              [ (import ./hosts/phobos) ]
+              ++ [
+                { networking.hostName = "phobos"; }
+                inputs.home-manager.nixosModules.home-manager
+                {
+                  home-manager = {
+                    useUserPackages = true;
+                    useGlobalPkgs = true;
+                    extraSpecialArgs = {
+                      inherit inputs username astronvim;
+                    };
+                    users.zaluru = {
+                      imports = [ (import ./hosts/home-zaluru.nix) ];
+                    };
+                  };
+                  nixpkgs = {
+                    overlays = [ self.overlays.default ];
+                  };
+                }
+                ./modules/core
+                ./modules/virtualisation
+                # Secrets management
+                inputs.agenix.nixosModules.default
+              ];
+            format = "qcow";
           };
-          modules = [ (import ./hosts/phobos) ]
-          ++ [
-            { networking.hostName = "phobos"; }
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useUserPackages = true;
-                useGlobalPkgs = true;
-                extraSpecialArgs = {
-                  inherit inputs username astronvim;
-                };
-                users.zaluru = {
-                  imports = [ (import ./hosts/home-zaluru.nix) ];
-                };
-              };
-              nixpkgs = {
-                overlays = [ self.overlays.default ];
-              };
-            }
-            ./modules/core
-            ./modules/virtualisation
-            # Secrets management
-            inputs.agenix.nixosModules.default
-          ];
-          format = "qcow";
-        };
-      });
+        }
+      );
     };
 }
