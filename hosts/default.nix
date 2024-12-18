@@ -7,12 +7,13 @@
   hyprland,
   disko,
   nixos-wsl,
+  pkgs-unstable,
   ...
 }:
 
 let
   system = "x86_64-linux";
-  pkgs = import nixpkgs { inherit system; };
+  #pkgs = import nixpkgs { inherit system; };
   lib = nixpkgs.lib;
   # Nixos modules
   bootloader = ../modules/core/bootloader.nix;
@@ -37,8 +38,64 @@ in
       inherit self inputs username;
     };
     modules =
+      #({
+      #  nixpkgs.overlays = [
+      #    (final: prev: {
+      #      msktutil = inputs.myRepo.packages."${prev.system}";
+      #    })
+      #  ];
+      #})
+      [ (import ./nebula) ]
+      ++ [
+        { networking.hostName = "nebula"; }
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
             sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+            extraSpecialArgs = {
+              inherit
+                inputs
+                username
+                astronvim
+                #hyprland
+                pkgs-unstable
+                ;
+            };
+            users.zaluru = {
+              #imports = [ (import ./home-zaluru.nix) ] ++ [ (import ./nebula/hm) ] ++ [ hyprland-system ] ++ [ plasma-manager-config ] ++ [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
+              imports = [ (import ./home-zaluru.nix) ] ++ [ (import ./nebula/hm) ] ++ [ plasma-manager-config ] ++ [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
+            };
+          };
+          nixpkgs = {
+            overlays = [ self.overlays.default ];
+          };
+        }
+        core
+        bootloader
+        virtualisation
+        razer
+        desktop
+        #gnome
         plasma
+        server
+        # Secrets management
+        agenix
+      ];
+  };
+  enceladus = nixpkgs.lib.nixosSystem {
+    specialArgs = {
+      inherit self inputs username;
+    };
+    modules =
+      #({
+      #  nixpkgs.overlays = [
+      #    (final: prev: {
+      #      msktutil = inputs.myRepo.packages."${prev.system}";
+      #    })
+      #  ];
+      #})
       [ (import ./nebula) ]
       ++ [
         { networking.hostName = "nebula"; }
@@ -54,10 +111,11 @@ in
                 username
                 astronvim
                 hyprland
+                pkgs-unstable
                 ;
             };
             users.zaluru = {
-              imports = [ (import ./home-zaluru.nix) ] ++ [ hyprland-system ];
+              imports = [ (import ./home-zaluru.nix) ] ++ [ (import ./nebula/hm) ] ++ [ hyprland-system ] ++ [ plasma-manager-config ] ++ [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
             };
           };
           nixpkgs = {
@@ -95,6 +153,7 @@ in
                 username
                 astronvim
                 hyprland
+                pkgs-unstable
                 ;
             };
             users.zaluru = {
@@ -130,7 +189,11 @@ in
             useUserPackages = true;
             useGlobalPkgs = true;
             extraSpecialArgs = {
-              inherit inputs username;
+              inherit
+                inputs
+                username
+                pkgs-unstable
+                ;
             };
             users.zaluru = {
               imports = [ (import ./home-zaluru.nix) ] ++ [ qtile ];
@@ -185,6 +248,7 @@ in
                 username
                 astronvim
                 hyprland
+                pkgs-unstable
                 ;
             };
             users.zaluru = {
@@ -221,7 +285,12 @@ in
             useUserPackages = true;
             useGlobalPkgs = true;
             extraSpecialArgs = {
-              inherit inputs username astronvim;
+              inherit
+                inputs
+                username
+                astronvim
+                pkgs-unstable
+                ;
             };
             users.zaluru = {
               imports = [ (import ./home-zaluru.nix) ];
