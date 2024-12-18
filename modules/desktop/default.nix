@@ -49,15 +49,16 @@
   };
 
   hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-    };
+    # TODO: Removed in 24.11
+    #opengl = {
+      #enable = true;
+      #driSupport = true;
+      #driSupport32Bit = true;
+      #extraPackages = with pkgs; [
+        #vaapiVdpau
+        #libvdpau-va-gl
+      #];
+    #};
     #pulseaudio.support32Bit = true;
   };
 
@@ -67,11 +68,12 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  sound = {
-    # TODO Don't think this is required - this will enable ALSA but pipewire should already do something with this
-    #enable = true;
-    mediaKeys.enable = true;
-  };
+  # TODO: Removed in 24.11, check what to do with mediaKeys
+  #sound = {
+    ## TODO Don't think this is required - this will enable ALSA but pipewire should already do something with this
+    ##enable = true;
+    #mediaKeys.enable = true;
+  #};
 
   programs = {
     # From what I read the system module should be enabled, but i set the package to null, so hyprland will use the home manager package
