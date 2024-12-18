@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # TODO: Broken in 24.11
   #imports = [ ./vagrant.nix ];
 
   programs.virt-manager.enable = true;
@@ -8,6 +9,14 @@
     podman-compose
     docker-compose
     guestfs-tools
+    crun # containers runtime
+    freerdp3 # rdp client for vagrant
+  ];
+
+  boot.kernelParams = [
+    "cgroup_enable=memory"
+    "cgroup_enable=cpuset"
+    "cgroup_memory=1"
   ];
 
   users.users.zaluru = {
