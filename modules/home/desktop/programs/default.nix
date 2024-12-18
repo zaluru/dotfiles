@@ -5,6 +5,7 @@
     ./obs
     ./mpv
     ./chromium
+    ./flatpak
     ./mangohud
   ];
 }
