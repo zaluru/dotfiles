@@ -26,6 +26,8 @@
           "itch"
           "renoise"
           "discord"
+          # TODO: broken in 24.11
+          #"vagrant"
         ];
     };
     overlays = [
@@ -48,12 +50,25 @@
     dev.enable = false;
   };
 
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
+  programs = {
+    nh = {
+      enable = true;
+      flake = "/home/zaluru/dev/dotfiles";
+      #TODO: make this an option so i can choose between the nix gc and nh clean
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 5";
+      };
     };
+  };
+
+  nix = {
+    #TODO: make this an option so i can choose between the nix gc and nh clean
+    #gc = {
+    #  automatic = true;
+    #  dates = "daily";
+    #  options = "--delete-older-than 4d";
+    #};
 
     # TODO have to learn how this works exactly
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
