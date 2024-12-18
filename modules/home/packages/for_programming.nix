@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     gcc
     nix-prefetch-github
-    vscodium-fhs
+    #vscodium-fhs
     devbox
     just
     asdf-vm
