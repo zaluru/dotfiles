@@ -14,7 +14,6 @@
     ./wallpapers
     ./scripts
     ./programs
-    #./editors
-    ./stylix
+    #./stylix
   ];
 }
