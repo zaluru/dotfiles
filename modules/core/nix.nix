@@ -28,7 +28,16 @@
           "discord"
         ];
     };
-    overlays = [ (import ../../overlays/mutt-wizard) ];
+    overlays = [
+      (import ../../overlays/mutt-wizard)
+      (final: prev: {
+        plasmusic-toolbar = (import inputs.nixpkgs-unstable { system = final.system; }).plasmusic-toolbar;
+      })
+      (final: prev: {
+        application-title-bar =
+          (import inputs.nixpkgs-unstable { system = final.system; }).application-title-bar;
+      })
+    ];
   };
 
   # faster rebuilding
