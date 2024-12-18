@@ -33,7 +33,10 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ greetd.tuigreet ];
+  environment.systemPackages = with pkgs; [
+    greetd.tuigreet
+    polkit_gnome
+  ];
 
   # Required for tuigreet remembering last users and sessions
   # TODO figure out how to add that to the tuigreet package
