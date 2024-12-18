@@ -62,4 +62,13 @@
   };
 
   environment.localBinInPath = true;
+
+  environment = {
+    # Disable baloo indexing - used by KDE apps, i had terrible performance with this enabled, also I don't need it
+    etc."xdg/baloofilerc".source = (pkgs.formats.ini { }).generate "baloorc" {
+      "Basic Settings" = {
+        "Indexing-Enabled" = false;
+      };
+    };
+  };
 }
