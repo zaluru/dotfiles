@@ -9,6 +9,16 @@
   ];
   # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
 
+  # For gaming
+  #TODO: read more about Jovian NixOS, maybe use their config
+  hardware.steam-hardware.enable = true;
+  programs = {
+    steam = {
+      enable = true;
+    };
+    gamescope.enable = true;
+    gamemode.enable = true;
+  };
   environment = {
     variables = {
       # TODO those should be desktop specific variables, have to look into them
