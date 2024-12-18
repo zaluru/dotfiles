@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, config, ... }:
 
 {
   # xserver configuration

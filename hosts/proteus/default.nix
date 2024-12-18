@@ -1,10 +1,9 @@
 { lib, pkgs, ... }:
 
 {
-  imports =
-    [ (import ./fileSystem.nix) ]
-    ++ [ (import ./vpn.nix) ]
-    ++ [ (import ./../../modules/home/packages/python.nix) ];
+  imports = [
+    (import ./fileSystem.nix)
+  ] ++ [ (import ./vpn.nix) ] ++ [ (import ./../../modules/home/packages/python.nix) ];
 
   # basic configuration
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

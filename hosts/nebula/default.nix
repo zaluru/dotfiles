@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   imports =
@@ -62,24 +67,12 @@
     algorithm = "zstd";
   };
 
-#  environment.sessionVariables = {
-#      XDG_SESSION_TYPE = "wayland";
-#      WLR_NO_HARDWARE_CURSORS = "1";
-#      # WLR_RENDERER = "vulkan";
-#      # GTK_USE_PORTAL = "1";
-#      # NIXOS_XDG_OPEN_USE_PORTAL = "1";
-#      NIXOS_OZONE_WL = "1";
-#      XWAYLAND_NO_GLAMOR = "1";
-#  };
-
   hardware = {
-      opengl = {
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
-      };
-
-  };
-
+    # TODO: Removed in 24.11
+    #opengl = {
+      #enable = true;
+      #driSupport = true;
+      #driSupport32Bit = true;
+    #};
   };
 }
