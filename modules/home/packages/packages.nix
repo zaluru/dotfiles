@@ -34,5 +34,7 @@
     scrcpy
     #mutt-wizard
     lsof
+    xdg-ninja
+    tree
   ];
 }
