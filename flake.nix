@@ -52,26 +52,43 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       astronvim,
       disko,
       nixos-generators,
       zjstatus,
       nixos-wsl,
       hyprland,
+      plasma-manager,
+      nix-flatpak,
+      klogg,
       ...
     }@inputs:
     let
       username = "zaluru";
       selfPkgs = import ./pkgs;
 
-      pkgsForSystem = system: import nixpkgs {
-        inherit system;
-      };
-      allVMs = [ "x86_64-linux" "aarch64-linux" ];
-      forAllVMs = f: nixpkgs.lib.genAttrs allVMs (system: f {
-        inherit system;
-        pkgs = pkgsForSystem system;
-      });
+      pkgsForSystem = system: import nixpkgs { inherit system; };
+
+      # TODO: fix this mess up so that i do not have to hard code the system
+      system = "x86_64-linux";
+      # For some reason setting this makes the configuration for nixpkgs on modules/core/nix be ignored
+      #pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+
+      allVMs = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllVMs =
+        f:
+        nixpkgs.lib.genAttrs allVMs (
+          system:
+          f {
+            inherit system;
+            pkgs = pkgsForSystem system;
+          }
+        );
     in
     {
       overlays.default = selfPkgs.overlay;
@@ -100,6 +117,11 @@
         {
           vm = nixos-generators.nixosGenerate {
             system = system;
+            specialArgs = {
+              diskSize = 50 * 1024;
+              inherit
+                system
+                self
                 inputs
                 nixpkgs
                 username

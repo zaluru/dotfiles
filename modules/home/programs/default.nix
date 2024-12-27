@@ -24,5 +24,6 @@
     ./ssh
     ./git
     ./doom-emacs
+    ./ghostty
   ];
 }
