@@ -4,7 +4,7 @@
   # xserver configuration
   services.xserver = {
     enable = true;
-    videoDrivers = [ "amd" ];
+    #videoDrivers = [ "amd" ];
     displayManager = {
       #defaultSession = "hyprland";
       #sessionPackages = [ inputs.hyprland.packages.${pkgs.system}.default ];

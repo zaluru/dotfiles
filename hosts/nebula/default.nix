@@ -87,13 +87,28 @@
     algorithm = "zstd";
   };
 
+  # Usefull links about gpu drivers for amd on nixos
+  # https://nixos.org/manual/nixos/unstable/index.html#sec-gpu-accel-vulkan
+  # https://wiki.nixos.org/wiki/Graphics
+  # https://wiki.nixos.org/wiki/AMD_GPU
+
+  # This specifies that the radv driver is the default one used
+  # TODO: Check if i need to also add there 32bit vulkan driver path as shown here (i dont see both 64 and 32 bit, but i have them enabled hmm)
+  # https://www.reddit.com/r/linux_gaming/comments/h8b7zv/comment/furvsmr/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+  #environment.variables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+  # If i want to use a diffrent one i can run an application with the VK_ICD_FILENAMES pointing to the prefered one
+
   hardware = {
-    # TODO: Removed in 24.11
-    #opengl = {
-      #enable = true;
-      #driSupport = true;
-      #driSupport32Bit = true;
-    #};
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        #amdvlk # if i want to use this rather than radv for some cases
+      ];
+      extraPackages32 = with pkgs; [
+        #driversi686Linux.amdvlk
+      ];
+    };
   };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
