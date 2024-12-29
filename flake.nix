@@ -46,6 +46,9 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs =
@@ -62,6 +65,7 @@
       plasma-manager,
       nix-flatpak,
       klogg,
+      ghostty,
       ...
     }@inputs:
     let
