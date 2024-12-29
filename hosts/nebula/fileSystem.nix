@@ -1,24 +1,6 @@
-{ modulesPath, ... }:
+{ ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "ehci_pci"
-    "ahci"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-    "rtsx_usb_sdmmc"
-    "nvme"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-
-  networking.hostId = "add3b19b"; # For ZFS
-
   boot.initrd.luks.devices."ssd".device = "/dev/disk/by-label/nebula-cryptroot";
 
   fileSystems."/" = {

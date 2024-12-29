@@ -2,16 +2,35 @@
   lib,
   pkgs,
   config,
+  modulesPath,
   ...
 }:
 
 {
   imports =
-    [ (import ./fileSystem.nix) ]
+    [ (modulesPath + "/installer/scan/not-detected.nix") ]
+    ++ [ (import ./fileSystem.nix) ]
     ++ [ (import ./xserver.nix) ]
     ++ [ (import ./vpn.nix) ]
     ++ [ (import ./../../modules/home/packages/python.nix) ]
     ++ [ (import ./hardware.nix) ];
+
+  boot.initrd.availableKernelModules = [
+    # Provided by nixos-generate-config
+    "xhci_pci"
+    "ahci"
+    "nvme"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+
+    # Additional
+    "rtsx_usb_sdmmc"
+    "ehci_pci"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
 
   # basic configuration
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -35,6 +54,7 @@
   # networking
   networking.networkmanager.enable = true;
   networking.useDHCP = lib.mkDefault true;
+  networking.hostId = "add3b19b"; # For ZFS
 
   # programs
   programs.dconf.enable = true;
