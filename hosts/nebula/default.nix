@@ -103,13 +103,34 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        #amdvlk # if i want to use this rather than radv for some cases
+        #amdvlk # if i want to use this driver rather than radv for some cases
+
+        # rocm required for davinci resolve - might also use opencl rusticl
+        rocmPackages.clr.icd
+        rocmPackages_5.clr
+        rocmPackages_5.rocminfo
+        rocmPackages_5.rocm-runtime
+
+        # provides both rusticl and the old clover, clover breaks davinci resolve
+        # can choose between rocm and opencl with
+        # OCL_ICD_VENDORS=rusticl.icd davinci-resolve
+        mesa.opencl
       ];
       extraPackages32 = with pkgs; [
         #driversi686Linux.amdvlk
       ];
     };
   };
+
+  environment.variables = {
+    RUSTICL_ENABLE = "radeonsi";
+  };
+
+  # Info about davinci resolve https://theholytachanka.com/posts/setting-up-resolve/
+  # This is necesery because many programs hard-code the path to hip
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages_5.clr}"
+  ];
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
