@@ -13,7 +13,8 @@
     ++ [ (import ./xserver.nix) ]
     ++ [ (import ./vpn.nix) ]
     ++ [ (import ./../../modules/home/packages/python.nix) ]
-    ++ [ (import ./hardware.nix) ];
+    ++ [ (import ./hardware.nix) ]
+    ++ [ (import ./lact.nix) ];
 
   boot.initrd.availableKernelModules = [
     # Provided by nixos-generate-config
