@@ -66,11 +66,20 @@
               icon = "nix-snowflake-white";
             };
           }
+          "org.dhruv8sh.kara"
           {
             applicationTitleBar = {
               behavior = {
+                # I have always a single instance of this wdiget on a single display
+                # Without those options it will not report the active window on a second screen etc.
                 activeTaskSource = "activeTask";
+                filterByActivity = false;
+                filterByScreen = false;
+                filterByVirtualDesktop = false;
               };
+              mouseAreaDrag.enable = false;
+              mouseAreaClick.enable = false;
+              mouseAreaWheel.enable = false;
               layout = {
                 elements = [ "windowTitle" ];
                 horizontalAlignment = "left";
@@ -97,6 +106,7 @@
                   size = 12;
                 };
                 hideEmptyTitle = true;
+                undefinedWindowTitle = "";
                 margins = {
                   bottom = 0;
                   left = 10;
@@ -120,7 +130,27 @@
               playbackSource = "auto";
             };
           }
-          "org.kde.plasma.systemtray"
+          {
+            systemTray = {
+              # To find the identifiers of the tray elements check ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+              items = {
+                hidden = [
+                  "steam"
+                  "polychromatic-tray-applet"
+                  "org.kde.plasma.clipboard"
+                  "org.kde.plasma.notifications"
+                  "xdg-desktop-portal-kde"
+
+                  # Ehh electron
+                  # https://github.com/electron/electron/issues/40936
+                  "chrome_status_icon_1"
+                ];
+              };
+              icons = {
+                spacing = "small";
+              };
+            };
+          }
           {
             digitalClock = {
               calendar.firstDayOfWeek = "monday";
