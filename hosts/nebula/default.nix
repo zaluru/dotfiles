@@ -133,4 +133,7 @@
   ];
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  boot.loader.grub.memtest86.enable = true;
+
 }
