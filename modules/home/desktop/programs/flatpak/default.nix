@@ -30,9 +30,9 @@
       "im.nheko.Nheko"
       "org.kde.krita"
 
-      "com.obsproject.Studio"
+      #"com.obsproject.Studio"
       # Capture vulkan and opengl games bypassing the compositor - https://github.com/nowrep/obs-vkcapture
-      "com.obsproject.Studio.Plugin.OBSVkCapture"
+      #"com.obsproject.Studio.Plugin.OBSVkCapture"
       "org.freedesktop.Platform.VulkanLayer.OBSVkCapture//23.08"
       "org.freedesktop.Platform.VulkanLayer.OBSVkCapture//24.08"
 
