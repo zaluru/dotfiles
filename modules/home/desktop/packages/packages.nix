@@ -54,6 +54,7 @@
       gpu-viewer
       nvtopPackages.full # gpu monitoring
       davinci-resolve
+      heroic
     ])
     ++ (with pkgs-unstable; [ ryujinx ]);
 }
