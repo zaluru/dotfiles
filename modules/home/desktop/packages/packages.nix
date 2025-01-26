@@ -55,6 +55,7 @@
       nvtopPackages.full # gpu monitoring
       davinci-resolve
       heroic
+      coppwr
     ])
     ++ (with pkgs-unstable; [ ryujinx ]);
 }
