@@ -36,5 +36,9 @@
     lsof
     xdg-ninja
     tree
+    btop
+    p7zip
+    erdtree
+    dust
   ];
 }
