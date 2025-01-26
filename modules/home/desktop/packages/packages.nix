@@ -32,7 +32,7 @@
       dbeaver-bin
       tutanota-desktop
       libsForQt5.kdenlive
-      blender
+      blender-hip
       reaper
       shotcut
       gimp
@@ -53,6 +53,7 @@
       xdg-ninja
       gpu-viewer
       nvtopPackages.full # gpu monitoring
+      davinci-resolve
     ])
     ++ (with pkgs-unstable; [ ryujinx ]);
 }
