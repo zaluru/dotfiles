@@ -1,6 +1,0 @@
-{ ... }:
-{
-  services.shiori = {
-    enable = true;
-  };
-}
