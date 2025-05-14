@@ -1,28 +1,35 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    agenix.url = "github:ryantm/agenix";
+    musnix.url = "github:musnix/musnix";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     hyprland = {
       url = "https://github.com/hyprwm/Hyprland";
       type = "git";
       ref = "refs/tags/v0.46.0";
       submodules = true;
     };
+
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
     astronvim = {
       url = "github:AstroNvim/AstroNvim/v3.40.3";
       flake = false;
     };
+
     stylix = {
       url = "github:danth/stylix";
       inputs = {
@@ -30,25 +37,44 @@
         home-manager.follows = "home-manager";
       };
     };
-    agenix.url = "github:ryantm/agenix";
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     zjstatus = {
-      url = "github:dj95/zjstatus";
+      url = "github:dj95/zjstatus/v0.20.2";
     };
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Pinned packages
+    # You can find the nixpkgs reference easly at https://www.nixhub.io/
+    davinci-resolve-pkgs.url = "github:nixos/nixpkgs/7cc0bff31a3a705d3ac4fdceb030a17239412210"; # version 19.1
   };
 
   outputs =
@@ -56,116 +82,139 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
+      home-manager,
+      hyprland,
+      plasma-manager,
+      emacs-overlay,
+      nix-flatpak,
       astronvim,
+      stylix,
+      agenix,
       disko,
       nixos-generators,
       zjstatus,
       nixos-wsl,
-      hyprland,
-      plasma-manager,
-      nix-flatpak,
-      klogg,
-      ghostty,
+      nix-index-database,
+      nixvim,
+      sops-nix,
       ...
     }@inputs:
     let
-      username = "zaluru";
-      selfPkgs = import ./pkgs;
-
-      pkgsForSystem = system: import nixpkgs { inherit system; };
-
-      # TODO: fix this mess up so that i do not have to hard code the system
-      system = "x86_64-linux";
-      # For some reason setting this makes the configuration for nixpkgs on modules/core/nix be ignored
-      #pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-
-      allVMs = [
+      lib = nixpkgs.lib.extend (
+        self: super: {
+          zaluru = import ./lib {
+            inherit inputs;
+            lib = self;
+          };
+        }
+      );
+      supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
-      forAllVMs =
+      forEachSupportedSystem =
         f:
-        nixpkgs.lib.genAttrs allVMs (
+        nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
-            inherit system;
-            pkgs = pkgsForSystem system;
+            pkgs = import nixpkgs { inherit system; };
           }
         );
     in
     {
-      overlays.default = selfPkgs.overlay;
-      nixosConfigurations = (
-        import ./hosts {
-          inherit
-            self
-            inputs
-            nixpkgs
-            nixpkgs-unstable
-            username
-            astronvim
-            hyprland
-            plasma-manager
-            nix-flatpak
-            klogg
-            disko
-            zjstatus
-            nixos-wsl
-            pkgs-unstable
-            ;
+      nixosConfigurations = {
+        "nebula" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./hosts/nebula/configuration.nix
+            nix-index-database.nixosModules.nix-index
+            disko.nixosModules.disko
+          ];
+        };
+        "proteus" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./hosts/nebula/configuration.nix
+            nix-index-database.nixosModules.nix-index
+            disko.nixosModules.disko
+          ];
+        };
+        "work-laptop" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./hosts/work-laptop/configuration.nix
+            nix-index-database.nixosModules.nix-index
+            disko.nixosModules.disko
+          ];
+        };
+      };
+      packages = forEachSupportedSystem (
+        { pkgs }:
+        {
+          klassy-qt6 = pkgs.kdePackages.callPackage ./packages/klassy-qt6.nix { };
+          iso = nixos-generators.nixosGenerate {
+            specialArgs = {
+              inherit inputs;
+              inherit lib;
+            };
+            system = "x86_64-linux";
+            format = "iso";
+            modules = [
+              ./systems/x86_64-iso-work-laptop/configuration.nix
+              nix-index-database.nixosModules.nix-index
+              disko.nixosModules.disko
+            ];
+          };
+          vm-nogui = nixos-generators.nixosGenerate {
+            specialArgs = {
+              inherit inputs;
+              inherit lib;
+            };
+            system = "x86_64-linux";
+            format = "vm-nogui";
+            modules = [
+              ./systems/x86_64-vm-nogui
+              nix-index-database.nixosModules.nix-index
+            ];
+          };
         }
       );
-      packages = forAllVMs (
-        { system, pkgs }:
+
+      devShells = forEachSupportedSystem (
+        { pkgs }:
         {
-          vm = nixos-generators.nixosGenerate {
-            system = system;
-            specialArgs = {
-              diskSize = 50 * 1024;
-              inherit
-                system
-                self
-                inputs
-                nixpkgs
-                username
-                astronvim
-                hyprland
-                plasma-manager
-                nix-flatpak
-                klogg
-                disko
-                zjstatus
-                nixos-wsl
-                ;
-            };
-            modules =
-              [ (import ./hosts/phobos) ]
-              ++ [
-                { networking.hostName = "phobos"; }
-                inputs.home-manager.nixosModules.home-manager
-                {
-                  home-manager = {
-                    useUserPackages = true;
-                    useGlobalPkgs = true;
-                    extraSpecialArgs = {
-                      inherit inputs username astronvim;
-                    };
-                    users.zaluru = {
-                      imports = [ (import ./hosts/home-zaluru.nix) ];
-                    };
-                  };
-                  nixpkgs = {
-                    overlays = [ self.overlays.default ];
-                  };
-                }
-                ./modules/core
-                ./modules/virtualisation
-                # Secrets management
-                inputs.agenix.nixosModules.default
+          tf =
+            with pkgs;
+            mkShell {
+              buildInputs = [
+                opentofu
+                awscli2
               ];
-            format = "qcow";
-          };
+            };
+          python =
+            with pkgs;
+            mkShell {
+              buildInputs = [
+                python312Full
+                (python312.withPackages (
+                  ps:
+                  with ps;
+                  with python312Packages;
+                  [
+                    requests
+                  ]
+                ))
+              ];
+            };
         }
       );
     };
