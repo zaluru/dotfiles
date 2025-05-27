@@ -95,10 +95,7 @@
         rocmPackages_6.clr
         rocmPackages_6.rocminfo
         rocmPackages_6.rocm-runtime
-        #rocmPackages_5.clr
-        #rocmPackages_5.rocminfo
-        #rocmPackages_5.rocm-runtime
-
+        
         # provides both rusticl and the old clover, clover breaks davinci resolve
         # can choose between rocm and opencl with
         # OCL_ICD_VENDORS=rusticl.icd davinci-resolve
