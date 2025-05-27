@@ -40,7 +40,7 @@ in
           "com.github.tchx84.Flatseal"
           "org.kde.krita"
           "info.beyondallreason.bar"
-
+          "at.vintagestory.VintageStory"
           #"com.obsproject.Studio"
           # Capture vulkan and opengl games bypassing the compositor - https://github.com/nowrep/obs-vkcapture
           #"com.obsproject.Studio.Plugin.OBSVkCapture"
