@@ -104,6 +104,7 @@ in
         };
         scarlett-gui = enabled;
         remmina = enabled;
+        nix-flatpak = enabled;
       };
 
       cli-tools = {

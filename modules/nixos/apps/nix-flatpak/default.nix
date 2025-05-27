@@ -8,12 +8,13 @@ let
 
   inherit (config.mine) user;
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.mine.services.nix-flatpak;
+  cfg = config.mine.apps.nix-flatpak;
 
 in
 {
-  options.mine.services.nix-flatpak = {
+  options.mine.apps.nix-flatpak = {
     enable = mkEnableOption "Enable nix-flatpak - declarative flatpak management.";
+    
   };
 
   config = mkIf cfg.enable {
