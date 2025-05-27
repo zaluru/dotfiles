@@ -81,7 +81,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
+      unstable,
       home-manager,
       hyprland,
       plasma-manager,
