@@ -118,7 +118,7 @@
   # Info about davinci resolve https://theholytachanka.com/posts/setting-up-resolve/
   # This is necesery because many programs hard-code the path to hip
   systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages_5.clr}"
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages_6.clr}"
   ];
 
   zramSwap = {
