@@ -104,7 +104,17 @@ in
         };
         scarlett-gui = enabled;
         remmina = enabled;
-        nix-flatpak = enabled;
+        nix-flatpak = {
+          enable = true;
+          krita = enabled;
+          pcsx2 = enabled;
+          prism-launcher = enabled;
+          rpcs3 = enabled;
+          shadps4 = enabled;
+          vintage-story = enabled;
+          duckstation = enabled;
+          beyond-all-reason = enabled;
+        };
       };
 
       cli-tools = {
