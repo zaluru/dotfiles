@@ -60,6 +60,8 @@ in
       # TODO: https://github.com/nix-community/plasma-manager/issues/419
       home.packages = with pkgs; [
         kdePackages.krohnkite
+pkgs.kdePackages.partitionmanager
+        pkgs.exfatprogs # Required for partitionmanager to support exfat
         inputs.self.packages.${pkgs.system}.klassy-qt6
       ];
 
