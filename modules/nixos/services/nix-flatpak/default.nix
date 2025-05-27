@@ -42,6 +42,7 @@ in
           "info.beyondallreason.bar"
           "at.vintagestory.VintageStory"
           "org.prismlauncher.PrismLauncher"
+          "net.shadps4.shadPS4"
           #"com.obsproject.Studio"
           # Capture vulkan and opengl games bypassing the compositor - https://github.com/nowrep/obs-vkcapture
           #"com.obsproject.Studio.Plugin.OBSVkCapture"
