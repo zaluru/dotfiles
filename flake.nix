@@ -74,7 +74,7 @@
 
     # Pinned packages
     # You can find the nixpkgs reference easly at https://www.nixhub.io/
-    davinci-resolve-pkgs.url = "github:nixos/nixpkgs/a16efe5d2fc7455d7328a01f4692bfec152965b3#davinci-resolve"; # version 19.1.4
+    davinci-resolve-pkgs.url = "github:nixos/nixpkgs/a16efe5d2fc7455d7328a01f4692bfec152965b3"; # version 19.1.4
   };
 
   outputs =
