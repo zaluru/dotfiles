@@ -39,6 +39,7 @@ in
               white = "#ffffff";
             };
           };
+          show_startup_tips = false;
         };
       };
     };
