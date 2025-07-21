@@ -126,6 +126,7 @@ in
         ansible = enabled;
         charm-freeze = enabled;
         direnv = enabled;
+        devbox = enabled;
         just = enabled;
         ncmpcpp = enabled;
         fastfetch = enabled;
