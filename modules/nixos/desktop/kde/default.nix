@@ -136,8 +136,11 @@ in
             "kwinrc"."Script-krohnkite"."screenGapLeft" = 10;
             "kwinrc"."Script-krohnkite"."screenGapRight" = 10;
             "kwinrc"."Script-krohnkite"."screenGapTop" = 10;
-            "kwinrc"."Script-krohnkite"."tileLayoutGap" = 10;
-            "kwinrc"."Script-krohnkite"."maximizeSoleTile" = true;
+            #"kwinrc"."Script-krohnkite"."tileLayoutGap" = 10;
+            "kwinrc"."Script-krohnkite"."screenGapBetween" = 10;
+            #"kwinrc"."Script-krohnkite"."maximizeSoleTile" = true;
+            "kwinrc"."Script-krohnkite"."soleWindowNoBorders" = true;
+            "kwinrc"."Script-krohnkite"."soleWindowNoGaps" = true;
 
             # Enable klassy for borders
             "kwinrc"."org.kde.kdecoration2"."theme" = "Klassy";
