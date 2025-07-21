@@ -56,6 +56,9 @@ in
       home-manager = {
         git = enabled;
         zoxide = enabled;
+        atuin = enabled;
+        fzf = enabled;
+        presenterm = enabled;
         ssh-config = enabled;
         #zsh = enabled;
       };
