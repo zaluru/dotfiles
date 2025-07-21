@@ -41,10 +41,6 @@ in
           font-family = "\"Monaspace Neon\"";
         };
       };
-
-      programs.tmux = {
-        terminal = mkForce "xterm-ghostty";
-      };
     };
   };
 }
