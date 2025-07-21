@@ -177,6 +177,7 @@ in
         lact = enabled;
         #sunshine = enabled;
         mpd = enabled;
+        kdeconnect = enabled;
         #beszel = {
         #  enable = true;
         #  isAgent = true;
