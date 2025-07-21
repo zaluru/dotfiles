@@ -230,7 +230,7 @@ in
         services = {
           gamemode = enabled;
           gamescope = enabled;
-          fix-8bitdo-ubc = enabled;
+          #fix-8bitdo-ubc = enabled;
           fwupd = enabled;
           #  bluetooth = {
           #    enable = true;
