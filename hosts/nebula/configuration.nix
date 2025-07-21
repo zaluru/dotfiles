@@ -55,6 +55,7 @@ in
 
       home-manager = {
         git = enabled;
+        zoxide = enabled;
         ssh-config = enabled;
         #zsh = enabled;
       };
