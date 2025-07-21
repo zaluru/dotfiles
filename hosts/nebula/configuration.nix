@@ -174,7 +174,6 @@ in
 
       services = {
         cockpit = enabled;
-        nix-flatpak = enabled;
         lact = enabled;
         sunshine = enabled;
         mpd = enabled;
