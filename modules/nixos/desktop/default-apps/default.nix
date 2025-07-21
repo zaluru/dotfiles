@@ -14,7 +14,7 @@ let
 in
 {
   options.mine.desktop.default-apps = {
-    enable = mkEnableOption "Install Bitwarden desktop app";
+    enable = mkEnableOption "Setup mimeapps list";
   };
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
