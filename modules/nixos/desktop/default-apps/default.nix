@@ -57,6 +57,7 @@ in
             categories = [ "Application" ];
           };
         };
+        configFile."mimeapps.list".force = true; # Often this file gets overwritten by another program and then home manager gets stuck as by default it will not overwrite an existing file
         mimeApps = {
           enable = true;
           defaultApplications = {
