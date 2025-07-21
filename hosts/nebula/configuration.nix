@@ -175,7 +175,7 @@ in
       services = {
         cockpit = enabled;
         lact = enabled;
-        sunshine = enabled;
+        #sunshine = enabled;
         mpd = enabled;
         #beszel = {
         #  enable = true;
