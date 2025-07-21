@@ -82,7 +82,7 @@ in
         obsidian = enabled;
         #proton = enabled;
         #prusa-slicer = enabled;
-        puddletag = enabled;
+        #puddletag = enabled;
         steam = enabled;
         syncthing = {
           enable = true;
