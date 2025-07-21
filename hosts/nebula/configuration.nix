@@ -106,6 +106,7 @@ in
         remmina = enabled;
         nix-flatpak = {
           enable = true;
+          trenchbroom = enabled;
           krita = enabled;
           pcsx2 = enabled;
           prism-launcher = enabled;
