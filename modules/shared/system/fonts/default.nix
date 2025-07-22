@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
       # If there are some fonts not present in nixpkgs
-      xdg.dataFile."fonts".source = ./font-files;
+      #xdg.dataFile."fonts".source = ./font-files;
       home.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
         nerd-fonts.droid-sans-mono
