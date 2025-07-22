@@ -42,7 +42,6 @@ in
 
   config = mkIf user.enable {
     mine.system.shell.fish.enable = mkIf (user.shell.package == pkgs.fish) true;
-    mine.system.shell.zsh.enable = mkIf (user.shell.package == pkgs.zsh) true;
 
     nix.settings.trusted-users = [ "${user.name}" ];
 
