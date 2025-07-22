@@ -38,10 +38,10 @@ in
       # wpctl status
       # wpctl info <id> - here you can find the device.name or node.name and add rules by matching them
       # Making my audio interface ports input only
-      xdg.configFile."wireplumber" = {
-        source = ./audio/wireplumber;
-        recursive = true;
-      };
+      #xdg.configFile."wireplumber" = {
+      #  source = ./audio/wireplumber;
+      #  recursive = true;
+      #};
     };
 
     mine = {
