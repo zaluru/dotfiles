@@ -8,7 +8,7 @@ let
 
   inherit (lib) mkEnableOption mkIf mkForce;
   inherit (config.mine) user;
-  cfg = config.mine.apps.ghostty;
+  cfg = config.mine.home-manager.ghostty;
 
 in
 {
