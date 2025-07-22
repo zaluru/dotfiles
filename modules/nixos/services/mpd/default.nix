@@ -40,15 +40,15 @@ in
       startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
     };
 
-    fileSystems."/music" = {
-      device = "192.168.10.12:/fast/music";
-      fsType = "nfs";
-      options = [
-        "auto"
-        "rw"
-        "defaults"
-        "_netdev"
-      ];
-    };
+#    fileSystems."/music" = {
+#      device = "192.168.10.12:/fast/music";
+#      fsType = "nfs";
+#      options = [
+#        "auto"
+#        "rw"
+#        "defaults"
+#        "_netdev"
+#      ];
+#    };
   };
 }
