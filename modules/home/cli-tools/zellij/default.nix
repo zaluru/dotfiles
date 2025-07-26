@@ -37,6 +37,8 @@ in
               cyan = "#2ddbd9";
               black = "#161615";
               white = "#ffffff";
+              frame_selected = "#cba6f7";
+              frame_highlight = "#ee5396";
             };
           };
           show_startup_tips = false;
