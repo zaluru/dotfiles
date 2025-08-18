@@ -121,6 +121,8 @@ in
           beyond-all-reason = enabled;
           bottles = enabled;
           blockbench = enabled;
+          upscayl = enabled;
+          proton-plus = enabled;
         };
       };
 
