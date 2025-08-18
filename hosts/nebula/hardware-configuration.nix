@@ -202,5 +202,28 @@
     };
   };
 
+  # Bind mounts
+  fileSystems."/home/zaluru/games/storage/nvme-0" = {
+    depends = [
+      "/data/storage-nvme-0" 
+    ];
+    device = "/data/storage-nvme-0/home/zaluru/games/storage/nvme-0";
+    fsType = "none";
+    options = [
+      "bind"
+      "nofail"
+    ];
+  };
+
+  fileSystems."/home/zaluru/videos/storage/nvme-0" = {
+    depends = [
+      "/data/storage-nvme-0" 
+    ];
+    device = "/data/storage-nvme-0/home/zaluru/videos/storage/nvme-0";
+    fsType = "none";
+    options = [
+      "bind"
+      "nofail"
+    ];
   };
 }
