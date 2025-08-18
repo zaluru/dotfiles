@@ -4,7 +4,6 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-    agenix.url = "github:ryantm/agenix";
     musnix.url = "github:musnix/musnix";
 
     home-manager = {
@@ -88,7 +87,6 @@
       nix-flatpak,
       astronvim,
       stylix,
-      agenix,
       disko,
       nixos-generators,
       zjstatus,
