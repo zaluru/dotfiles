@@ -120,6 +120,7 @@ in
           duckstation = enabled;
           beyond-all-reason = enabled;
           bottles = enabled;
+          blockbench = enabled;
         };
       };
 
