@@ -178,6 +178,29 @@
           };
         };
       };
+      storage-nvme-0 = {
+        type = "disk";
+        device = "/dev/disk/by-id/nvme-KINGSTON_SNV2S2000G_50026B77851E0CFB";
+        content = {
+          type = "gpt";
+          partitions = {
+            main = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "xfs";
+                mountpoint = "/data/storage-nvme-0";
+                mountOptions = [
+                  "defaults"
+                  "nofail"
+                ];
+              };
+            };
+          };
+        };
+      };
     };
+  };
+
   };
 }
