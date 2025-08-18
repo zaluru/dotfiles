@@ -119,6 +119,7 @@ in
           vintage-story = enabled;
           duckstation = enabled;
           beyond-all-reason = enabled;
+          bottles = enabled;
         };
       };
 
