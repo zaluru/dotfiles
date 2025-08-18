@@ -14,11 +14,11 @@ in
         add_newline = false;
         command_timeout = 5000;
         format = ''
-          $directory$shell$all
+          $status$directory$shell$all
         '';
         character = {
-          success_symbol = "[ ](bold #cba6f7)[ ](bold #f2cdcd)[󰮯 ](bold #b4befe)[ ](bold #a6e3a1)";
-          error_symbol = "[ ](bold #cba6f7)[ ](bold #f2cdcd)[󰮯 ](bold #b4befe)[ ](bold #f38ba8)";
+          success_symbol = "[ ](bold #cba6f7)[ ](bold #f2cdcd)[󰮯 ](bold #b4befe)[ ](bold #a6e3a1)";
+          error_symbol = "[ ](bold #cba6f7)[ ](bold #f2cdcd)[󰮯 ](bold #b4befe)[ ](bold #f38ba8)";
           vimcmd_symbol = "[ NORMAL](bold #fab387)";
           vimcmd_visual_symbol = "[ VISUAL](bold #89dceb)";
         };
@@ -72,11 +72,11 @@ in
         };
 
         status = {
-          style = "italic";
+          style = "fg:#b4befe";
           disabled = false;
-          symbol = "[](fg:#D54E53)";
-          success_symbol = "[](fg:#A7AF63)";
-          format = "[$int]($style)";
+          symbol = "[]($style)";
+          success_symbol = "[]($style)";
+          format = "[$int ]($style)";
         };
 
         sudo = {
@@ -111,7 +111,7 @@ in
 
         directory = {
           format = "[$path]($style)";
-          truncate_to_repo = false;
+          truncate_to_repo = true;
           truncation_length = 5;
           truncation_symbol = "…/";
         };
