@@ -6,6 +6,9 @@ let
   inherit (config.mine) user;
   cfg = config.mine.apps.davinci-resolve;
 
+  davinci-resolve-rusticl = pkgs.writeShellScriptBin "davinci-resolve-rusticl" ''
+    env OCL_ICD_VENDORS="rusticl.icd" QT_QPA_PLATFORM="xcb" QT_PLUGIN_PATH="/etc/profiles/per-user/zaluru/lib/qt-6/plugins" davinci-resolve
+  '';
 in
 {
   options.mine.apps.davinci-resolve = {
@@ -14,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
-      home.packages = [ pkgs.davinci-resolve-pkgs.davinci-resolve ];
+      home.packages = [ pkgs.davinci-resolve-pkgs.davinci-resolve davinci-resolve-rusticl ];
     };
   };
 }
