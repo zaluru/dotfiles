@@ -143,6 +143,7 @@ in
         yt-dlp = enabled;
         man-nvim = enabled;
         bat = enabled;
+        sops = enabled;
         #sops = {
         #  enable = true;
         #  requires.unlock = true;
