@@ -205,6 +205,7 @@ in
         #  authKeyFile = config.sops.secrets."tailscale/AUTH_KEY".path;
         #  useRoutingFeatures = "client";
         #};
+        ssh-agent = enabled;
       };
 
       system = {
