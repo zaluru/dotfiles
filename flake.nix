@@ -5,6 +5,7 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     musnix.url = "github:musnix/musnix";
+    nixarr.url = "github:rasmus-kirk/nixarr";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -94,6 +95,7 @@
       nix-index-database,
       nixvim,
       sops-nix,
+      nixarr,
       ...
     }@inputs:
     let

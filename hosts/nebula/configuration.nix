@@ -178,6 +178,7 @@ in
       };
 
       services = {
+        nixarr = enabled;
         cockpit = enabled;
         lact = enabled;
         #sunshine = enabled;
