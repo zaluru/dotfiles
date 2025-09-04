@@ -103,7 +103,7 @@ nixos-hardware.url = "github:NixOS/nixos-hardware/master";
       nixvim,
       sops-nix,
       nixarr,
-winapps,
+      winapps,
       nixos-hardware,
       ...
     }@inputs:

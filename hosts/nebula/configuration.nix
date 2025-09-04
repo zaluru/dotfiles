@@ -185,7 +185,7 @@ in
 
       services = {
         nixarr = enabled;
-winapps = enabled;
+        winapps = enabled;
         cockpit = enabled;
         lact = enabled;
         #sunshine = enabled;
