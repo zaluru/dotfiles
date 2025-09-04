@@ -90,6 +90,7 @@ in
       };
 
       services = {
+        ssh-agent = enabled;
  #       keyring-pam-kde = true;
         #mpd = enabled;
  #       docker = {
