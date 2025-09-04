@@ -6,6 +6,8 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     musnix.url = "github:musnix/musnix";
     nixarr.url = "github:rasmus-kirk/nixarr";
+nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -96,6 +98,7 @@
       nixvim,
       sops-nix,
       nixarr,
+      nixos-hardware,
       ...
     }@inputs:
     let
@@ -153,6 +156,7 @@
             ./hosts/work-laptop/configuration.nix
             nix-index-database.nixosModules.nix-index
             disko.nixosModules.disko
+nixos-hardware.nixosModules.dell-latitude-e7240
           ];
         };
       };
