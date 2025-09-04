@@ -37,7 +37,7 @@ in
 
     services.desktopManager.plasma6.enable = true;
 
-    home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+    home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
 
     home-manager.users.${user.name} = {
       xdg.portal = {
