@@ -475,6 +475,8 @@ in
                         "xdg-desktop-portal-kde"
                         "A PipeWire Graph Qt GUI Interface" # qpwgraph
                         "org.kde.plasma.mediacontrolle"
+                        "remmina-icon"
+                        "org.kde.plasma.mediacontroller"
 
                         # Ehh electron
                         # https://github.com/electron/electron/issues/40936
