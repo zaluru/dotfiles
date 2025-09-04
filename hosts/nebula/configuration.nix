@@ -108,6 +108,7 @@ in
         };
         scarlett-gui = enabled;
         remmina = enabled;
+        losless-cut = enabled;
         nix-flatpak = {
           enable = true;
           trenchbroom = enabled;
