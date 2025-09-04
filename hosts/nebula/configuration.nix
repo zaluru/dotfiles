@@ -124,6 +124,7 @@ in
           blockbench = enabled;
           upscayl = enabled;
           proton-plus = enabled;
+          digikam = enabled;
         };
       };
 
