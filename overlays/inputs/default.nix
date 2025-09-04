@@ -13,7 +13,11 @@ let
       config.allowUnfree = true;
     };
   };
+
+  winappsPkgs = final: prev: {
+    winapps = inputs.winapps.packages.${prev.system};
+  };
 in
 {
-  nixpkgs.overlays = [ unstablePkgs davinciResolvePkgs ];
+  nixpkgs.overlays = [ unstablePkgs davinciResolvePkgs winappsPkgs ];
 }
