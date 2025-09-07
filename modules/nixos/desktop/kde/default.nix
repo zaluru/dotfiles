@@ -19,6 +19,11 @@ in
         };
       };
     };
+
+    wallpaper = mkOpt (types.listOf types.str) [
+      "${builtins.toString (inputs.self + /media/wallpapers/nanomortis/Live_and_Let_Die_upscayl_4x_realesr-animevideov3-x4.png)}"
+      "${builtins.toString (inputs.self + /media/wallpapers/arca.live-b-tsfiction-104052638.png)}"
+    ] "List of paths to wallpapers";
   };
 
   config = mkIf cfg.enable {
@@ -81,6 +86,10 @@ in
           enable = true;
           workspace = {
             lookAndFeel = "org.kde.breezedark.desktop";
+            wallpaper = cfg.wallpaper;
+          };
+          kscreenlocker.appearance = {
+            wallpaper = builtins.head cfg.wallpaper; # This option currently does not support a list of wallpapers for every screen
           };
           kwin.virtualDesktops.names = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
           configFile = {
