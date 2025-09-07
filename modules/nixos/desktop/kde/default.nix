@@ -1,7 +1,7 @@
 { lib, config, pkgs, inputs, ... }:
 let
 
-  inherit (lib) mkIf types;
+  inherit (lib) mkIf types mkOption;
   inherit (lib.zaluru) mkOpt;
   inherit (config.mine) user;
   cfg = config.mine.desktop.kde;
@@ -10,6 +10,15 @@ in
 {
   options.mine.desktop.kde = {
     enable = mkOpt types.bool false "KDE";
+    panel = mkOption {
+      default = {};
+      description = "Options for the kde panel";
+      type = types.submodule {
+        options = {
+          screen = mkOpt types.int 0 "Choose on which screen the panel will be displayed, defaults to screen 0";
+        };
+      };
+    };
   };
 
   config = mkIf cfg.enable {
@@ -390,7 +399,7 @@ in
           panels = [
             {
               location = "top";
-              screen = 1; # Display only on second monitor
+              screen = cfg.panel.screen;
               height = 26;
               widgets = [
                 {

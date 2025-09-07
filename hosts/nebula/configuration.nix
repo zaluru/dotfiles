@@ -167,7 +167,10 @@ in
       };
 
       desktop = {
-        kde = enabled;
+        kde = {
+          enable = true;
+          panel.screen = 1;
+        };
         gdm = enabled;
         default-apps = enabled;
         #cursor = enabled;
