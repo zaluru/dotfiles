@@ -214,6 +214,9 @@ in
             "krunnerrc"."Plugins"."org.kde.datetimeEnabled" = false;
             "krunnerrc"."Plugins"."unitconverterEnabled" = false;
             "krunnerrc"."Plugins"."windowsEnabled" = false;
+            
+            # Single virtual desktops row
+            "kwinrc"."Desktops"."Rows" = 1;
           };
           window-rules = [
             # The screen window rule seems to be broken, to hack around it i set the initial position = "1920,0", so that it starts on the second screen
