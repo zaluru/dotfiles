@@ -1,1 +1,5 @@
-/result
+result
+.stfolder
+builds/
+secrets/
+nixos.qcow*
