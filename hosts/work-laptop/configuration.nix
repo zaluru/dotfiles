@@ -64,6 +64,7 @@ in
         vscode = enabled;
         obs = enabled;
         remmina = enabled;
+        vicinae = enabled;
       };
 
       cli-tools = {

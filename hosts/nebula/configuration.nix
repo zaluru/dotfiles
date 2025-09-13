@@ -109,6 +109,7 @@ in
         scarlett-gui = enabled;
         remmina = enabled;
         losless-cut = enabled;
+        vicinae = enabled;
         nix-flatpak = {
           enable = true;
           trenchbroom = enabled;
