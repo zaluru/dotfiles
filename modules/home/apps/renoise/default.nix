@@ -22,12 +22,18 @@ let
         "3.4.4" = {
           hash = "01drmbmqpc6dcar17gccxh2ksjgwb1vbxjlr5iq1cr6icahbq59n";
         };
+        "3.5.2" = {
+          hash = "1v5zqw4wc89c64kkl08a195p2hsmjcmgcvjhjsfjq95lzx37q2aa";
+        };
       };
     };
     aarch64-linux = {
       version = {
         "3.4.4" = {
           hash = "0gndjlgdvxvrkjarybbxpc6zw07ihklpr1abxinmqi3g51lj0q0r";
+        };
+        "3.5.2" = {
+          hash = "";
         };
       };
     };
@@ -42,7 +48,7 @@ in
       type = types.submodule {
         options = {
           enable = mkEnableOption "Use the full renoise version with the provided binary";
-          version = mkOpt types.str "3.4.4" "Choose which version to use, defaults to 3.4.4";
+          version = mkOpt types.str "3.5.2" "Choose which version to use, defaults to 3.5.2";
         };
       };
     };
