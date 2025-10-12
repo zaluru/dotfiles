@@ -121,6 +121,7 @@ in
           vintage-story = enabled;
           duckstation = enabled;
           beyond-all-reason = enabled;
+          taisei-project = enabled;
           bottles = enabled;
           blockbench = enabled;
           upscayl = enabled;
