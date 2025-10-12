@@ -112,21 +112,27 @@ in
         vicinae = enabled;
         nix-flatpak = {
           enable = true;
+
+          ## Tools
+          proton-plus = enabled;
+          bottles = enabled;
+
+          ## Creative
           trenchbroom = enabled;
           krita = enabled;
-          pcsx2 = enabled;
-          prism-launcher = enabled;
-          rpcs3 = enabled;
-          shadps4 = enabled;
-          vintage-story = enabled;
-          duckstation = enabled;
-          beyond-all-reason = enabled;
-          taisei-project = enabled;
-          bottles = enabled;
-          blockbench = enabled;
           upscayl = enabled;
-          proton-plus = enabled;
+          blockbench = enabled;
           digikam = enabled;
+
+          ## Games
+          #pcsx2 = enabled;
+          #rpcs3 = enabled;
+          #shadps4 = enabled;
+          #duckstation = enabled;
+          #prism-launcher = enabled;
+          #vintage-story = enabled;
+          #beyond-all-reason = enabled;
+          taisei-project = enabled;
         };
       };
 
