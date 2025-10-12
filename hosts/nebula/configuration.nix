@@ -64,6 +64,7 @@ in
       };
 
       apps = {
+        cables = enabled;
         bitwarden = enabled;
         keepassxc = enabled;
         brave = enabled;
