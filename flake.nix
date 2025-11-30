@@ -7,6 +7,7 @@
     musnix.url = "github:musnix/musnix";
     nixarr.url = "github:rasmus-kirk/nixarr";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+affinity-nix.url = "github:mrshmllow/affinity-nix";
 
 
     home-manager = {
@@ -108,6 +109,7 @@
       winapps,
       nixos-hardware,
       vicinae,
+affinity-nix,
       ...
     }@inputs:
     let
