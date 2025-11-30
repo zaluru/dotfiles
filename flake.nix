@@ -109,7 +109,7 @@
       winapps,
       nixos-hardware,
       vicinae,
-affinity-nix,
+      affinity-nix,
       ...
     }@inputs:
     let
