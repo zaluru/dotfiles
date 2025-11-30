@@ -66,6 +66,7 @@ in
       apps = {
         cables = enabled;
         bitwarden = enabled;
+        bruno = enabled;
         keepassxc = enabled;
         brave = enabled;
         thunderbird = enabled;
