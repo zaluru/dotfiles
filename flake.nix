@@ -147,6 +147,17 @@
             disko.nixosModules.disko
           ];
         };
+        "quasar" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./hosts/quasar/configuration.nix
+            nix-index-database.nixosModules.nix-index
+            disko.nixosModules.disko
+          ];
+        };
         "proteus" = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
