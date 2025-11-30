@@ -97,6 +97,7 @@ in
         mpv = enabled;
         #vscodium = enabled;
         vscode = enabled;
+        zed = enabled;
         obs = enabled;
         blender = enabled;
         davinci-resolve = enabled;
