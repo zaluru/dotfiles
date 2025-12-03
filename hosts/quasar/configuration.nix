@@ -102,7 +102,7 @@ in
         };
         services = {
           openssh = enabled;
-        }
+        };
         defaultLocales = enabled;
       };
     };
