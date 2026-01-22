@@ -64,6 +64,7 @@ in
       };
 
       apps = {
+        waydroid = enabled;
         cables = enabled;
         bitwarden = enabled;
         bruno = enabled;
