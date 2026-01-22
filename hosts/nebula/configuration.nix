@@ -200,7 +200,7 @@ in
       };
 
       services = {
-        nixarr = enabled;
+        #nixarr = enabled;
         winapps = enabled;
         cockpit = enabled;
         lact = enabled;
