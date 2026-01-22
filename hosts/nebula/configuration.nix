@@ -65,6 +65,7 @@ in
 
       apps = {
         waydroid = enabled;
+        mangohud = enabled;
         cables = enabled;
         bitwarden = enabled;
         bruno = enabled;
