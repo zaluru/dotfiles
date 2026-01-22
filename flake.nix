@@ -74,11 +74,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     #vicinae.url = "github:vicinaehq/vicinae/v0.9.6";
 
     # Pinned packages
@@ -106,7 +101,6 @@
       nixvim,
       sops-nix,
       nixarr,
-      winapps,
       nixos-hardware,
       #vicinae,
       affinity-nix,

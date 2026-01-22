@@ -14,13 +14,7 @@ let
     };
   };
 
-  winappsPkgs = final: prev: {
-    winapps = import inputs.winapps {
-      inherit (final) config;
-      inherit (final.stdenv.hostPlatform) system;
-    };
-  };
 in
 {
-  nixpkgs.overlays = [ unstablePkgs davinciResolvePkgs winappsPkgs ];
+  nixpkgs.overlays = [ unstablePkgs davinciResolvePkgs ];
 }
