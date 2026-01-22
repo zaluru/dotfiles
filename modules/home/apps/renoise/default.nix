@@ -69,8 +69,8 @@ in
       nixpkgs.overlays = [ (self: super: {
         renoise = super.renoise.override {
           releasePath = super.fetchurl {
-            url = "file://${toString "${releasesPath}/rns_${builtins.replaceStrings [ "." ] [ "_" ] cfg.full-version.version}_${super.system}.tar.gz"}";
-            sha256 = platforms.${super.system}.version.${cfg.full-version.version}.hash;
+            url = "file://${toString "${releasesPath}/rns_${builtins.replaceStrings [ "." ] [ "_" ] cfg.full-version.version}_${super.stdenv.hostPlatform.system}.tar.gz"}";
+            sha256 = platforms.${super.stdenv.hostPlatform.system}.version.${cfg.full-version.version}.hash;
           };
         };
       }) ];
