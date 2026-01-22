@@ -2,20 +2,23 @@
 let
   unstablePkgs = final: prev: {
     unstable = import inputs.unstable {
-      system = "${prev.system}";
-      config.allowUnfree = true;
+      inherit (final) config;
+      inherit (final.stdenv.hostPlatform) system;
     };
   };
 
   davinciResolvePkgs = final: prev: {
     davinci-resolve-pkgs = import inputs.davinci-resolve-pkgs {
-      system = "${prev.system}";
-      config.allowUnfree = true;
+      inherit (final) config;
+      inherit (final.stdenv.hostPlatform) system;
     };
   };
 
   winappsPkgs = final: prev: {
-    winapps = inputs.winapps.packages.${prev.system};
+    winapps = import inputs.winapps {
+      inherit (final) config;
+      inherit (final.stdenv.hostPlatform) system;
+    };
   };
 in
 {
