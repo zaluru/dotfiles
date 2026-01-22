@@ -203,6 +203,7 @@ in
       services = {
         #nixarr = enabled;
         #cockpit = enabled;
+        nextdns = enabled;
         lact = enabled;
         #sunshine = enabled;
         mpd = enabled;
