@@ -20,7 +20,6 @@ in
   config = lib.mkIf cfg.enable {
     home-manager.users.${user.name} = {
       programs.zed-editor = {
-        #package = inputs.zed.packages.${pkgs.system}.default;
         enable = true;
         extraPackages = [ pkgs.nixd ];
         extensions = [ "nix" "toml" "rust" "rose-pine-theme" ];
