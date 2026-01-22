@@ -93,15 +93,15 @@ in
             wallpaper = builtins.head cfg.wallpaper; # This option currently does not support a list of wallpapers for every screen
           };
           kwin.virtualDesktops.names = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
-          hotkeys = {
-            commands = {
-              vicinae = {
-                name = "Vicinae launcher";
-                command = "vicinae";
-                key = "Meta+Space";
-              };
-            };
-          };
+          #hotkeys = {
+          #  commands = {
+          #    vicinae = {
+          #      name = "Vicinae launcher";
+          #     command = "vicinae";
+          #      key = "Meta+Space";
+          #    };
+          #  };
+          #};
           configFile = {
             # Keyboard layout
             "kxkbrc"."Layout"."LayoutList" = "pl";

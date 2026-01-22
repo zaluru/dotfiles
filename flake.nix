@@ -79,7 +79,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    vicinae.url = "github:vicinaehq/vicinae";
+    #vicinae.url = "github:vicinaehq/vicinae/v0.9.6";
 
     # Pinned packages
     # You can find the nixpkgs reference easly at https://www.nixhub.io/
@@ -108,7 +108,7 @@
       nixarr,
       winapps,
       nixos-hardware,
-      vicinae,
+      #vicinae,
       affinity-nix,
       ...
     }@inputs:
