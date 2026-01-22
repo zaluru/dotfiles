@@ -128,6 +128,7 @@ in
           upscayl = enabled;
           blockbench = enabled;
           digikam = enabled;
+          material-maker = enabled;
 
           ## Games
           #pcsx2 = enabled;
