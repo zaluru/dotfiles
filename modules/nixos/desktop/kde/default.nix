@@ -35,6 +35,11 @@ in
         };
       };
 
+      systemPackages = [
+        pkgs.xsettingsd # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13
+        pkgs.xorg.xrdb # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13 
+      ];
+
       plasma6.excludePackages = with pkgs.kdePackages; [
         konsole
         elisa
@@ -54,6 +59,10 @@ in
     home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
 
     home-manager.users.${user.name} = {
+
+      # Required for proper cursor on xwayland apps https://www.reddit.com/r/NixOS/comments/1htxgly/steam_not_using_cursor_theme/
+      home.file.".local/share/icons/default".source = "${pkgs.kdePackages.breeze}/share/icons/breeze_cursors";
+
       xdg.portal = {
         enable = true;
         extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
