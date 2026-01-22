@@ -202,7 +202,7 @@ in
       services = {
         #nixarr = enabled;
         winapps = enabled;
-        cockpit = enabled;
+        #cockpit = enabled;
         lact = enabled;
         #sunshine = enabled;
         mpd = enabled;
