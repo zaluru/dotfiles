@@ -179,7 +179,6 @@
       packages = forEachSupportedSystem (
         { pkgs }:
         {
-          klassy-qt6 = pkgs.kdePackages.callPackage ./packages/klassy-qt6.nix { };
           iso = nixos-generators.nixosGenerate {
             specialArgs = {
               inherit inputs;

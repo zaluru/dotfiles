@@ -85,7 +85,7 @@ in
         kdePackages.krohnkite
         pkgs.kdePackages.partitionmanager
         pkgs.exfatprogs # Required for partitionmanager to support exfat
-        inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.klassy-qt6
+        pkgs.unstable.klassy
         pkgs.kdePackages.qtmultimedia # For animated wallpapers with smart-video-wallpaper-reborn
       ];
 
