@@ -168,7 +168,7 @@ in
             # Krohnkite tiling
             "kwinrc"."Plugins"."krohnkiteEnabled" = true;
             "kwinrc"."Script-krohnkite"."enableStackedLayout" = true;
-            "kwinrc"."Script-krohnkite"."screenDefaultLayout" = "DP-1:tilelayout,DP-1:3:stackedlayout,DP-2:stackedlayout";
+            "kwinrc"."Script-krohnkite"."screenDefaultLayout" = "DP-1:tilelayout,DP-1:3:stackedlayout,DP-2:tilelayout";
             "kwinrc"."Script-krohnkite"."screenGapBottom" = 10;
             "kwinrc"."Script-krohnkite"."screenGapLeft" = 10;
             "kwinrc"."Script-krohnkite"."screenGapRight" = 10;
