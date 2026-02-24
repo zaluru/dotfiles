@@ -64,6 +64,10 @@ in
       };
 
       apps = {
+        hamachi = {
+          enable = true;
+          startOnBoot = false;
+        };
         waydroid = enabled;
         mangohud = enabled;
         cables = enabled;
