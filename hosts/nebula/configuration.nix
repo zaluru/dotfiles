@@ -44,6 +44,142 @@ in
       #};
     };
 
+    specialisation."kde".configuration = {
+      environment.etc."specialisation".text = "kde"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
+      system.nixos.tags = [ "with-kde" ];
+      home-manager.users.${user.name} = {
+        specialisation."kde".configuration = {
+          xdg.dataFile."home-manager/specialisation".text = "kde";
+        };
+      };
+      
+      mine = {
+        apps = {
+          steam = enabled;
+          hamachi = {
+            enable = true;
+            startOnBoot = false;
+          };
+          waydroid = enabled;
+          bitwarden = enabled;
+          bruno = enabled;
+          keepassxc = enabled;
+          brave = enabled;
+          thunderbird = enabled;
+          alacritty = enabled;
+          imv = enabled;
+          signal-desktop = enabled;
+          #chromium = enabled;
+          discord = enabled;
+          #element = enabled;
+          firefox = enabled;
+          #flycast = enabled;
+          #freecad = enabled;
+          #ghostty = enabled;
+          gimp = enabled;
+          #gthumb = enabled;
+          inkscape = enabled;
+          #keybase = enabled;
+          #keymapp = enabled;
+          obsidian = enabled;
+          #proton = enabled;
+          #prusa-slicer = enabled;
+          #puddletag = enabled;
+          vlc = enabled;
+          mpv = enabled;
+          #vscodium = enabled;
+          vscode = enabled;
+          zed = enabled;
+          obs = enabled;
+          blender = enabled;
+          davinci-resolve = enabled;
+          #affinity = enabled;
+          renoise = {
+            enable = true;
+            full-version = {
+              enable = true;
+              version = "3.5.4";
+            };
+          };
+          scarlett-gui = enabled;
+          remmina = enabled;
+          losless-cut = enabled;
+          #vicinae = enabled;
+          nix-flatpak = {
+            enable = true;
+
+            ## Tools
+            proton-plus = enabled;
+            bottles = enabled;
+
+            ## Creative
+            trenchbroom = enabled;
+            krita = enabled;
+            upscayl = enabled;
+            blockbench = enabled;
+            digikam = enabled;
+            material-maker = enabled;
+
+            ## Games
+            #pcsx2 = enabled;
+            #rpcs3 = enabled;
+            #shadps4 = enabled;
+            #duckstation = enabled;
+            prism-launcher = enabled;
+            ente-auth = enabled;
+            #vintage-story = enabled;
+            #beyond-all-reason = enabled;
+            taisei-project = enabled;
+          };
+        };
+
+        desktop = {
+          kde = {
+            enable = true;
+            panel.screen = 1;
+          };
+          gdm = enabled;
+          default-apps = enabled;
+          #cursor = enabled;
+          #fuzzel = enabled;
+          #hypridle = enabled;
+          #hyprland = {
+          #  enable = true;
+          #  home = true;
+          #};
+          #hyprlock = enabled;
+          #hyprpaper = enabled;
+          #screenshots = enabled;
+          #swaync = enabled;
+          #systemd = enabled;
+          #waybar = enabled;
+        };
+
+        system = {
+          services = {
+            keyring-pam-kde = enabled;
+            #pam-u2f-totp = enabled;
+          }
+        }
+      };
+    };
+
+    specialisation."steam-ui".configuration = {
+      environment.etc."specialisation".text = "steam-ui"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
+      system.nixos.tags = [ "with-steam-ui" ];
+      home-manager.users.${user.name} = {
+        specialisation."steam-ui".configuration = {
+          xdg.dataFile."home-manager/specialisation".text = "steam-ui";
+          # ..rest of config
+        };
+      };
+      mine = {
+        desktop = {
+          steam-ui = enabled;
+        };
+      };
+    };
+
     mine = {
       user = {
         enable = true;
@@ -64,85 +200,11 @@ in
       };
 
       apps = {
-        hamachi = {
-          enable = true;
-          startOnBoot = false;
-        };
-        waydroid = enabled;
         mangohud = enabled;
         cables = enabled;
-        bitwarden = enabled;
-        bruno = enabled;
-        keepassxc = enabled;
-        brave = enabled;
-        thunderbird = enabled;
-        alacritty = enabled;
-        imv = enabled;
-        signal-desktop = enabled;
-        #chromium = enabled;
-        discord = enabled;
-        element = enabled;
-        firefox = enabled;
-        #flycast = enabled;
-        #freecad = enabled;
-        #ghostty = enabled;
-        gimp = enabled;
-        #gthumb = enabled;
-        inkscape = enabled;
-        #keybase = enabled;
-        #keymapp = enabled;
-        obsidian = enabled;
-        #proton = enabled;
-        #prusa-slicer = enabled;
-        #puddletag = enabled;
-        steam = enabled;
         syncthing = {
           enable = true;
           isNix = true;
-        };
-        vlc = enabled;
-        mpv = enabled;
-        #vscodium = enabled;
-        vscode = enabled;
-        zed = enabled;
-        obs = enabled;
-        blender = enabled;
-        davinci-resolve = enabled;
-        renoise = {
-          enable = true;
-          full-version = {
-            enable = true;
-            version = "3.5.2";
-          };
-        };
-        scarlett-gui = enabled;
-        remmina = enabled;
-        losless-cut = enabled;
-        vicinae = enabled;
-        nix-flatpak = {
-          enable = true;
-
-          ## Tools
-          proton-plus = enabled;
-          bottles = enabled;
-
-          ## Creative
-          trenchbroom = enabled;
-          krita = enabled;
-          upscayl = enabled;
-          blockbench = enabled;
-          digikam = enabled;
-          material-maker = enabled;
-
-          ## Games
-          #pcsx2 = enabled;
-          #rpcs3 = enabled;
-          #shadps4 = enabled;
-          #duckstation = enabled;
-          #prism-launcher = enabled;
-          #vintage-story = enabled;
-          #beyond-all-reason = enabled;
-          taisei-project = enabled;
         };
       };
 
@@ -173,45 +235,14 @@ in
         #vagrant = enabled;
       };
 
-      container = {
-        settings = {
-          configPath = "${user.homeDir}/configs";
-        };
-        #traefik = {
-        #  enable = true;
-        #  awsEnvKeys = true;
-        #  domainName = "zaluru.pw";
-        #};
-      };
 
-      desktop = {
-        kde = {
-          enable = true;
-          panel.screen = 1;
-        };
-        gdm = enabled;
-        default-apps = enabled;
-        #cursor = enabled;
-        #fuzzel = enabled;
-        #hypridle = enabled;
-        #hyprland = {
-        #  enable = true;
-        #  home = true;
-        #};
-        #hyprlock = enabled;
-        #hyprpaper = enabled;
-        #screenshots = enabled;
-        #swaync = enabled;
-        #systemd = enabled;
-        #waybar = enabled;
-      };
 
       services = {
         #nixarr = enabled;
         #cockpit = enabled;
         nextdns = enabled;
         lact = enabled;
-        #sunshine = enabled;
+        sunshine = enabled;
         mpd = enabled;
         kdeconnect = enabled;
         #beszel = {
