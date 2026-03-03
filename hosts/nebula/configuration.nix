@@ -159,8 +159,8 @@ in
           services = {
             keyring-pam-kde = enabled;
             #pam-u2f-totp = enabled;
-          }
-        }
+          };
+        };
       };
     };
 
@@ -170,7 +170,6 @@ in
       home-manager.users.${user.name} = {
         specialisation."steam-ui".configuration = {
           xdg.dataFile."home-manager/specialisation".text = "steam-ui";
-          # ..rest of config
         };
       };
       mine = {
