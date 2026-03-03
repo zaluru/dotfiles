@@ -74,6 +74,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    jovian = {
+      url = "github:Jovian-Experiments/Jovian-NixOS/1955e18274411cd538719a4dcee34ff86a8aa5d5";
+    };
+
     #vicinae.url = "github:vicinaehq/vicinae/v0.9.6";
 
     # Pinned packages
@@ -104,6 +108,7 @@
       nixos-hardware,
       #vicinae,
       affinity-nix,
+      jovian,
       ...
     }@inputs:
     let
