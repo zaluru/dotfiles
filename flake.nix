@@ -8,6 +8,7 @@
     nixarr.url = "github:rasmus-kirk/nixarr";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     affinity-nix.url = "github:mrshmllow/affinity-nix";
+    pelican-wings.url = "https://codeberg.org/zaluru/pelican-wings-flake/archive/master.tar.gz";
 
 
     home-manager = {
@@ -109,6 +110,7 @@
       #vicinae,
       affinity-nix,
       jovian,
+      pelican-wings,
       ...
     }@inputs:
     let
