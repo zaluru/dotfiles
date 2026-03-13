@@ -78,6 +78,12 @@ in
       services = {
       };
 
+      container = {
+        quadlet-nix = {
+          enable = true;
+        };
+      };
+
       system = {
         #boot = {
         #  grub = enabled;
