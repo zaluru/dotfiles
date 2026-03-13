@@ -105,6 +105,12 @@ in
         };
         defaultLocales = enabled;
       };
+
+      defaults.web = {
+        domainName = "";
+        acmeEmail = "";
+      };
+
     };
   };
 }
