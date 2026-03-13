@@ -81,6 +81,7 @@ in
       container = {
         quadlet-nix = {
           enable = true;
+          netbird = enabled;
         };
       };
 
