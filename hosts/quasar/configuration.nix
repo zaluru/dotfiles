@@ -76,6 +76,7 @@ in
       };
 
       services = {
+        personal-website = enabled;
       };
 
       container = {
