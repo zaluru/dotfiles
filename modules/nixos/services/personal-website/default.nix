@@ -4,7 +4,7 @@ let
   inherit (lib) mkIf types;
   inherit (lib.zaluru) mkOpt;
   inherit (config.mine) user;
-  cfg = config.mine.container.quadlet-nix.netbird;
+  cfg = config.mine.services.personal-website;
 
 in
 {
