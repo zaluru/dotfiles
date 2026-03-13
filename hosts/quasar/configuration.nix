@@ -63,7 +63,7 @@ in
       cli-tools = {
         direnv = enabled;
         just = enabled;
-        #nixvim = enabled;
+        nixvim = enabled;
         zellij = enabled;
         #tealdeer = enabled;
         #croc = enabled;
