@@ -176,6 +176,14 @@ in
         desktop = {
           steam-ui = enabled;
         };
+        system = {
+          virtual-display = {
+            enable = true;
+            output-id = "HDMI-A-2";
+            resolution = "3840x2160";
+            refresh-rate = 60;
+          };
+        }
       };
     };
 
