@@ -197,7 +197,7 @@
             system = "x86_64-linux";
             format = "iso";
             modules = [
-              ./systems/x86_64-iso-work-laptop/configuration.nix
+              ./systems/x86_64-iso/default.nix
               nix-index-database.nixosModules.nix-index
               disko.nixosModules.disko
             ];
