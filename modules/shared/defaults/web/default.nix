@@ -13,12 +13,12 @@ in
       acceptTerms = mkOpt types.bool false "Acme terms acceptance";
       email = mkOpt types.str "acme@changeme.local" "Default acme email used by all web services";
     };
+  };
 
-    config = mkIf cfg.acme.acceptTerms {
-      security.acme = {
-        acceptTerms = true;
-        defaults.email = "${cfg.acme.email}";
-      };
+  config = mkIf cfg.acme.acceptTerms {
+    security.acme = {
+      acceptTerms = true;
+      defaults.email = "${cfg.acme.email}";
     };
   };
 }
