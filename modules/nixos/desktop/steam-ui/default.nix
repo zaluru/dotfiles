@@ -17,11 +17,13 @@ in
   ];
 
   config = mkIf cfg.enable {
+    services.displayManager.sddm.wayland.enable = true;
     jovian = {
       steam = {
         enable = true;
         autoStart = true;
         user = "${user.name}";
+        desktopSession = "gamescope-wayland";
       };
       hardware.has.amd.gpu = true;
       hardware.amd.gpu.enableEarlyModesetting = true;
