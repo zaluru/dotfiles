@@ -3,13 +3,14 @@ let
 
   inherit (lib) mkIf types;
   inherit (lib.zaluru) mkOpt;
+  cfg = config.mine.defaults.web;
 
 in
 {
   options.mine.defaults.web = {
     domainName = mkOpt types.str "changeme.local" "Default domain name used by all web services";
     acme = {
-      acceptTerms = mkopt types.bool false "Acme terms acceptance"
+      acceptTerms = mkOpt types.bool false "Acme terms acceptance";
       email = mkOpt types.str "acme@changeme.local" "Default acme email used by all web services";
     };
 
