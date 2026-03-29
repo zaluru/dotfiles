@@ -183,7 +183,7 @@ in
             resolution = "3840x2160";
             refresh-rate = 60;
           };
-        }
+        };
       };
     };
 
