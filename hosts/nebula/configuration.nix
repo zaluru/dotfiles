@@ -290,7 +290,6 @@ in
         networking = {
           networkmanager = {
             enable = true;
-            applet = true;
             hostname = "nebula";
           };
           firewall = enabled;
