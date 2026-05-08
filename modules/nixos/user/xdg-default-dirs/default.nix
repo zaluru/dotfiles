@@ -26,6 +26,8 @@ in
           music = "${user.homeDir}/music";
           pictures = "${user.homeDir}/pictures";
           videos = "${user.homeDir}/videos";
+          # TODO: uncomment when added in new release
+          #projects = "${user.homeDir}/projects";
           # I don't use those
           desktop = "${user.homeDir}/.local/share/.userDirs/desktop";
           templates = "${user.homeDir}/.local/share/.userDirs/templates";
