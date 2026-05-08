@@ -38,6 +38,7 @@ in
       systemPackages = [
         pkgs.xsettingsd # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13
         pkgs.xorg.xrdb # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13 
+        pkgs.kdePackages.partitionmanager # Does not seem to work when installed to users home manager, related issue https://github.com/NixOS/nixpkgs/issues/273659
       ];
 
       plasma6.excludePackages = with pkgs.kdePackages; [
@@ -83,7 +84,6 @@ in
       # TODO: https://github.com/nix-community/plasma-manager/issues/419
       home.packages = with pkgs; [
         kdePackages.krohnkite
-        pkgs.kdePackages.partitionmanager
         pkgs.exfatprogs # Required for partitionmanager to support exfat
         pkgs.unstable.klassy
         pkgs.kdePackages.qtmultimedia # For animated wallpapers with smart-video-wallpaper-reborn
