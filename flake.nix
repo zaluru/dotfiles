@@ -76,7 +76,7 @@
     };
 
     jovian = {
-      url = "github:Jovian-Experiments/Jovian-NixOS/8ffb6db9322542ec3cb541a232864084422f7e90";
+      url = "github:Jovian-Experiments/Jovian-NixOS/ca0970551a092fd69fdbb31ef3ea2dfe15f96349";
     };
 
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
