@@ -52,7 +52,7 @@
     };
 
     zjstatus = {
-      url = "github:dj95/zjstatus/v0.20.2";
+      url = "github:dj95/zjstatus/v0.22.0";
     };
 
     nixos-wsl = {
