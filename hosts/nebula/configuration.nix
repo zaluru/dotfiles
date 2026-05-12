@@ -233,12 +233,11 @@ in
         man-nvim = enabled;
         bat = enabled;
         age = enabled;
-        sops = enabled;
-        #sops = {
-        #  enable = true;
-        #  requires.unlock = true;
-        #  defaultSopsFile = inputs.nixos-zaluru.packages.${pkgs.system}.mySecrets + "/encrypted/secrets.yaml";
-        #};
+        sops-nix = {
+          enable = true;
+          ageKeyFile.path = "/home/zaluru/.config/sops/age/keys.txt";
+          defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/nebula.yaml";
+        };
         #vagrant = enabled;
       };
 
