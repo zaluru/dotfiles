@@ -10,6 +10,10 @@
     affinity-nix.url = "github:mrshmllow/affinity-nix";
     pelican-wings.url = "https://codeberg.org/zaluru/pelican-wings-flake/archive/master.tar.gz";
 
+    nix-private-config = {
+      url = "git+ssh://git@codeberg.org/zaluru/nix-private-config";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -94,6 +98,7 @@
       nixpkgs,
       unstable,
       home-manager,
+      nix-private-config,
       hyprland,
       plasma-manager,
       emacs-overlay,
