@@ -162,6 +162,17 @@
             disko.nixosModules.disko
           ];
         };
+        "blazar" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./hosts/blazar/configuration.nix
+            nix-index-database.nixosModules.nix-index
+            disko.nixosModules.disko
+          ];
+        };
         "proteus" = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;

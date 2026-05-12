@@ -1,0 +1,133 @@
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+let
+
+  inherit (lib.zaluru) enabled;
+  inherit (config.mine) user;
+
+  hostname = "blazar";
+
+in
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../../overlays/inputs
+    ../../modules/nixos/import.nix
+    ../../modules/shared/import.nix
+    ../../modules/home/import.nix
+  ];
+
+  config = {
+
+
+  # Boot into a nixos iso and install with 
+  # nix run github:nix-community/nixos-anywhere -- --flake '.#c0400' --target-host nixos@10.22.19.126
+
+
+    # yubikey
+    services.pcscd.enable = true;
+
+    
+    environment.systemPackages = with pkgs; [
+      devenv
+    ];
+
+    system.stateVersion = "25.11";
+
+    mine = {
+      user = {
+        enable = true;
+        home-manager = enabled;
+        #ghToken = enabled;
+        shell.package = pkgs.fish;
+        xdg-default-dirs = enabled;
+      };
+
+      container = {
+        quadlet-nix = {
+          enable = true;
+        };
+      };
+
+      home-manager = {
+        git = enabled;
+        ssh-config = enabled;
+        #zsh = enabled;
+      };
+
+      apps = {
+      };
+
+      cli-tools = {
+        direnv = enabled;
+        just = enabled;
+        fastfetch = enabled;
+        #nixvim = enabled;
+        zellij = enabled;
+        tealdeer = enabled;
+        croc = enabled;
+        btop = enabled;
+        lsof = enabled;
+        bat = enabled;
+      };
+
+      desktop = {
+      };
+
+      services = {
+        #kanidm-server = enabled;
+        #ssh-agent = enabled;
+        cockpit = enabled; 
+ #       keyring-pam-kde = true;
+        #mpd = enabled;
+#        docker = {
+#          enable = true;
+#          scripts.check-versions = false;
+#        };
+      };
+
+      system = {
+        #boot = {
+        #  grub = enabled;
+        #};
+        fonts = enabled;
+
+        networking = {
+          networkmanager = {
+            enable = true;
+            hostname = "${hostname}";
+          };
+          firewall = enabled;
+        };
+        nix = {
+          unfree = enabled;
+          flakes = enabled;
+          nh = enabled;
+          index = enabled;
+        };
+        security = {
+          sudonopass = enabled;
+        };
+        services = {
+          openssh = enabled;
+          fwupd = enabled;
+          #krb5 = enabled;
+        };
+        utils = {
+          dev = true;
+          sysadmin = true;
+        };
+
+        virtualisation = {
+          libvirtd = enabled;
+        };
+        defaultLocales = enabled;
+      };
+    };
+  };
+}
