@@ -26,7 +26,7 @@ in
 
 
   # Boot into a nixos iso and install with 
-  # nix run github:nix-community/nixos-anywhere -- --flake '.#c0400' --target-host nixos@10.22.19.126
+  # nix run github:nix-community/nixos-anywhere -- --flake '.#<hostname>' --target-host nixos@<ip>
 
 
     # yubikey
