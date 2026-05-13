@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     musnix.url = "github:musnix/musnix";
     nixarr.url = "github:rasmus-kirk/nixarr";
@@ -101,7 +100,6 @@
       nix-private-config,
       hyprland,
       plasma-manager,
-      emacs-overlay,
       nix-flatpak,
       astronvim,
       stylix,
