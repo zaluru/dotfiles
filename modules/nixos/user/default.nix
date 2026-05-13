@@ -60,7 +60,10 @@ in
       isNormalUser = true;
       createHome = true;
       uid = 1000;
-            group = "${user.name}";
+      openssh.authorizedKeys.keys = [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpspkJsoWurcoBpmqBhMQSBZDBvBCL3f7GpIpaW06IeLDyUmzclTIG571eDTNiQTkcnVDHyKSN3WbQL6GkvkcAU7YT1kRcECf8wYMjOjm1UFBuSX4mTcSoJqSftMZASxDVo4+g6OxbSv8JlMChVf3ni3ACx5E4KRVGhpY/E4BgbAZkHny86FwvStemPSe2BRmuTuVwvSJ8bKkmwfa1ADI81MKeqOiNhgX+1DtJnDE8c1FPBQavEgyJqK1WOshPkaheHprNE8yzKnovcagpyRKB4giOJPmDwaphEuP8ciAaiGlJa8W5kJy48TZ7YpBu7sVXBsWB3KNKWNVlXWiUs0D9 YubiKey"
+      ];
+      group = "${user.name}";
       extraGroups = [ "wheel" ];
       shell = user.shell.package;
     };
