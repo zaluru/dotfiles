@@ -37,12 +37,12 @@
       flake = false;
     };
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
+#    stylix = {
+#      url = "github:danth/stylix";
+#      inputs = {
+#        nixpkgs.follows = "nixpkgs";
+#     };
+#   };
 
     disko = {
       url = "github:nix-community/disko";
@@ -102,7 +102,7 @@
       plasma-manager,
       nix-flatpak,
       astronvim,
-      stylix,
+      #stylix,
       disko,
       nixos-generators,
       zjstatus,
