@@ -15,7 +15,7 @@ in
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
       home.packages = [
-        inputs.affinity-nix.packages.x86_64-linux.v3
+        inputs.affinity-nix.packages.${pkgs.stdenv.hostPlatform.system}.v3
       ];
     };
   };
