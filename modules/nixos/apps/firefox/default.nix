@@ -119,6 +119,12 @@ in
                   icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
                   definedAliases = [ "@nw" ];
                 };
+                bing.metaData.hidden = true;
+                google.metaData.hidden = true;
+                "DuckDuckGo".metaData.hidden = true;
+                "ebay-pl".metaData.hidden = true;
+                perplexity.metaData.hidden = true;
+                "Wikipedia (en)".metaData.hidden = true;
               };
             };
           };
