@@ -87,7 +87,7 @@ in
                 "Home Manager" = {
                   urls = [
                     {
-                      template = "https://search.nixos.org/options?source=home_manager";
+                      template = "https://search.nixos.org/options";
                       params = [
                         {
                           name = "source";
