@@ -66,6 +66,11 @@ in
 
       xdg.portal = {
         enable = true;
+        config.kde = {
+          default = [ "kde" ];
+          "org.freedesktop.portal.FileChooser" = [ "kde" ];
+          "org.freedesktop.portal.OpenURI" = [ "kde" ];
+        };
         extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
       };
 
