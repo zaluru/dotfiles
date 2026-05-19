@@ -121,10 +121,10 @@ in
                 };
                 bing.metaData.hidden = true;
                 google.metaData.hidden = true;
-                "DuckDuckGo".metaData.hidden = true;
+                ddg.metaData.hidden = true;
                 "ebay-pl".metaData.hidden = true;
                 perplexity.metaData.hidden = true;
-                "Wikipedia (en)".metaData.hidden = true;
+                wikipedia.metaData.hidden = true;
               };
             };
           };
