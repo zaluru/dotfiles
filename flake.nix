@@ -10,7 +10,7 @@
     pelican-wings.url = "https://codeberg.org/zaluru/pelican-wings-flake/archive/master.tar.gz";
 
     nix-private-config = {
-      url = "git+ssh://git@codeberg.org/zaluru/nix-private-config";
+      url = "git+ssh://git@codeberg.org/zaluru/nix-private-config.git?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
