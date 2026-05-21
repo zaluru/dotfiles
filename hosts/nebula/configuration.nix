@@ -129,6 +129,7 @@ in
             ente-auth = enabled;
             #vintage-story = enabled;
             #beyond-all-reason = enabled;
+            retrodeck = enabled;
             taisei-project = enabled;
           };
         };
