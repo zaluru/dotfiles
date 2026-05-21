@@ -80,6 +80,7 @@ in
       };
 
       services = {
+        netbird-client = enabled;
         #ente = enabled;
         #kanidm-server = enabled;
         #ssh-agent = enabled;
