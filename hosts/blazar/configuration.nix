@@ -80,6 +80,7 @@ in
       };
 
       services = {
+        #ente = enabled;
         #kanidm-server = enabled;
         #ssh-agent = enabled;
         cockpit = enabled; 
