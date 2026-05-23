@@ -80,6 +80,8 @@ in
       };
 
       services = {
+        kanidm-server = enabled;
+        kanidm-client = enabled;
         netbird-client = enabled;
         #ente = enabled;
         #kanidm-server = enabled;
