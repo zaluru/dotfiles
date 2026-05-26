@@ -26,6 +26,10 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    # Currently not able to set the system image from nixos configuration, had to run:
+    # kanidm system domain set-image ~/downloads/multifactor-authenticator.svg
+
     services.kanidm = {
       package = lib.mkDefault pkgs.kanidmWithSecretProvisioning_1_10;
       enableServer = true;
@@ -53,6 +57,38 @@ in
             displayName = "zaluru";
             legalName = "zaluru";
             mailAddresses = [ "zaluru@zaluru.com" ];
+          };
+        };
+
+        groups = {
+          proxmox_users = {
+            members = [ ];
+          };
+          proxmox_admins = {
+            members = [ "zaluru" ];
+          };
+        };
+
+        systems.oauth2 = {
+          proxmox = {
+            present = true;
+            imageFile = "${inputs.dashboard-icons}/proxmox.svg";
+            preferShortUsername = true;
+            displayName = "Proxmox";
+            originUrl = "https://pve.i.zaluru.com";
+            originLanding = "https://pve.i.zaluru.com";
+            basicSecretFile = config.sops.secrets.kanidm-oauth2-proxmox-secret.path;
+            scopeMaps = {
+              proxmox_users = ["openid" "email" "profile" "groups"];
+              proxmox_admins = ["openid" "email" "profile" "groups"];
+            };
+            claimMaps.proxmox_groups = {
+              joinType = "array";
+              valuesByGroup = {
+                proxmox_users = ["user"];
+                proxmox_admins = ["admin"];
+              };
+            };
           };
         };
       };
@@ -105,6 +141,7 @@ in
         [
           "kanidm-admin-password"
           "kanidm-idm-admin-password"
+          "kanidm-oauth2-proxmox-secret"
         ]
         (name: {
           owner = "kanidm";
