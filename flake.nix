@@ -8,6 +8,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
     pelican-wings.url = "https://codeberg.org/zaluru/pelican-wings-flake/archive/master.tar.gz";
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
     nix-private-config = {
       url = "git+ssh://git@codeberg.org/zaluru/nix-private-config.git?ref=main&shallow=1";
@@ -117,6 +118,7 @@
       jovian,
       pelican-wings,
       quadlet-nix,
+      proxmox-nixos,
       ...
     }@inputs:
     let

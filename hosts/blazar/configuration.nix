@@ -88,6 +88,7 @@ in
         kanidm-server = enabled;
         kanidm-client = enabled;
         netbird-client = enabled;
+        proxmox-nixos = enabled;
         #ente = enabled;
         #kanidm-server = enabled;
         #ssh-agent = enabled;
