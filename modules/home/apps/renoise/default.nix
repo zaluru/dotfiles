@@ -25,6 +25,9 @@ let
         "3.5.2" = {
           hash = "1v5zqw4wc89c64kkl08a195p2hsmjcmgcvjhjsfjq95lzx37q2aa";
         };
+        "3.5.4" = {
+          hash = "1daiyhf2dcbl1j33991zd5cipk0n32vvzvd70l78xbgi50fq83lv";
+        };
       };
     };
     aarch64-linux = {
@@ -33,6 +36,9 @@ let
           hash = "0gndjlgdvxvrkjarybbxpc6zw07ihklpr1abxinmqi3g51lj0q0r";
         };
         "3.5.2" = {
+          hash = "";
+        };
+        "3.5.4" = {
           hash = "";
         };
       };
