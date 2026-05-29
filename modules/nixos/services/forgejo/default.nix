@@ -28,6 +28,7 @@ in
       enable = true;
       database.type = "postgres";
       lfs.enable = true;
+      # https://forgejo.org/docs/latest/admin/config-cheat-sheet/
       settings = {
         server = {
           DOMAIN = "git.i.zaluru.com";
@@ -38,7 +39,15 @@ in
           ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}/"; 
           HTTP_PORT = 3000;
         };
-        service.DISABLE_REGISTRATION = true; 
+        service = {
+          DISABLE_REGISTRATION = false; 
+          ALLOW_ONLY_EXTERNAL_REGISTRATION = true; # so only users from kanidm can register
+          ENABLE_INTERNAL_SIGNIN = false;
+          ENABLE_BASIC_AUTHENTICATION = false;
+        };
+        openid = {
+          ENABLE_OPENID_SIGNIN = false;
+        };
       };
     };
 
@@ -51,5 +60,6 @@ in
       ${adminCmd} create --admin --email "root@localhost" --username ${user} --password "$(tr -d '\n' < ${pwd.path})" || true
     '';
 
+    environment.systemPackages = [ pkgs.forgejo-cli ];
   };
 }
