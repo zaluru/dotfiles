@@ -67,6 +67,15 @@ in
           proxmox_admins = {
             members = [ "zaluru" ];
           };
+          forgejo_users = {
+            members = [ ];
+          };
+          forgejo_admins = {
+            members = [ "zaluru" ];
+          };
+          forgejo_restricted = {
+            members = [ ];
+          };
         };
 
         systems.oauth2 = {
@@ -90,6 +99,30 @@ in
               };
             };
           };
+
+          forgejo = {
+            present = true;
+            imageFile = "${inputs.dashboard-icons}/forgejo.svg";
+            preferShortUsername = true;
+            displayName = "Forgejo";
+            originUrl = "https://git.i.zaluru.com/user/oauth2/kanidm/callback";
+            originLanding = "https://git.i.zaluru.com/user/oauth2/kanidm";
+            basicSecretFile = config.sops.secrets.kanidm-oauth2-forgejo-secret.path;
+            scopeMaps = {
+              forgejo_users = ["openid" "email" "profile" "groups"];
+              forgejo_admins = ["openid" "email" "profile" "groups"];
+              forgejo_restricted  = ["openid" "email" "profile" "groups"];
+            };
+            claimMaps.forgejo_groups = {
+              joinType = "array";
+              valuesByGroup = {
+                forgejo_users = ["user"];
+                forgejo_admins = ["admin"];
+                forgejo_restricted = ["restricted"];
+              };
+            };
+          };
+
         };
       };
     };
@@ -142,6 +175,7 @@ in
           "kanidm-admin-password"
           "kanidm-idm-admin-password"
           "kanidm-oauth2-proxmox-secret"
+          "kanidm-oauth2-forgejo-secret"
         ]
         (name: {
           owner = "kanidm";
