@@ -19,7 +19,10 @@ in
 
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
-      services.remmina.enable = true;
+      services.remmina = {
+        enable = true;
+        package = pkgs.unstable.remmina;
+      };
     };
   };
 }
