@@ -85,6 +85,7 @@ in
       };
 
       services = {
+        woodpecker-server = enabled;
         kanidm-server = enabled;
         kanidm-client = enabled;
         netbird-client = enabled;
