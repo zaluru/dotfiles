@@ -61,7 +61,6 @@ in
             startOnBoot = false;
           };
           waydroid = enabled;
-          bitwarden = enabled;
           bruno = enabled;
           keepassxc = enabled;
           brave = enabled;
@@ -119,6 +118,8 @@ in
             blockbench = enabled;
             digikam = enabled;
             material-maker = enabled;
+
+            bitwarden = enabled;
 
             ## Games
             #pcsx2 = enabled;
