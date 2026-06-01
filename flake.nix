@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     musnix.url = "github:musnix/musnix";
@@ -16,7 +16,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -76,8 +76,7 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim/nixos-26.05";
     };
 
     sops-nix = {
@@ -86,7 +85,7 @@
     };
 
     jovian = {
-      url = "github:Jovian-Experiments/Jovian-NixOS/ca0970551a092fd69fdbb31ef3ea2dfe15f96349";
+      url = "github:Jovian-Experiments/Jovian-NixOS/8f97d1dee8c0971b01cd6b17ccf913e8bb70f5d5";
     };
 
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
