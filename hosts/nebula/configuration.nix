@@ -118,6 +118,7 @@ in
             blockbench = enabled;
             digikam = enabled;
             material-maker = enabled;
+            drawy = enabled;
 
             bitwarden = enabled;
 
