@@ -22,8 +22,10 @@ in
   config = mkIf cfg.enable {
     services.kanidm = {
       package = lib.mkForce pkgs.kanidmWithSecretProvisioning_1_10;
-      enableClient = true;
-      clientSettings.uri = "https://${cfg.domainIdm}";
+      client = {
+        enable = true;
+        settings.uri = "https://${cfg.domainIdm}";
+      };
     };
 
     environment.systemPackages = [ pkgs.kanidmWithSecretProvisioning_1_10 ];

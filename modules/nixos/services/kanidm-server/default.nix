@@ -32,17 +32,21 @@ in
 
     services.kanidm = {
       package = lib.mkDefault pkgs.kanidmWithSecretProvisioning_1_10;
-      enableServer = true;
-      serverSettings = {
-        domain = "${cfg.domainIdm}";
-        origin = "https://${cfg.domainIdm}";
-        trust_x_forward_for = true;
+      server = {
+        enable = true;
 
-        bindaddress = "127.0.0.1:${toString cfg.portIdm}";
-        ldapbindaddress = "0.0.0.0:${toString cfg.portLdap}";
+        settings = {
+          domain = "${cfg.domainIdm}";
+          origin = "https://${cfg.domainIdm}";
+          trust_x_forward_for = true;
 
-        tls_key = "${certDirectory}/key.pem";
-        tls_chain = "${certDirectory}/fullchain.pem";
+          bindaddress = "127.0.0.1:${toString cfg.portIdm}";
+          ldapbindaddress = "0.0.0.0:${toString cfg.portLdap}";
+
+          tls_key = "${certDirectory}/key.pem";
+          tls_chain = "${certDirectory}/fullchain.pem";
+        };
+
       };
 
       provision = {
