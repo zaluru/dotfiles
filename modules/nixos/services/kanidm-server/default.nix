@@ -38,13 +38,20 @@ in
         settings = {
           domain = "${cfg.domainIdm}";
           origin = "https://${cfg.domainIdm}";
-          trust_x_forward_for = true;
 
           bindaddress = "127.0.0.1:${toString cfg.portIdm}";
           ldapbindaddress = "0.0.0.0:${toString cfg.portLdap}";
 
           tls_key = "${certDirectory}/key.pem";
           tls_chain = "${certDirectory}/fullchain.pem";
+
+          http_client_address_info = {
+            x-forward-for = ["127.0.0.1" "127.0.0.0/8"];
+          };
+          # TODO: might have to put that in front of haproxy, not sure if caddy supports this, currently not using ldap for anything.
+          #ldap_client_address_info = {
+          #  proxy-v2 = ["127.0.0.1" "127.0.0.0/8"];
+          #};
         };
 
       };
