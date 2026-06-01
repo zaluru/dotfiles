@@ -29,14 +29,11 @@ in
     services.mpd = {
       enable = true;
       user = "${user.name}";
-      musicDirectory = "/music/";
-      extraConfig = ''
-        auto_update "yes"
-        audio_output {
-          type "pipewire"
-          name "PipeWire Output"
-        }'';
-      network.listenAddress = "any"; # if you want to allow non-localhost connections
+      settings = {
+        music_directory = "/music/";
+        bind_to_address = "any";
+      };
+      openFirewall = false;
       startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
     };
 

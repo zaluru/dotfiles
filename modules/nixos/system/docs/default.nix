@@ -14,7 +14,7 @@ in
     documentation = {
       doc.enable = false;
       # Fish shell enables this and it takes forever to build man-cache as a result
-      man.generateCaches = mkForce false;
+      man.cache.enable = mkForce false;
     };
   };
 }

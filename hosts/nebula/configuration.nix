@@ -140,7 +140,7 @@ in
             enable = true;
             panel.screen = 1;
           };
-          gdm = enabled;
+          plasma-login = enabled;
           default-apps = enabled;
           #cursor = enabled;
           #fuzzel = enabled;

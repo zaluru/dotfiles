@@ -20,6 +20,8 @@ in
     home-manager.users.${user.name} = {
       programs.firefox = {
         enable = true;
+        # TODO: This is not a home manager moudle so config references the system config, have to think about how to aproach this
+        configPath = "${config.home-manager.users.${user.name}.xdg.configHome}/mozilla/firefox";
         profiles = {
           default = {
             id = 0;

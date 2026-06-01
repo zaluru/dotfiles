@@ -37,7 +37,7 @@ in
 
       systemPackages = [
         pkgs.xsettingsd # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13
-        pkgs.xorg.xrdb # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13 
+        pkgs.xrdb # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13 
         pkgs.kdePackages.partitionmanager # Does not seem to work when installed to users home manager, related issue https://github.com/NixOS/nixpkgs/issues/273659
       ];
 
