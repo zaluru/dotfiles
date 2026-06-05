@@ -247,6 +247,7 @@ in
 
 
       services = {
+        beszel.agent = enabled;
         #nixarr = enabled;
         #cockpit = enabled;
         nextdns = enabled;

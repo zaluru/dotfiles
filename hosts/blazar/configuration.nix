@@ -85,6 +85,10 @@ in
       };
 
       services = {
+        beszel = {
+          agent = enabled;
+          hub = enabled;
+        };
         woodpecker-server = enabled;
         kanidm-server = enabled;
         kanidm-client = enabled;
