@@ -87,6 +87,12 @@ in
           forgejo_restricted = {
             members = [ ];
           };
+          beszel_users = {
+            members = [ ];
+          };
+          beszel_admins = {
+            members = [ "zaluru" ];
+          };
         };
 
         systems.oauth2 = {
@@ -130,6 +136,28 @@ in
                 forgejo_users = ["user"];
                 forgejo_admins = ["admin"];
                 forgejo_restricted = ["restricted"];
+              };
+            };
+          };
+
+          # https://www.beszel.dev/guide/oauth
+          beszel = {
+            present = true;
+            imageFile = "${inputs.dashboard-icons}/beszel.svg";
+            preferShortUsername = true;
+            displayName = "Beszel";
+            originUrl = "https://mon.i.zaluru.com/api/oauth2-redirect";
+            originLanding = "https://mon.i.zaluru.com";
+            basicSecretFile = config.sops.secrets.kanidm-oauth2-beszel-secret.path;
+            scopeMaps = {
+              beszel_users = ["openid" "email" "profile" "groups"];
+              beszel_admins = ["openid" "email" "profile" "groups"];
+            };
+            claimMaps.forgejo_groups = {
+              joinType = "array";
+              valuesByGroup = {
+                beszel_users = ["user"];
+                beszel_admins = ["admin"];
               };
             };
           };
@@ -187,6 +215,7 @@ in
           "kanidm-idm-admin-password"
           "kanidm-oauth2-proxmox-secret"
           "kanidm-oauth2-forgejo-secret"
+          "kanidm-oauth2-beszel-secret"
         ]
         (name: {
           owner = "kanidm";
