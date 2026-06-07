@@ -22,7 +22,7 @@ in
     services.beszel.hub = {
       enable = true;
       host = "${cfg.listenAddress}";
-      port = "${cfg.port}";
+      port = cfg.port;
       environment = {
         APP_URL = "https://${cfg.domain}";
         USER_CREATION = "true"; # Creates OAUTH2 users
@@ -62,7 +62,7 @@ in
         request_body {
           max_size 10MB
         }
-        reverse_proxy ${cfg.listenAddress}:${toString cfg.hubPort} {
+        reverse_proxy ${cfg.listenAddress}:${toString cfg.port} {
           transport http {
             read_timeout 360s
           }
