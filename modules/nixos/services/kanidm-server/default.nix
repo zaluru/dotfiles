@@ -98,7 +98,7 @@ in
         systems.oauth2 = {
           proxmox = {
             present = true;
-            imageFile = "${inputs.dashboard-icons}/proxmox.svg";
+            imageFile = "${pkgs.dashboard-icons-svg}/proxmox.svg";
             preferShortUsername = true;
             displayName = "Proxmox";
             originUrl = "https://pve.i.zaluru.com";
@@ -119,7 +119,7 @@ in
 
           forgejo = {
             present = true;
-            imageFile = "${inputs.dashboard-icons}/forgejo.svg";
+            imageFile = "${pkgs.dashboard-icons-svg}/forgejo.svg";
             preferShortUsername = true;
             displayName = "Forgejo";
             originUrl = "https://git.i.zaluru.com/user/oauth2/kanidm/callback";
@@ -143,7 +143,7 @@ in
           # https://www.beszel.dev/guide/oauth
           beszel = {
             present = true;
-            imageFile = "${inputs.dashboard-icons}/beszel.svg";
+            imageFile = "${pkgs.dashboard-icons-svg}/beszel.svg";
             preferShortUsername = true;
             displayName = "Beszel";
             originUrl = "https://mon.i.zaluru.com/api/oauth2-redirect";

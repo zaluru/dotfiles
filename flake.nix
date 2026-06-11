@@ -38,12 +38,6 @@
       flake = false;
     };
 
-    # TODO: 331 MiB ehh, might want to rethink this
-    dashboard-icons = {
-      url = "git+https://github.com/homarr-labs/dashboard-icons?rev=0f2fc5a515ede104e640da39e5c185d5c1ae9d84&dir=svg&shallow=1";
-      flake = false;
-    };
-
 #    stylix = {
 #      url = "github:danth/stylix";
 #      inputs = {
@@ -124,7 +118,6 @@
       pelican-wings,
       quadlet-nix,
       proxmox-nixos,
-      dashboard-icons,
       ...
     }@inputs:
     let
