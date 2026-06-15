@@ -52,6 +52,7 @@ in
         discover
         #spectacle
         #ark
+        kwin-x11
       ];
     };
 
