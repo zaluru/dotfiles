@@ -110,6 +110,7 @@ in
             ## Tools
             proton-plus = enabled;
             bottles = enabled;
+            heroic-games-launcher = enabled;
 
             ## Creative
             trenchbroom = enabled;
