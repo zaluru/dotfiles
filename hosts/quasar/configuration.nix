@@ -11,6 +11,8 @@ let
   inherit (lib.zaluru) enabled;
   inherit (config.mine) user;
 
+  hostname = "quasar";
+
 in
 {
   imports = [
@@ -25,15 +27,16 @@ in
   ];
 
   config = {
+    services.resolved.enable = true; # Required for netbird dns
 
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
 
     boot.loader.grub = {
       enable = true;
       efiSupport = false;
       device = "/dev/sda";
     };
-    
+
     # TODO: check if this even works (from what i remember reading - not really)
     nix.settings = {
       max-jobs = 2;
@@ -43,6 +46,7 @@ in
     services.qemuGuest.enable = true;
 
     mine = {
+
       user = {
         enable = true;
         home-manager = enabled;
@@ -51,10 +55,15 @@ in
         xdg-default-dirs = enabled;
       };
 
+      container = {
+        quadlet-nix = {
+          enable = true;
+        };
+      };
+
       home-manager = {
         git = enabled;
         ssh-config = enabled;
-        #zsh = enabled;
       };
 
       apps = {
@@ -63,37 +72,51 @@ in
       cli-tools = {
         direnv = enabled;
         just = enabled;
-        nixvim = enabled;
+        fastfetch = enabled;
         zellij = enabled;
-        #tealdeer = enabled;
-        #croc = enabled;
+        tealdeer = enabled;
         btop = enabled;
         lsof = enabled;
-        #bat = enabled;
+        bat = enabled;
+        age = enabled; 
+        sops-nix = {
+          enable = true;
+          defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/${hostname}.yaml";
+        };
       };
 
       desktop = {
       };
 
       services = {
-        personal-website = enabled;
-      };
+        #personal-website = enabled;
+        #zitadel = enabled;
+        #netbird = enabled;
+        #pelican-wings = enabled;
+        #pelican = enabled;
+        #authentik = enabled;
+        #romm = enabled;
 
-      container = {
-        quadlet-nix = {
-          enable = true;
-          netbird = enabled;
+        beszel = {
+          agent = enabled;
+          hub = enabled;
         };
+        woodpecker-server = enabled;
+        kanidm-server = enabled;
+        kanidm-client = enabled;
+        netbird-client = enabled;
+        #proxmox-nixos = enabled;
+        incus = enabled;
+        forgejo = enabled;
+        #ente = enabled;
+        cockpit = enabled;
       };
 
       system = {
-        #boot = {
-        #  grub = enabled;
-        #};
         networking = {
           networkmanager = {
             enable = true;
-            hostname = "quasar";
+            hostname = "${hostname}";
           };
           firewall = enabled;
         };
