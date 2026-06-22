@@ -92,9 +92,9 @@
 
         # rocm required for davinci resolve - might also use opencl rusticl
         rocmPackages.clr.icd
-        rocmPackages_6.clr
-        rocmPackages_6.rocminfo
-        rocmPackages_6.rocm-runtime
+        rocmPackages.clr
+        rocmPackages.rocminfo
+        rocmPackages.rocm-runtime
         
         # provides both rusticl and the old clover, clover breaks davinci resolve
         # can choose between rocm and opencl with
@@ -115,7 +115,7 @@
   # Info about davinci resolve https://theholytachanka.com/posts/setting-up-resolve/
   # This is necesery because many programs hard-code the path to hip
   systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages_6.clr}"
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
   zramSwap = {
