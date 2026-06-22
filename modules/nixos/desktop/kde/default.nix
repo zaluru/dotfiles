@@ -21,8 +21,8 @@ in
     };
 
     wallpaper = mkOpt (types.listOf types.str) [
-      "${builtins.toString (inputs.self + /media/wallpapers/nanomortis/Live_and_Let_Die_upscayl_4x_realesr-animevideov3-x4.png)}"
-      "${builtins.toString (inputs.self + /media/wallpapers/arca.live-b-tsfiction-104052638.png)}"
+      "${builtins.toString (inputs.nix-private-config + /media/wallpapers/nanomortis/Live_and_Let_Die_upscayl_4x_realesr-animevideov3-x4.png)}"
+      "${builtins.toString (inputs.nix-private-config + /media/wallpapers/arca.live-b-tsfiction-104052638.png)}"
     ] "List of paths to wallpapers";
   };
 
