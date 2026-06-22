@@ -82,6 +82,11 @@
       url = "github:Jovian-Experiments/Jovian-NixOS/8f97d1dee8c0971b01cd6b17ccf913e8bb70f5d5";
     };
 
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
 
     #vicinae.url = "github:vicinaehq/vicinae/v0.9.6";
@@ -116,6 +121,7 @@
       #affinity-nix,
       jovian,
       pelican-wings,
+      microvm,
       quadlet-nix,
       proxmox-nixos,
       ...
