@@ -56,6 +56,7 @@ in
       mine = {
         apps = {
           steam = enabled;
+          heroic-games-launcher = enabled;
           hamachi = {
             enable = true;
             startOnBoot = false;
@@ -110,7 +111,6 @@ in
             ## Tools
             proton-plus = enabled;
             bottles = enabled;
-            heroic-games-launcher = enabled;
 
             ## Creative
             trenchbroom = enabled;
