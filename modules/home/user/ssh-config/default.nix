@@ -13,6 +13,8 @@ in
     home-manager.users.${user.name} = {lib, ...}: {
       programs.ssh = {
         enable = true;
+        enableDefaultConfig = false;
+      };
       home = {
         file = {
           # home-manager wrongly thinks it doesn't manage (and thus shouldn't clobber) this file due to the activation script
