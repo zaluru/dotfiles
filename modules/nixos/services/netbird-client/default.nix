@@ -26,7 +26,7 @@ in
         login = {
           enable = true;
           setupKeyFile = "/run/secrets/netbird-main-setup-key";
-          systemdDependencies = [ "sops-install-secrets.service" ];
+          #systemdDependencies = [ "sops-install-secrets.service" ]; # TODO: this for some reason leads to the service failing to authenticate
         };
         openFirewall = true;
         openInternalFirewall = true;
