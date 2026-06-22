@@ -93,18 +93,11 @@ in
         kanidm-server = enabled;
         kanidm-client = enabled;
         netbird-client = enabled;
-        proxmox-nixos = enabled;
+        #proxmox-nixos = enabled;
+        incus = enabled;
         forgejo = enabled;
         #ente = enabled;
-        #kanidm-server = enabled;
-        #ssh-agent = enabled;
         cockpit = enabled; 
- #       keyring-pam-kde = true;
-        #mpd = enabled;
-#        docker = {
-#          enable = true;
-#          scripts.check-versions = false;
-#        };
       };
 
       system = {
