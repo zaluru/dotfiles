@@ -16,7 +16,7 @@ let
   dev = with pkgs; [
     glow
     jq
-    nixfmt-rfc-style
+    nixfmt
     nixpkgs-fmt
     shellcheck
     statix
