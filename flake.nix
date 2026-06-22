@@ -200,6 +200,16 @@
             nixos-hardware.nixosModules.dell-latitude-e7240
           ];
         };
+        "installer-cloud" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./systems/x86_64-cloud/default.nix
+            nix-index-database.nixosModules.nix-index
+          ];
+        };
       };
       packages = forEachSupportedSystem (
         { pkgs }:
@@ -217,6 +227,7 @@
               disko.nixosModules.disko
             ];
           };
+          cloud = self.nixosConfigurations.installer-cloud.config.system.build.images.qemu;
           vm-nogui = nixos-generators.nixosGenerate {
             specialArgs = {
               inherit inputs;
