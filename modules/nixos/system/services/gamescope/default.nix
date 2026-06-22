@@ -17,6 +17,12 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.gamescope.enable = true;
+    programs.gamescope = {
+      enable = true;
+      # TODO: Aparently it has some problems with bubblewrap so should not be enabled until this issue is solved
+      # Might result in performance issues when disabled
+      # https://github.com/NixOS/nixpkgs/issues/523200
+      capSysNice = false;
+    };
   };
 }
