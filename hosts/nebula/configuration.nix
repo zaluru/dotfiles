@@ -52,7 +52,7 @@ in
           xdg.dataFile."home-manager/specialisation".text = "kde";
         };
       };
-      
+
       mine = {
         apps = {
           steam = enabled;
@@ -89,7 +89,7 @@ in
           mpv = enabled;
           #vscodium = enabled;
           vscode = enabled;
-          zed = enabled;
+          #zed = enabled;
           obs = enabled;
           blender = enabled;
           davinci-resolve = enabled;
@@ -129,9 +129,9 @@ in
             #shadps4 = enabled;
             #duckstation = enabled;
             prism-launcher = enabled;
-            ente-auth = enabled;
+            #ente-auth = enabled;
             #vintage-story = enabled;
-            #beyond-all-reason = enabled;
+            beyond-all-reason = enabled;
             retrodeck = enabled;
             taisei-project = enabled;
           };
@@ -225,9 +225,9 @@ in
         direnv = enabled;
         devbox = enabled;
         just = enabled;
-        ncmpcpp = enabled;
+        #ncmpcpp = enabled;
         fastfetch = enabled;
-        nixvim = enabled;
+        #nixvim = enabled;
         zellij = enabled;
         tealdeer = enabled;
         croc = enabled;
@@ -249,34 +249,14 @@ in
 
       services = {
         beszel.agent = enabled;
+        kanidm-client = enabled;
         #nixarr = enabled;
-        #cockpit = enabled;
-        nextdns = enabled;
+        cockpit = enabled;
+        #nextdns = enabled;
         lact = enabled;
         sunshine = enabled;
         mpd = enabled;
         kdeconnect = enabled;
-        #beszel = {
-        #  enable = true;
-        #  isAgent = true;
-        #};
-        docker = {
-          enable = true;
-          scripts.check-versions = false;
-        };
-        #ollama = enabled;
-        #prometheus = {
-        #  enable = true;
-        #  exporters = {
-        #    node = enabled;
-        #    smartctl = enabled;
-        #    zfs = enabled;
-        #  };
-        #};
-        #tailscale = {
-        #  enable = true;
-        #  authKeyFile = config.sops.secrets."tailscale/AUTH_KEY".path;
-        #  useRoutingFeatures = "client";
         #};
         ssh-agent = enabled;
       };
@@ -317,7 +297,7 @@ in
           #  fix-suspend = enabled;
           #  input-remapper = enabled;
           #  keyring = enabled;
-          #  openssh = enabled;
+          openssh = enabled;
           #  sleep-on-lan = enabled;
         };
         utils = {
