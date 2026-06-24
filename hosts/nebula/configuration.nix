@@ -196,7 +196,6 @@ in
       user = {
         enable = true;
         home-manager = enabled;
-        #ghToken = enabled;
         shell.package = pkgs.fish;
         xdg-default-dirs = enabled;
       };
@@ -284,6 +283,7 @@ in
           flakes = enabled;
           nh = enabled;
           index = enabled;
+          github-access-token = enabled;
         };
         security.sudonopass = enabled;
         services = {
