@@ -105,6 +105,9 @@ in
     sops = {
       inherit (config.mine.cli-tools.sops-nix) defaultSopsFile;
       age.keyFile = config.mine.cli-tools.sops-nix.ageKeyFile.path;
+      # TODO make this an option
+      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      age.generateKey = true;
     };
 
     systemd.services.decrypt-sops-after-network =
