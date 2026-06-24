@@ -93,6 +93,12 @@ in
           beszel_admins = {
             members = [ "zaluru" ];
           };
+          incus_users = {
+            members = [ ];
+          };
+          incus_admins = {
+            members = [ "zaluru" ];
+          };
         };
 
         systems.oauth2 = {
@@ -162,6 +168,29 @@ in
             };
           };
 
+          # https://canonical.com/lxd/docs/latest/howto/oidc_keycloak/
+          # TODO: this is not supported by incus
+          incus-blazar = {
+            present = true;
+            imageFile = "${pkgs.dashboard-icons-svg}/incus.svg";
+            preferShortUsername = true;
+            displayName = "Incus Blazar";
+            originUrl = "https://incus.blazar.h.zaluru.com:8888/oidc/callback";
+            originLanding = "https://incus.blazar.h.zaluru.com:8888";
+            basicSecretFile = config.sops.secrets.kanidm-oauth2-incus-blazar-secret.path;
+            scopeMaps = {
+              incus_users = ["openid" "email" "profile" "groups"];
+              incus_admins = ["openid" "email" "profile" "groups"];
+            };
+            claimMaps.forgejo_groups = {
+              joinType = "array";
+              valuesByGroup = {
+                incus_users = ["user"];
+                incus_admins = ["admin"];
+              };
+            };
+          };
+
         };
       };
     };
@@ -216,6 +245,7 @@ in
           "kanidm-oauth2-proxmox-secret"
           "kanidm-oauth2-forgejo-secret"
           "kanidm-oauth2-beszel-secret"
+          "kanidm-oauth2-incus-blazar-secret"
         ]
         (name: {
           owner = "kanidm";
