@@ -20,6 +20,8 @@ in
 
     services.nextdns = {
       enable = true;
+      # TODO: add profile id with sops
+      #arguments = [ "-profile" "" "-cache-size" "10MB" ];
     };
 
     systemd.services.nextdns-activate = {
