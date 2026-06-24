@@ -29,6 +29,12 @@ in
     services.mpd = {
       enable = true;
       user = "${user.name}";
+      #extraConfig = ''
+      #  auto_update "yes"
+      #  audio_output {
+      #    type "pipewire"
+      #    name "PipeWire Output"
+      #  }'';
       settings = {
         music_directory = "/music/";
         bind_to_address = "any";
