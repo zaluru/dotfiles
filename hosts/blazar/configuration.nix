@@ -17,8 +17,6 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../overlays/inputs
-    ../../modules/nixos/import.nix
-    ../../modules/home/import.nix
     (inputs.import-tree ../../modules-import-tree)
   ];
 

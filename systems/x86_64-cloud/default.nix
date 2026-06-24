@@ -16,10 +16,7 @@ in
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-
     ../../overlays/inputs
-    ../../modules/nixos/import.nix
-    ../../modules/home/import.nix
     (inputs.import-tree ../../modules-import-tree)
   ];
 
