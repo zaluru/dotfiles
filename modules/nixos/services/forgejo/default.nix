@@ -22,7 +22,7 @@ in
       reverse_proxy localhost:3000
     '';
 
-    services.openssh.settings.AcceptEnv = mkForce "GIT_PROTOCOL"; # TODO: Conflicts with proxmox, set temporarly for testing 
+    services.openssh.settings.AcceptEnv = mkForce [ "GIT_PROTOCOL" ]; # TODO: Conflicts with proxmox, set temporarly for testing 
 
     services.forgejo = {
       enable = true;
