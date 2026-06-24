@@ -17,6 +17,13 @@ in
   ];
 
   config = mkIf cfg.enable {
-    services.pterodactyl.wings.enable = true;
+    networking.firewall.allowedTCPPorts = [ 2022 9999 ]; # Have to open the sftp and api port of wings
+    systemd.services.wings.environment.TZ = "Etc/UTC"; # TODO: wings won't start without that
+    nixpkgs.overlays = [ inputs.pelican-wings.overlays.default ];
+    services.pelican.wings = {
+      enable = true;
+      extraConfigFile = builtins.toFile "config.yaml" ''
+      '';
+    };
   };
 }
