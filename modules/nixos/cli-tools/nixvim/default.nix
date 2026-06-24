@@ -17,7 +17,6 @@ in
 
   imports = [
     inputs.nixvim.nixosModules.nixvim
-    ../../../nixvim/import.nix
   ];
 
   config = mkIf cfg.enable {
