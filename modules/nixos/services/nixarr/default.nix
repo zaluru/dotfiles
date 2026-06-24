@@ -12,11 +12,15 @@ in
     enable = mkOpt types.bool false "nixarr";
   };
 
+# TODO: for now disabled
+/*
   imports = [
     inputs.nixarr.nixosModules.default
   ];
+  */
 
   config = mkIf cfg.enable {
+    /*
     nixarr = {
       enable = true;
       stateDir = "/data/storage-nvme-0/nixarr/.state";
@@ -25,12 +29,18 @@ in
       vpn = {
         enable = true;
         wgConf = "/data/storage-nvme-0/nixarr/.secret/wg.conf";
+        openTcpPorts = [ 40395 ];
+        openUdpPorts = [ 40395 ];
       };
 
       transmission = {
         enable = true;
         vpn.enable = true;
-        peerPort = 43909;
+        peerPort = 40395;
+      };
+
+      jellyfin = {
+        enable = true;
       };
 
       bazarr.enable = true;
@@ -41,5 +51,6 @@ in
       sonarr.enable = true;
       jellyseerr.enable = true;
     };
+    */
   };
 }
