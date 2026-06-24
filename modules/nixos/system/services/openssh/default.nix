@@ -18,7 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    users.users.root.openssh.authorizedKeys.keyFiles = mkIf cfg.root [ inputs.ssh-keys.outPath ];
+    #users.users.root.openssh.authorizedKeys.keyFiles = mkIf cfg.root [ inputs.ssh-keys.outPath ];
 
     # Passwordless sudo when SSH'ing with keys
     security.pam.sshAgentAuth.enable = true;
