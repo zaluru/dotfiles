@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
 
-      imports = [ ./layouts.nix ];
+      imports = [ ./_layouts.nix ];
 
       programs.zellij = {
         enable = true;
