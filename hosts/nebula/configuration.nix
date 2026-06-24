@@ -16,7 +16,7 @@ in
     #inputs.nixos-zaluru.nixosModules.configs
     ./hardware-configuration.nix
     ../../overlays/inputs
-    (inputs.import-tree ../../modules-import-tree)
+    (inputs.import-tree ../../modules)
   ];
 
   config = {

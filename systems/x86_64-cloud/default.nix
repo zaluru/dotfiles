@@ -17,7 +17,7 @@ in
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ../../overlays/inputs
-    (inputs.import-tree ../../modules-import-tree)
+    (inputs.import-tree ../../modules)
   ];
 
   config = {

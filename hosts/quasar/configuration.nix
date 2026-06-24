@@ -21,7 +21,7 @@ in
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
     ../../overlays/inputs
-    (inputs.import-tree ../../modules-import-tree)
+    (inputs.import-tree ../../modules)
   ];
 
   config = {
