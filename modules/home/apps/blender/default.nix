@@ -13,8 +13,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    home-manager.users.${user.name} = {
-      home.packages = with pkgs; [ blender-hip ];
-    };
+    # TODO: WIP
+    #home-manager.users.${user.name} = {
+      #home.packages = with pkgs; [ blender-hip ];
+      #error: blender-hip has been removed in favor of setting `config.rocmSupport = true`
+    #};
   };
 }
