@@ -15,6 +15,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    # TODO: WIP
     virtualisation = {
       quadlet = {
 
@@ -105,7 +106,7 @@ in
                 "NB_LOG_LEVEL" = "info";
                 "NB_LISTEN_ADDRESS" = ":80";
                 "NB_EXPOSED_ADDRESS" = "rels://netbird.${cfg.domainName}:443";
-                "NB_AUTH_SECRET" = "vtqPsBfsfMZbPSlkhkw8LdePyKsrGHJfZC+wRKBF4rQ";
+                "NB_AUTH_SECRET" = "";
                 "NB_ENABLE_STUN" = "true";
                 "NB_STUN_LOG_LEVEL" = "info";
                 "NB_STUN_PORTS" = "3478";
@@ -155,7 +156,6 @@ in
     };
 
     security.acme.certs."netbird.${cfg.domainName}".email = "${cfg.acmeEmail}";
-    security.acme.acceptTerms = true;
 
     services.nginx = {
       enable = true;
