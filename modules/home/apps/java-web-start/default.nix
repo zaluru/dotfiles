@@ -1,0 +1,25 @@
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+let
+
+  inherit (lib) mkIf types;
+  inherit (lib.zaluru) mkOpt;
+  inherit (config.mine) user;
+  cfg = config.mine.apps.java-web-start;
+
+in
+{
+  options.mine.apps.java-web-start = {
+    enable = mkOpt types.bool false "Install IcedTeaWeb for opening jnlp consoles";
+  };
+
+  config = mkIf cfg.enable {
+    home-manager.users.${user.name} = {
+      home.packages = with pkgs; [ adoptopenjdk-icedtea-web ];
+    };
+  };
+}

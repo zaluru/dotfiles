@@ -61,6 +61,7 @@ in
             enable = true;
             startOnBoot = false;
           };
+          java-web-start = enabled;
           waydroid = enabled;
           bruno = enabled;
           keepassxc = enabled;
