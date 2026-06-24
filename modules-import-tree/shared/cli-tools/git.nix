@@ -9,7 +9,6 @@ let
   inherit (lib) mkEnableOption mkIf;
   inherit (config.mine) user;
   cfg = config.mine.cli-tools.git;
-  aliases = import ../../../shared/aliases.nix;
 
 in
 {
@@ -22,9 +21,5 @@ in
       git
       gh
     ];
-
-    programs.fish.shellAliases = mkIf (
-      user.shell.package == pkgs.fish || config.mine.system.shell.fish.enable
-    ) aliases.git;
   };
 }

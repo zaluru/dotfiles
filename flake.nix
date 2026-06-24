@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    import-tree.url = "github:vic/import-tree";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     musnix.url = "github:musnix/musnix";
     nixarr.url = "github:rasmus-kirk/nixarr";
@@ -102,6 +103,7 @@
       nixpkgs,
       unstable,
       home-manager,
+      import-tree,
       nix-private-config,
       hyprland,
       plasma-manager,

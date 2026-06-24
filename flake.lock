@@ -496,6 +496,21 @@
         "type": "github"
       }
     },
+    "import-tree": {
+      "locked": {
+        "lastModified": 1778781969,
+        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
+        "owner": "vic",
+        "repo": "import-tree",
+        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vic",
+        "repo": "import-tree",
+        "type": "github"
+      }
+    },
     "jovian": {
       "inputs": {
         "nix-github-actions": "nix-github-actions",
@@ -620,10 +635,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1782154117,
-        "narHash": "sha256-W1sXEGV1P6kaky5B52xZ5x9N7FocfLGfU+TbeDuYBLo=",
+        "lastModified": 1782320442,
+        "narHash": "sha256-sMmFG5001mOxvzh9pwpXwPbj0xarSoybdpoG7T2wLxo=",
         "ref": "main",
-        "rev": "efe7cc4cea7f6988e83a2b9faa0b3f8d1565c4d3",
+        "rev": "3d40272df0a2ca387129dc9b0a63972b8027441a",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@codeberg.org/zaluru/nix-private-config.git"
@@ -1050,6 +1065,7 @@
         "disko": "disko",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "import-tree": "import-tree",
         "jovian": "jovian",
         "microvm": "microvm",
         "musnix": "musnix",

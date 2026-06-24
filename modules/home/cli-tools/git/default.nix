@@ -9,7 +9,6 @@ let
   inherit (lib) mkEnableOption mkIf;
   inherit (config.mine) user;
   cfg = config.mine.home-manager.git;
-  aliases = import ../../../shared/aliases.nix;
 
 in
 {
@@ -25,33 +24,27 @@ in
         git
         gh
       ];
-      programs.git = {
-        enable = true;
-        settings = {
-          user = {
-            name = "${user.name}";
-            email = "${user.email}";
+      programs = lib.mkMerge [
+        {
+          git = {
+            enable = true;
+            settings = {
+              user = {
+                name = "${user.name}";
+                email = "${user.email}";
+              };
+              safe.directory = "*";
+              init.defaultBranch = "main";
+              pull.rebase = false;
+              push.autoSetupRemote = true;
+              core.editor = "nvim";
+            };
           };
-          safe.directory = "*";
-          init = {
-            defaultBranch = "main";
-          };
-          pull = {
-            rebase = false;
-          };
-          push = {
-            autoSetupRemote = true;
-          };
-          core = {
-            editor = "nvim";
-          };
-        };
-      };
-      programs.zsh.shellAliases = mkIf (
-        config.mine.home-manager.zsh.enable
-        || user.shell.package == pkgs.zsh
-        || config.mine.system.shell.zsh.enable
-      ) aliases.git;
+        }
+        (lib.mkIf (user.shell.package == pkgs.fish) {
+          fish.shellAliases = config.mine.defaults.aliases.git;
+        })
+      ];
     };
   };
 }

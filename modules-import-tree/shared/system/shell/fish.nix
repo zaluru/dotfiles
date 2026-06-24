@@ -8,7 +8,6 @@ let
 
   inherit (lib) mkEnableOption mkIf;
   cfg = config.mine.system.shell.fish;
-  aliases = import ../../../../shared/aliases.nix;
 
 in
 {
@@ -28,7 +27,7 @@ in
 
     programs.fish = {
       enable = true;
-      shellAliases = aliases.eza // aliases.systemctl;
+      shellAliases = config.mine.defaults.aliases.eza // config.mine.defaults.aliases.systemctl;
       promptInit = mkIf pkgs.stdenv.isDarwin "starship init fish | source";
       interactiveShellInit = ''
         set -U fish_greeting ""
