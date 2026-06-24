@@ -19,6 +19,8 @@ in
     programs.steam = {
       enable = true;
       extraCompatPackages = [ pkgs.proton-ge-bin ];
+      # TODO: when gamescope and bubblewrap get fixed
+      #extraPackages = with pkgs; [ config.programs.gamescope.package ];
     };
   };
 }
