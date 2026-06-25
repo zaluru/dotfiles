@@ -20,6 +20,12 @@ in
       };
     };
 
+    launcher = mkOption {
+      default = "krunner";
+      description = "Choose the application launcher: 'krunner' or 'vicinae'";
+      type = types.enum [ "krunner" "vicinae" ];
+    };
+
     wallpaper = mkOpt (types.listOf types.str) [
       "${builtins.toString (inputs.nix-private-config + /media/wallpapers/nanomortis/Live_and_Let_Die_upscayl_4x_realesr-animevideov3-x4.png)}"
       "${builtins.toString (inputs.nix-private-config + /media/wallpapers/arca.live-b-tsfiction-104052638.png)}"
@@ -108,15 +114,6 @@ in
             wallpaper = builtins.head cfg.wallpaper; # This option currently does not support a list of wallpapers for every screen
           };
           kwin.virtualDesktops.names = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
-          #hotkeys = {
-          #  commands = {
-          #    vicinae = {
-          #      name = "Vicinae launcher";
-          #     command = "vicinae";
-          #      key = "Meta+Space";
-          #    };
-          #  };
-          #};
           configFile = {
             # Keyboard layout
             "kxkbrc"."Layout"."LayoutList" = "pl";
@@ -415,10 +412,14 @@ in
             "services/Alacritty.desktop" = {
               "New" = "Meta+Shift+Return";
             };
-            # Untill i find a way to integrate tofi or other launchers better
+
             "services/org.kde.krunner.desktop" = {
-              "_launch" = "Meta+D";
+              "_launch" = if cfg.launcher == "krunner" then "Meta+D" else "";
             };
+            "services/vicinae.desktop" = {
+              "toggle" = if cfg.launcher == "vicinae" then "Meta+D" else "";
+            };
+
           };
           dataFile = {
             "dolphin/view_properties/global/.directory"."Dolphin"."SortOrder" = 1;

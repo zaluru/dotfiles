@@ -103,7 +103,7 @@ in
           scarlett-gui = enabled;
           remmina = enabled;
           losless-cut = enabled;
-          #vicinae = enabled;
+          vicinae = enabled;
           nix-flatpak = {
             enable = true;
 
@@ -140,6 +140,7 @@ in
           kde = {
             enable = true;
             panel.screen = 1;
+            launcher = "vicinae";
           };
           plasma-login = enabled;
           default-apps = enabled;

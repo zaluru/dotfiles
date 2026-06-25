@@ -21,6 +21,10 @@ in
     home-manager.users.${user.name} = {
       programs.vicinae = {
         enable = true;
+        systemd = {
+          enable = true;
+          autoStart = true;
+        };
       };
     };
   };
