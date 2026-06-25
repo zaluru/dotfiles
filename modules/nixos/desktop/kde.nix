@@ -565,6 +565,20 @@ in
                   };
                 }
                 {
+                  # How to configure: https://github.com/nix-community/plasma-manager/issues/455
+                  name = "org.kde.plasma.weather";
+                  config = {
+                    WeatherStation = {
+                      updateInterval = 30; # (Mins)
+                      source = "${config.nix-private.plasma.weather-location}";
+                    };
+                    Appearance = {
+                      showTemperatureInCompactMode = true;
+                      showPressureInTooltip = true;
+                    };
+                  };
+                }
+                {
                   digitalClock = {
                     calendar.firstDayOfWeek = "monday";
                     time.format = "24h";
