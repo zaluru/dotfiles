@@ -19,10 +19,8 @@ in
 
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
-      imports = [ inputs.vicinae.homeManagerModules.default ];
-      services.vicinae = {
+      programs.vicinae = {
         enable = true;
-        autoStart = true;
       };
     };
   };

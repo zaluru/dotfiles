@@ -8,7 +8,6 @@ _: {
       "https://nix-community.cachix.org"
       "https://hyprland.cachix.org"
       "https://nixpkgs-unfree.cachix.org"
-      "https://vicinae.cachix.org"
       "https://cache.saumon.network/proxmox-nixos"
     ];
 
@@ -19,7 +18,6 @@ _: {
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nixpkgs-unfree.cachix.org-1:hqvoInulhbV4nJ9yJOEr+4wxhDV4xq2d1DK7S6Nj6rs="
-      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
       "proxmox-nixos:D9RYSWpQQC/msZUWphOY2I5RLH5Dd6yQcaHIuug7dWM="
     ];
   };

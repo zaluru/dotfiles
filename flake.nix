@@ -86,8 +86,6 @@
 
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
 
-    #vicinae.url = "github:vicinaehq/vicinae/v0.9.6";
-
     # Pinned packages
     # You can find the nixpkgs reference easly at https://www.nixhub.io/
     davinci-resolve-pkgs.url = "github:nixos/nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d"; # version 20.3.2
@@ -114,7 +112,6 @@
       sops-nix,
       nixarr,
       nixos-hardware,
-      #vicinae,
       #affinity-nix,
       jovian,
       pelican-wings,
