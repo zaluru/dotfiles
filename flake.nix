@@ -56,10 +56,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zjstatus = {
-      url = "github:dj95/zjstatus/v0.22.0";
-    };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -112,7 +108,6 @@
       #stylix,
       disko,
       nixos-generators,
-      zjstatus,
       nixos-wsl,
       nix-index-database,
       nixvim,
