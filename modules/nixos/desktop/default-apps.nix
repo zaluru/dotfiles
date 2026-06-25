@@ -99,7 +99,8 @@ in
             (mkAssoc "mail.desktop" [
               "x-scheme-handler/mailto"
             ])
-            (mkAssoc "javaws.desktop" [ # From adoptopenjdk-icedtea-web
+            (mkAssoc "javaws.desktop" [
+              # From adoptopenjdk-icedtea-web
               "application/x-java-jnlp-file"
             ])
           ];

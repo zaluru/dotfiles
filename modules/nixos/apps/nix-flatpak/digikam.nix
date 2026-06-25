@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.digikam = {
     enable = mkEnableOption "Enable digikam flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

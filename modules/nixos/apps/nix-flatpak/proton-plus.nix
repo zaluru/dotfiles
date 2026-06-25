@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.proton-plus = {
     enable = mkEnableOption "Enable ProtonPlus flatpak, compatibility tools manager";
-    
+
   };
 
   config = mkIf cfg.enable {

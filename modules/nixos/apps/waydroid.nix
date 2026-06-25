@@ -22,7 +22,7 @@ in
       package = pkgs.waydroid-nftables;
     };
 
-    environment.systemPackages =  [ pkgs.waydroid-helper ];
+    environment.systemPackages = [ pkgs.waydroid-helper ];
 
     systemd = {
       packages = [ pkgs.waydroid-helper ];

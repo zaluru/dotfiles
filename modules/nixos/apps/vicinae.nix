@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.vicinae = {
     enable = mkEnableOption "Enable vicinae - high performance launcher.";
-    
+
   };
 
   config = mkIf cfg.enable {

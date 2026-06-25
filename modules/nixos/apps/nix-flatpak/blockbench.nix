@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.blockbench = {
     enable = mkEnableOption "Enable blockbench flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

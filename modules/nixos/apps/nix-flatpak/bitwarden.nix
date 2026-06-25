@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.bitwarden = {
     enable = mkEnableOption "Enable bitwarden password manager flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

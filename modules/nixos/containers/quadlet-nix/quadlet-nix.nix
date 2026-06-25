@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -12,7 +18,9 @@ in
   imports = [ inputs.quadlet-nix.nixosModules.quadlet ];
 
   options.mine.container.quadlet-nix = {
-    enable = mkOpt types.bool false "quadlet-nix: Manages Podman containers, networks, pods, etc. on NixOS via Quadlet.";
+    enable =
+      mkOpt types.bool false
+        "quadlet-nix: Manages Podman containers, networks, pods, etc. on NixOS via Quadlet.";
   };
 
   config = mkIf cfg.enable {

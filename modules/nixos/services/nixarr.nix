@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -12,45 +18,45 @@ in
     enable = mkOpt types.bool false "nixarr";
   };
 
-# TODO: for now disabled
-/*
-  imports = [
-    inputs.nixarr.nixosModules.default
-  ];
+  # TODO: for now disabled
+  /*
+    imports = [
+      inputs.nixarr.nixosModules.default
+    ];
   */
 
   config = mkIf cfg.enable {
     /*
-    nixarr = {
-      enable = true;
-      stateDir = "/data/storage-nvme-0/nixarr/.state";
-      mediaDir = "/data/storage-nvme-0/nixarr/media";
-
-      vpn = {
+      nixarr = {
         enable = true;
-        wgConf = "/data/storage-nvme-0/nixarr/.secret/wg.conf";
-        openTcpPorts = [ 40395 ];
-        openUdpPorts = [ 40395 ];
-      };
+        stateDir = "/data/storage-nvme-0/nixarr/.state";
+        mediaDir = "/data/storage-nvme-0/nixarr/media";
 
-      transmission = {
-        enable = true;
-        vpn.enable = true;
-        peerPort = 40395;
-      };
+        vpn = {
+          enable = true;
+          wgConf = "/data/storage-nvme-0/nixarr/.secret/wg.conf";
+          openTcpPorts = [ 40395 ];
+          openUdpPorts = [ 40395 ];
+        };
 
-      jellyfin = {
-        enable = true;
-      };
+        transmission = {
+          enable = true;
+          vpn.enable = true;
+          peerPort = 40395;
+        };
 
-      bazarr.enable = true;
-      lidarr.enable = true;
-      prowlarr.enable = true;
-      radarr.enable = true;
-      readarr.enable = true;
-      sonarr.enable = true;
-      jellyseerr.enable = true;
-    };
+        jellyfin = {
+          enable = true;
+        };
+
+        bazarr.enable = true;
+        lidarr.enable = true;
+        prowlarr.enable = true;
+        radarr.enable = true;
+        readarr.enable = true;
+        sonarr.enable = true;
+        jellyseerr.enable = true;
+      };
     */
   };
 }

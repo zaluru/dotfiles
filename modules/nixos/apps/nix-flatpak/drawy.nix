@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.drawy = {
     enable = mkEnableOption "Enable drawy - infinite canvas app.";
-    
+
   };
 
   config = mkIf cfg.enable {

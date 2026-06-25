@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.beyond-all-reason = {
     enable = mkEnableOption "Enable beyond all reason flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

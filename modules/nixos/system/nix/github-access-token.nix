@@ -12,7 +12,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    
+
     nix.extraOptions = ''
       !include ${config.sops.templates."nix-github-access-token.conf".path}
     '';

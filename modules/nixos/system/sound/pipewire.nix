@@ -20,7 +20,6 @@ in
       pkgs.pavucontrol
     ];
 
-
     # Pipewire
     # TODO there is some crackling noise in discord, propably related to those:
     # https://www.reddit.com/r/linux_gaming/comments/vg8gl2/comment/id4liim/

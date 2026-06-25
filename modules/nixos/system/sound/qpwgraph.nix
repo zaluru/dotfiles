@@ -21,7 +21,8 @@ in
       qpwgraph
     ];
     home-manager.users.${user.name} = {
-      xdg.configFile."autostart/org.rncbc.qpwgraph.desktop".text = builtins.readFile "${pkgs.qpwgraph}/share/applications/org.rncbc.qpwgraph.desktop";
+      xdg.configFile."autostart/org.rncbc.qpwgraph.desktop".text =
+        builtins.readFile "${pkgs.qpwgraph}/share/applications/org.rncbc.qpwgraph.desktop";
     };
   };
 }

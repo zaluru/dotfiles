@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.duckstation = {
     enable = mkEnableOption "Enable duckstation flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

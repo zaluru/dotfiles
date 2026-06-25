@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.upscayl = {
     enable = mkEnableOption "Enable Upscayl flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

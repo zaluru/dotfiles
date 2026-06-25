@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.rpcs3 = {
     enable = mkEnableOption "Enable rpcs3 flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
 
   inherit (lib) mkEnableOption mkIf;
@@ -15,7 +20,7 @@ in
     home-manager.users.${user.name} = {
       programs.brave = {
         enable = true;
-        package = pkgs.brave.override { 
+        package = pkgs.brave.override {
           commandLineArgs = "--enable-features=VaapiVideoDecodeLinuxGL,WebRTCPipeWireCapturer";
         };
       };

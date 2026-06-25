@@ -47,11 +47,12 @@ in
       ];
     };
 
-    services.caddy.virtualHosts."cockpit.${config.mine.system.networking.networkmanager.hostname}.h.zaluru.com".extraConfig = ''
-      reverse_proxy http://127.0.0.1:9090 {
-        header_up Host {host}
-        header_up X-Forwarded-Proto {scheme}
-      }
-    '';
+    services.caddy.virtualHosts."cockpit.${config.mine.system.networking.networkmanager.hostname}.h.zaluru.com".extraConfig =
+      ''
+        reverse_proxy http://127.0.0.1:9090 {
+          header_up Host {host}
+          header_up X-Forwarded-Proto {scheme}
+        }
+      '';
   };
 }

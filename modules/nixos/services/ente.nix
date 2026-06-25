@@ -95,14 +95,19 @@ in
       }
     '';
 
-    sops.secrets = lib.genAttrs [
-      "ente-encryption-key"
-      "ente-hash-key"
-      "ente-jwt-secret"
-      "ente-s3-endpoint"
-      "ente-s3-bucket"
-      "ente-s3-secret"
-      "ente-s3-key"
-    ] (name: { owner = "ente"; });
+    sops.secrets =
+      lib.genAttrs
+        [
+          "ente-encryption-key"
+          "ente-hash-key"
+          "ente-jwt-secret"
+          "ente-s3-endpoint"
+          "ente-s3-bucket"
+          "ente-s3-secret"
+          "ente-s3-key"
+        ]
+        (name: {
+          owner = "ente";
+        });
   };
 }

@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types mkForce;
@@ -23,8 +29,9 @@ in
       # sudo rm -r /var/lib/incus
       preseed = {
         config = {
-          "core.https_address" = "incus.${config.mine.system.networking.networkmanager.hostname}.h.zaluru.com:8888";
-          
+          "core.https_address" =
+            "incus.${config.mine.system.networking.networkmanager.hostname}.h.zaluru.com:8888";
+
           # BEGIN TLS
           # On client device
           ## Enter the web ui
@@ -40,7 +47,7 @@ in
 
           # on server device
           ## incus config trust add-certificate incus-ui.crt
-          
+
           # On client device
           ## Enter the web ui, firefox will ask you if you want it to send the certificate
           ## Set Remember this decision to permamently
@@ -52,7 +59,7 @@ in
           #"oidc.issuer" = "https://idm.i.zaluru.com/ui/oauth2";
           #"oidc.client.id" = "incus-blazar";
           # TODO: Not sure if this will get accepted with sops
-          # "oidc.client.secret" = "";  
+          # "oidc.client.secret" = "";
           # Currently setting it like so:
           # incus config set oidc.client.secret - < /run/secrets/kanidm-oauth2-incus-blazar-secret
           # TODO: hmm lxd supports this but incus does not :C
@@ -97,7 +104,7 @@ in
         ];
       };
     };
-    
+
     networking.nftables.enable = true;
     networking.firewall.interfaces.incusbr0.allowedTCPPorts = [
       53
@@ -110,9 +117,10 @@ in
       8888 # Incus
     ];
 
-    users.users."zaluru".extraGroups = ["incus-admin"];
+    users.users."zaluru".extraGroups = [ "incus-admin" ];
 
-    sops.secrets."kanidm-oauth2-incus-${config.mine.system.networking.networkmanager.hostname}-secret" = {};
+    sops.secrets."kanidm-oauth2-incus-${config.mine.system.networking.networkmanager.hostname}-secret" =
+      { };
 
     networking.firewall.allowedTCPPorts = [ 8888 ];
   };

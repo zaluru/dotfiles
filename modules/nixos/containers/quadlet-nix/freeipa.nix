@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -126,7 +132,7 @@ in
       };
     };
     networking.hosts = {
-      "192.168.0.17" = ["${cfg.domainName}"];
+      "192.168.0.17" = [ "${cfg.domainName}" ];
     };
   };
 }

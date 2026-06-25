@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.prism-launcher = {
     enable = mkEnableOption "Enable prism-launcher flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

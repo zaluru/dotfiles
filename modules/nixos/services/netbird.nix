@@ -35,15 +35,15 @@ in
       recommendedTlsSettings = true;
 
       upstreams = {
-        netbird_dashboard.servers."127.0.0.1:8080" = {};
+        netbird_dashboard.servers."127.0.0.1:8080" = { };
 
-        netbird_signal.servers."127.0.0.1:10000" = {};
+        netbird_signal.servers."127.0.0.1:10000" = { };
 
-        netbird_signal_ws.servers."127.0.0.1:8083" = {};
+        netbird_signal_ws.servers."127.0.0.1:8083" = { };
 
-        netbird_management.servers."127.0.0.1:8081" = {};
+        netbird_management.servers."127.0.0.1:8081" = { };
 
-        netbird_relay.servers."127.0.0.1:8084" = {};
+        netbird_relay.servers."127.0.0.1:8084" = { };
       };
 
       virtualHosts = {
@@ -131,7 +131,6 @@ in
         };
       };
     };
-
 
     networking.firewall.allowedTCPPorts = [
       80

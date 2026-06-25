@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types mkForce;
@@ -37,7 +43,7 @@ in
         WOODPECKER_FORGEJO = "true";
         WOODPECKER_FORGEJO_URL = "https://${cfg.hostForgejo}";
         WOODPECKER_FORGEJO_CLIENT_FILE = "%d/woodpecker-forgejo-client";
-        WOODPECKER_FORGEJO_SECRET_FILE = "%d/woodpecker-forgejo-secret"; 
+        WOODPECKER_FORGEJO_SECRET_FILE = "%d/woodpecker-forgejo-secret";
 
         WOODPECKER_FORCE_IGNORE_SERVICE_FAILURE = "false"; # is true by default. To prepare for v4.0.0, set it to false and update your pipeline definitions if needed."
       };
@@ -54,8 +60,8 @@ in
       ];
     };
 
-    sops.secrets.woodpecker-forgejo-client = {};
-    sops.secrets.woodpecker-forgejo-secret = {};
+    sops.secrets.woodpecker-forgejo-client = { };
+    sops.secrets.woodpecker-forgejo-secret = { };
 
     environment.systemPackages = [ pkgs.woodpecker-cli ];
 

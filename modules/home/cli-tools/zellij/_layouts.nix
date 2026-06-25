@@ -1,9 +1,10 @@
 { inputs, pkgs, ... }:
 let
-  zjstatus = (import inputs.unstable {
-    inherit (pkgs) config;
-    inherit (pkgs.stdenv.hostPlatform) system;
-  }).zellijPlugins.zjstatus;
+  zjstatus =
+    (import inputs.unstable {
+      inherit (pkgs) config;
+      inherit (pkgs.stdenv.hostPlatform) system;
+    }).zellijPlugins.zjstatus;
 in
 {
   xdg.configFile."zellij/layouts/default.kdl".text = ''

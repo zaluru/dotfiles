@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -15,8 +20,8 @@ in
   config = mkIf cfg.enable {
     # TODO: WIP
     #home-manager.users.${user.name} = {
-      #home.packages = with pkgs; [ blender-hip ];
-      #error: blender-hip has been removed in favor of setting `config.rocmSupport = true`
+    #home.packages = with pkgs; [ blender-hip ];
+    #error: blender-hip has been removed in favor of setting `config.rocmSupport = true`
     #};
   };
 }

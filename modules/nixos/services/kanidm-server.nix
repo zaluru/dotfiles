@@ -46,7 +46,10 @@ in
           tls_chain = "${certDirectory}/fullchain.pem";
 
           http_client_address_info = {
-            x-forward-for = ["127.0.0.1" "127.0.0.0/8"];
+            x-forward-for = [
+              "127.0.0.1"
+              "127.0.0.0/8"
+            ];
           };
           # TODO: might have to put that in front of haproxy, not sure if caddy supports this, currently not using ldap for anything.
           #ldap_client_address_info = {
@@ -111,14 +114,24 @@ in
             originLanding = "https://pve.i.zaluru.com";
             basicSecretFile = config.sops.secrets.kanidm-oauth2-proxmox-secret.path;
             scopeMaps = {
-              proxmox_users = ["openid" "email" "profile" "groups"];
-              proxmox_admins = ["openid" "email" "profile" "groups"];
+              proxmox_users = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
+              proxmox_admins = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
             };
             claimMaps.proxmox_groups = {
               joinType = "array";
               valuesByGroup = {
-                proxmox_users = ["user"];
-                proxmox_admins = ["admin"];
+                proxmox_users = [ "user" ];
+                proxmox_admins = [ "admin" ];
               };
             };
           };
@@ -132,16 +145,31 @@ in
             originLanding = "https://git.i.zaluru.com/user/oauth2/kanidm";
             basicSecretFile = config.sops.secrets.kanidm-oauth2-forgejo-secret.path;
             scopeMaps = {
-              forgejo_users = ["openid" "email" "profile" "groups"];
-              forgejo_admins = ["openid" "email" "profile" "groups"];
-              forgejo_restricted  = ["openid" "email" "profile" "groups"];
+              forgejo_users = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
+              forgejo_admins = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
+              forgejo_restricted = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
             };
             claimMaps.forgejo_groups = {
               joinType = "array";
               valuesByGroup = {
-                forgejo_users = ["user"];
-                forgejo_admins = ["admin"];
-                forgejo_restricted = ["restricted"];
+                forgejo_users = [ "user" ];
+                forgejo_admins = [ "admin" ];
+                forgejo_restricted = [ "restricted" ];
               };
             };
           };
@@ -156,14 +184,24 @@ in
             originLanding = "https://mon.i.zaluru.com";
             basicSecretFile = config.sops.secrets.kanidm-oauth2-beszel-secret.path;
             scopeMaps = {
-              beszel_users = ["openid" "email" "profile" "groups"];
-              beszel_admins = ["openid" "email" "profile" "groups"];
+              beszel_users = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
+              beszel_admins = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
             };
             claimMaps.forgejo_groups = {
               joinType = "array";
               valuesByGroup = {
-                beszel_users = ["user"];
-                beszel_admins = ["admin"];
+                beszel_users = [ "user" ];
+                beszel_admins = [ "admin" ];
               };
             };
           };
@@ -179,14 +217,24 @@ in
             originLanding = "https://incus.blazar.h.zaluru.com:8888";
             basicSecretFile = config.sops.secrets.kanidm-oauth2-incus-blazar-secret.path;
             scopeMaps = {
-              incus_users = ["openid" "email" "profile" "groups"];
-              incus_admins = ["openid" "email" "profile" "groups"];
+              incus_users = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
+              incus_admins = [
+                "openid"
+                "email"
+                "profile"
+                "groups"
+              ];
             };
             claimMaps.forgejo_groups = {
               joinType = "array";
               valuesByGroup = {
-                incus_users = ["user"];
-                incus_admins = ["admin"];
+                incus_users = [ "user" ];
+                incus_admins = [ "admin" ];
               };
             };
           };

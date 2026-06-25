@@ -27,19 +27,18 @@ in
         APP_URL = "https://${cfg.domain}";
         USER_CREATION = "true"; # Creates OAUTH2 users
         # TODO: Change to this when USER_EMAIL and USER_PASSWORD accept a file
-        #USER_EMAIL_FILE = "%d/beszel-initial-user-email"; # Somethings fucked i don't know why it does not accept the email 
+        #USER_EMAIL_FILE = "%d/beszel-initial-user-email"; # Somethings fucked i don't know why it does not accept the email
         #USER_PASSWORD_FILE = "%d/beszel-initial-user-password";
         DISABLE_PASSWORD_AUTH = "true";
       };
     };
 
-
     systemd.services.beszel-hub = {
-    # TODO: Change to this when USER_EMAIL and USER_PASSWORD accept a file
-    #  serviceConfig.LoadCredential = [
-    #    "beszel-initial-user-email:${config.sops.secrets.beszel-initial-user-email.path}"
-    #    "beszel-initial-user-password:${config.sops.secrets.beszel-initial-user-password.path}"
-    #  ];
+      # TODO: Change to this when USER_EMAIL and USER_PASSWORD accept a file
+      #  serviceConfig.LoadCredential = [
+      #    "beszel-initial-user-email:${config.sops.secrets.beszel-initial-user-email.path}"
+      #    "beszel-initial-user-password:${config.sops.secrets.beszel-initial-user-password.path}"
+      #  ];
       serviceConfig.EnvironmentFile = config.sops.templates."beszel-hub-secrets-env".path;
       restartTriggers = [
         config.sops.secrets.beszel-initial-user-email.path
@@ -47,8 +46,8 @@ in
       ];
     };
 
-    sops.secrets.beszel-initial-user-email = {};
-    sops.secrets.beszel-initial-user-password = {};
+    sops.secrets.beszel-initial-user-email = { };
+    sops.secrets.beszel-initial-user-password = { };
 
     sops.templates."beszel-hub-secrets-env" = {
       content = ''

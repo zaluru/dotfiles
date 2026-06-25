@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -39,7 +45,6 @@ in
     systemd.tmpfiles.rules = [
       "C /etc/caddy/pve-root-ca.pem 0400 caddy caddy - /etc/pve/pve-root-ca.pem"
     ];
-
 
     # Make vmbr0 bridge visible in Proxmox web interface
     services.proxmox-ve.bridges = [ "vmbr0" ];

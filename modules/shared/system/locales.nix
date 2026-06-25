@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
 
   inherit (lib) mkEnableOption mkIf;
@@ -14,7 +19,11 @@ in
     i18n = {
       defaultLocale = "en_US.UTF-8";
 
-      supportedLocales = ["en_US.UTF-8/UTF-8" "pl_PL.UTF-8/UTF-8" "C.UTF-8/UTF-8"];
+      supportedLocales = [
+        "en_US.UTF-8/UTF-8"
+        "pl_PL.UTF-8/UTF-8"
+        "C.UTF-8/UTF-8"
+      ];
 
       extraLocaleSettings = {
         LC_CTYPE = "pl_PL.UTF8";

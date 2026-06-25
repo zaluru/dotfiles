@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types mkForce;
@@ -22,7 +28,7 @@ in
       reverse_proxy localhost:3000
     '';
 
-    services.openssh.settings.AcceptEnv = mkForce [ "GIT_PROTOCOL" ]; # TODO: Conflicts with proxmox, set temporarly for testing 
+    services.openssh.settings.AcceptEnv = mkForce [ "GIT_PROTOCOL" ]; # TODO: Conflicts with proxmox, set temporarly for testing
 
     services.forgejo = {
       enable = true;
@@ -36,11 +42,11 @@ in
           # https://github.com/NixOS/nixpkgs/issues/306205
           START_SSH_SERVER = true;
           DISABLE_SSH = true;
-          ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}/"; 
+          ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}/";
           HTTP_PORT = 3000;
         };
         service = {
-          DISABLE_REGISTRATION = false; 
+          DISABLE_REGISTRATION = false;
           ALLOW_ONLY_EXTERNAL_REGISTRATION = true; # so only users from kanidm can register
           ENABLE_INTERNAL_SIGNIN = false;
           ENABLE_BASIC_AUTHENTICATION = false;
@@ -52,13 +58,15 @@ in
     };
 
     sops.secrets.forgejo-admin-password.owner = "forgejo";
-    systemd.services.forgejo.preStart = let 
-      adminCmd = "${lib.getExe config.services.forgejo.package} admin user";
-      pwd = config.sops.secrets.forgejo-admin-password;
-      user = "admin-zaluru"; # Forgejo doesn't allow creation of an account named "admin"
-    in ''
-      ${adminCmd} create --admin --email "root@localhost" --username ${user} --password "$(tr -d '\n' < ${pwd.path})" || true
-    '';
+    systemd.services.forgejo.preStart =
+      let
+        adminCmd = "${lib.getExe config.services.forgejo.package} admin user";
+        pwd = config.sops.secrets.forgejo-admin-password;
+        user = "admin-zaluru"; # Forgejo doesn't allow creation of an account named "admin"
+      in
+      ''
+        ${adminCmd} create --admin --email "root@localhost" --username ${user} --password "$(tr -d '\n' < ${pwd.path})" || true
+      '';
 
     environment.systemPackages = [ pkgs.forgejo-cli ];
   };

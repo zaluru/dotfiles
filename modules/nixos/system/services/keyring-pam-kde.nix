@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
 
   inherit (lib) mkEnableOption mkIf mkForce;
@@ -14,7 +19,7 @@ in
     enable = mkEnableOption "Enable KDE keyring pam service";
   };
 
-# TODO: does not seem to be working :|
+  # TODO: does not seem to be working :|
   config = mkIf cfg.enable {
     nixpkgs.overlays = [ myOverlay ];
 

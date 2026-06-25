@@ -26,9 +26,11 @@ in
     "${inputs.unstable}/nixos/modules/virtualisation/libvirtd.nix"
   ];
 
-
   config = mkIf cfg.enable {
-    users.users.${user.name}.extraGroups = mkIf user.enable [ "libvirtd" "qemu-libvirtd" ];
+    users.users.${user.name}.extraGroups = mkIf user.enable [
+      "libvirtd"
+      "qemu-libvirtd"
+    ];
 
     environment.systemPackages = with pkgs; [
       virt-manager

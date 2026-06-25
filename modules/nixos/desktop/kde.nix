@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types mkOption;
@@ -11,11 +17,13 @@ in
   options.mine.desktop.kde = {
     enable = mkOpt types.bool false "KDE";
     panel = mkOption {
-      default = {};
+      default = { };
       description = "Options for the kde panel";
       type = types.submodule {
         options = {
-          screen = mkOpt types.int 0 "Choose on which screen the panel will be displayed, defaults to screen 0";
+          screen =
+            mkOpt types.int 0
+              "Choose on which screen the panel will be displayed, defaults to screen 0";
         };
       };
     };
@@ -23,12 +31,20 @@ in
     launcher = mkOption {
       default = "krunner";
       description = "Choose the application launcher: 'krunner' or 'vicinae'";
-      type = types.enum [ "krunner" "vicinae" ];
+      type = types.enum [
+        "krunner"
+        "vicinae"
+      ];
     };
 
     wallpaper = mkOpt (types.listOf types.str) [
-      "${builtins.toString (inputs.nix-private-config + /media/wallpapers/nanomortis/Live_and_Let_Die_upscayl_4x_realesr-animevideov3-x4.png)}"
-      "${builtins.toString (inputs.nix-private-config + /media/wallpapers/arca.live-b-tsfiction-104052638.png)}"
+      "${builtins.toString (
+        inputs.nix-private-config
+        + /media/wallpapers/nanomortis/Live_and_Let_Die_upscayl_4x_realesr-animevideov3-x4.png
+      )}"
+      "${builtins.toString (
+        inputs.nix-private-config + /media/wallpapers/arca.live-b-tsfiction-104052638.png
+      )}"
     ] "List of paths to wallpapers";
   };
 
@@ -43,7 +59,7 @@ in
 
       systemPackages = [
         pkgs.xsettingsd # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13
-        pkgs.xrdb # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13 
+        pkgs.xrdb # Required for proper cursor on xwayland apps https://discourse.nixos.org/t/system-cursor-theme-and-scaling-not-being-followed-by-some-apps-system-packages-flatpak/49917/13
         pkgs.kdePackages.partitionmanager # Does not seem to work when installed to users home manager, related issue https://github.com/NixOS/nixpkgs/issues/273659
       ];
 
@@ -69,7 +85,8 @@ in
     home-manager.users.${user.name} = {
 
       # Required for proper cursor on xwayland apps https://www.reddit.com/r/NixOS/comments/1htxgly/steam_not_using_cursor_theme/
-      home.file.".local/share/icons/default".source = "${pkgs.kdePackages.breeze}/share/icons/breeze_cursors";
+      home.file.".local/share/icons/default".source =
+        "${pkgs.kdePackages.breeze}/share/icons/breeze_cursors";
 
       xdg.portal = {
         enable = true;
@@ -113,7 +130,17 @@ in
           kscreenlocker.appearance = {
             wallpaper = builtins.head cfg.wallpaper; # This option currently does not support a list of wallpapers for every screen
           };
-          kwin.virtualDesktops.names = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
+          kwin.virtualDesktops.names = [
+            "1"
+            "2"
+            "3"
+            "4"
+            "5"
+            "6"
+            "7"
+            "8"
+            "9"
+          ];
           configFile = {
             # Keyboard layout
             "kxkbrc"."Layout"."LayoutList" = "pl";
@@ -128,7 +155,8 @@ in
             "dolphinrc"."General/$i"."Version[$i]" = 202;
             "dolphinrc"."KFileDialog Settings"."Places Icons Auto-resize" = false;
             "dolphinrc"."KFileDialog Settings"."Places Icons Static Size" = 22;
-            "dolphinrc"."PreviewSettings"."Plugins" = "mltpreview,appimagethumbnail,audiothumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,windowsexethumbnail,windowsimagethumbnail,directorythumbnail";
+            "dolphinrc"."PreviewSettings"."Plugins" =
+              "mltpreview,appimagethumbnail,audiothumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,windowsexethumbnail,windowsimagethumbnail,directorythumbnail";
 
             # File dialog options
             "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
@@ -156,7 +184,7 @@ in
             # Mouse
             "kcminputrc"."Libinput/5426/138/Razer Razer Viper Mini"."PointerAcceleration" = 0.000;
             "kcminputrc"."Libinput/5426/138/Razer Razer Viper Mini"."PointerAccelerationProfile" = 1;
-            
+
             # Look and feel
             "kdeglobals"."General"."AccentColor" = "73,43,91";
             "kdeglobals"."KDE"."AnimationDurationFactor" = 0.17677669529663687;
@@ -171,7 +199,8 @@ in
             # Krohnkite tiling
             "kwinrc"."Plugins"."krohnkiteEnabled" = true;
             "kwinrc"."Script-krohnkite"."enableStackedLayout" = true;
-            "kwinrc"."Script-krohnkite"."screenDefaultLayout" = "DP-1:tilelayout,DP-1:3:stackedlayout,DP-2:tilelayout";
+            "kwinrc"."Script-krohnkite"."screenDefaultLayout" =
+              "DP-1:tilelayout,DP-1:3:stackedlayout,DP-2:tilelayout";
             "kwinrc"."Script-krohnkite"."screenGapBottom" = 10;
             "kwinrc"."Script-krohnkite"."screenGapLeft" = 10;
             "kwinrc"."Script-krohnkite"."screenGapRight" = 10;
@@ -236,7 +265,7 @@ in
             "krunnerrc"."Plugins"."org.kde.datetimeEnabled" = false;
             "krunnerrc"."Plugins"."unitconverterEnabled" = false;
             "krunnerrc"."Plugins"."windowsEnabled" = false;
-            
+
             # Single virtual desktops row
             "kwinrc"."Desktops"."Rows" = 1;
           };
@@ -353,7 +382,6 @@ in
               #"Window On All Desktops" = "Meta+Shift+D";
               "Window On All Desktops" = [ ];
 
-
               "KrohnkiteBTreeLayout" = [ ];
               "KrohnkiteColumnsLayout" = [ ];
               "KrohnkiteDecrease" = [ ];
@@ -425,7 +453,8 @@ in
             "dolphin/view_properties/global/.directory"."Dolphin"."SortOrder" = 1;
             "dolphin/view_properties/global/.directory"."Dolphin"."SortRole" = "creationtime";
             "dolphin/view_properties/global/.directory"."Dolphin"."ViewMode" = 1;
-            "dolphin/view_properties/global/.directory"."Dolphin"."VisibleRoles" = "CustomizedDetails,Details_text,Details_size,Details_creationtime,Details_type";
+            "dolphin/view_properties/global/.directory"."Dolphin"."VisibleRoles" =
+              "CustomizedDetails,Details_text,Details_size,Details_creationtime,Details_type";
           };
 
           powerdevil.AC = {

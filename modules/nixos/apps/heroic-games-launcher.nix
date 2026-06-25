@@ -10,10 +10,11 @@ let
   cfg = config.mine.apps.heroic-games-launcher;
 
   heroic-custom = pkgs.heroic.override {
-    extraPkgs = pkgs': with pkgs'; [
-      gamescope
-      gamemode
-    ];
+    extraPkgs =
+      pkgs': with pkgs'; [
+        gamescope
+        gamemode
+      ];
   };
 in
 {

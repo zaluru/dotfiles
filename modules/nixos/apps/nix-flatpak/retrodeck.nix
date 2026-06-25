@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.retrodeck = {
     enable = mkEnableOption "Enable RetroDECK - All-in-one Retro Gaming Platform";
-    
+
   };
 
   config = mkIf cfg.enable {

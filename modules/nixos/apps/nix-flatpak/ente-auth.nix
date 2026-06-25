@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.ente-auth = {
     enable = mkEnableOption "Enable ente auth 2FA app";
-    
+
   };
 
   config = mkIf cfg.enable {

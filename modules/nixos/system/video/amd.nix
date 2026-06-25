@@ -15,7 +15,7 @@ in
     enable = mkEnableOption "Enable AMD Video Drivers";
   };
 
-# TODO: wip
+  # TODO: wip
   config = mkIf cfg.enable {
     hardware.graphics = {
       enable = true;

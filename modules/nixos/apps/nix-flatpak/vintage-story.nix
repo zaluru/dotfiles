@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.vintage-story = {
     enable = mkEnableOption "Enable vintage story flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

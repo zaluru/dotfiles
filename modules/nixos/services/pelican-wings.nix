@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -17,13 +23,15 @@ in
   ];
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 2022 9999 ]; # Have to open the sftp and api port of wings
+    networking.firewall.allowedTCPPorts = [
+      2022
+      9999
+    ]; # Have to open the sftp and api port of wings
     systemd.services.wings.environment.TZ = "Etc/UTC"; # TODO: wings won't start without that
     nixpkgs.overlays = [ inputs.pelican-wings.overlays.default ];
     services.pelican.wings = {
       enable = true;
-      extraConfigFile = builtins.toFile "config.yaml" ''
-      '';
+      extraConfigFile = builtins.toFile "config.yaml" "";
     };
   };
 }

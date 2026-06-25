@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.bottles = {
     enable = mkEnableOption "Enable bottles flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

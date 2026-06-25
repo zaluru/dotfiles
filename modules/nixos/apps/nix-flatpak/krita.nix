@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.krita = {
     enable = mkEnableOption "Enable krita flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

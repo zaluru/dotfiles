@@ -18,7 +18,10 @@ in
 
   config = mkIf cfg.enable {
     home-manager.users.${user.name} = {
-      home.packages = with pkgs; [ age ssh-to-age ];
+      home.packages = with pkgs; [
+        age
+        ssh-to-age
+      ];
     };
   };
 }

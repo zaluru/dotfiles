@@ -22,7 +22,12 @@ in
       programs.zed-editor = {
         enable = true;
         extraPackages = [ pkgs.nixd ];
-        extensions = [ "nix" "toml" "rust" "rose-pine-theme" ];
+        extensions = [
+          "nix"
+          "toml"
+          "rust"
+          "rose-pine-theme"
+        ];
         userSettings = {
           theme = {
             mode = "system";
@@ -56,4 +61,3 @@ in
     };
   };
 }
-

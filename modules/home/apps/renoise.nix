@@ -1,14 +1,25 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
 
   # TODO: Write a tutorial on how to fix the renoise audio issue when running it with pipewire
   # I just use the pipewire jack rather than pipewire alsa that is choosen by default by renoise
-  # but after every rebuild it gets reset to use alsa 
+  # but after every rebuild it gets reset to use alsa
   # so i had to set up qpwgraph and pin the pipewire connections for renoise, also autostart qpwgraph
   # it makes it so when i start renois it uses the pipewire jack and audio works without an issue
   # TODO: write a tutorial on how to setup renoise with the full paid version like here
 
-  inherit (lib) mkIf types mkMerge mkOption mkEnableOption;
+  inherit (lib)
+    mkIf
+    types
+    mkMerge
+    mkOption
+    mkEnableOption
+    ;
   inherit (lib.zaluru) mkOpt;
   inherit (config.mine) user;
   cfg = config.mine.apps.renoise;
@@ -72,14 +83,16 @@ in
     })
 
     (mkIf cfg.full-version.enable {
-      nixpkgs.overlays = [ (self: super: {
-        renoise = super.renoise.override {
-          releasePath = super.fetchurl {
-            url = "file://${toString "${releasesPath}/rns_${builtins.replaceStrings [ "." ] [ "_" ] cfg.full-version.version}_${super.stdenv.hostPlatform.system}.tar.gz"}";
-            sha256 = platforms.${super.stdenv.hostPlatform.system}.version.${cfg.full-version.version}.hash;
+      nixpkgs.overlays = [
+        (self: super: {
+          renoise = super.renoise.override {
+            releasePath = super.fetchurl {
+              url = "file://${toString "${releasesPath}/rns_${builtins.replaceStrings [ "." ] [ "_" ] cfg.full-version.version}_${super.stdenv.hostPlatform.system}.tar.gz"}";
+              sha256 = platforms.${super.stdenv.hostPlatform.system}.version.${cfg.full-version.version}.hash;
+            };
           };
-        };
-      }) ];
+        })
+      ];
     })
   ];
 }

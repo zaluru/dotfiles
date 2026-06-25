@@ -7,7 +7,12 @@
 let
 
   inherit (config.mine) user;
-  inherit (lib) mkEnableOption mkIf mkOption types;
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkOption
+    types
+    ;
   cfg = config.mine.apps.steam;
 
 in
@@ -28,7 +33,7 @@ in
       # TODO: when gamescope and bubblewrap get fixed
       #extraPackages = with pkgs; [ config.programs.gamescope.package ];
     };
-    home-manager.users.${user.name} = {lib, ...}: {
+    home-manager.users.${user.name} = { lib, ... }: {
       home.activation.hide-steam-games-desktop-entry = lib.mkIf cfg.hide-games-desktop-entry (
         lib.hm.dag.entryAfter [ "writeBoundary" ] ''
           for f in ~/.local/share/applications/*.desktop; do

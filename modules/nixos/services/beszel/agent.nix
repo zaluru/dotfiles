@@ -40,7 +40,7 @@ in
       ];
     };
 
-    sops.secrets.beszel-agent-public-key = {};
-    sops.secrets.beszel-agent-websocket-token = {};
+    sops.secrets.beszel-agent-public-key = { };
+    sops.secrets.beszel-agent-websocket-token = { };
   };
 }

@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak = {
     enable = mkEnableOption "Enable nix-flatpak - declarative flatpak management.";
-    
+
   };
 
   config = mkIf cfg.enable {

@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.pcsx2 = {
     enable = mkEnableOption "Enable pcsx2 flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

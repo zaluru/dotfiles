@@ -22,7 +22,7 @@ in
         userDirs = {
           # TODO: Verify that nothing depends on this and replace with false
           # The default value of `xdg.userDirs.setSessionVariables` has changed from `true` to `false`
-          # Not recommended to use the env vars anymore 
+          # Not recommended to use the env vars anymore
           setSessionVariables = true;
           enable = true;
           createDirectories = true;

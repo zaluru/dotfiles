@@ -36,7 +36,7 @@ in
               cyan = "#2ddbd9";
               black = "#161615";
               white = "#ffffff";
-              #frame_selected = { 
+              #frame_selected = {
               #  "#cba6f7";
               #};
               #frame_highlight = {

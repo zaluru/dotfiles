@@ -10,7 +10,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    home-manager.users.${user.name} = {lib, ...}: {
+    home-manager.users.${user.name} = { lib, ... }: {
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;

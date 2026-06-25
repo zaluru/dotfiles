@@ -20,7 +20,6 @@ in
     home-manager.users.${user.name} = {
       home.packages = with pkgs.unstable; [ presenterm ];
 
-
       # Source: https://gitlab.com/boydkelly/carbonizer/-/blob/main/bat/oxocarbon-dark.tmTheme
       xdg.configFile."presenterm/themes/highlighting/oxocarbon-dark.tmTheme".text = ''
         <?xml version="1.0" encoding="UTF-8"?>

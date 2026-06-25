@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
 
   inherit (lib) mkIf types;
@@ -38,8 +44,14 @@ in
           ];
         };
         unitConfig = {
-          Requires = [ containers.romm-db.ref "network-online.target" ];
-          After = [ containers.romm-db.ref "network-online.target" ];
+          Requires = [
+            containers.romm-db.ref
+            "network-online.target"
+          ];
+          After = [
+            containers.romm-db.ref
+            "network-online.target"
+          ];
         };
       };
 
@@ -69,25 +81,25 @@ in
     };
   };
   /*
-  sops.templates."romm.env".content = ''
-    OIDC_PROVIDER = "${config.sops.placeholder.}"
-    STEAMGRIDDB_API_KEY = "${config.sops.placeholder.}"
-    OIDC_SERVER_APPLICATION_URL = "${config.sops.placeholder.}"
-    DB_HOST = "${config.sops.placeholder.romm-db-host}"
-    DB_NAME = "${config.sops.placeholder.romm-db-name}"
-    DB_PASSWD = "${config.sops.placeholder.romm-db-password}"
-    DB_USER = "${config.sops.placeholder.romm-db-user}"
-    OIDC_REDIRECT_URI = "${config.sops.placeholder.}"
-    ROMM_AUTH_SECRET_KEY = "${config.sops.placeholder.}"
-    OIDC_CLIENT_ID = "${config.sops.placeholder.}"
-    OIDC_CLIENT_SECRET = "${config.sops.placeholder.}"
-    OIDC_ENABLED = "true"
-    IGDB_CLIENT_ID = "${config.sops.placeholder.romm-igdb-client-id}"
-    IGDB_CLIENT_SECRET = "${config.sops.placeholder.romm-igdb-client-secret}"
-    HASHEOUS_API_ENABLED = "true"
-  '';
-  sops.templates."romm-db.env".content = ''
-    password = "${config.sops.placeholder.your-secret}"
-  '';
+    sops.templates."romm.env".content = ''
+      OIDC_PROVIDER = "${config.sops.placeholder.}"
+      STEAMGRIDDB_API_KEY = "${config.sops.placeholder.}"
+      OIDC_SERVER_APPLICATION_URL = "${config.sops.placeholder.}"
+      DB_HOST = "${config.sops.placeholder.romm-db-host}"
+      DB_NAME = "${config.sops.placeholder.romm-db-name}"
+      DB_PASSWD = "${config.sops.placeholder.romm-db-password}"
+      DB_USER = "${config.sops.placeholder.romm-db-user}"
+      OIDC_REDIRECT_URI = "${config.sops.placeholder.}"
+      ROMM_AUTH_SECRET_KEY = "${config.sops.placeholder.}"
+      OIDC_CLIENT_ID = "${config.sops.placeholder.}"
+      OIDC_CLIENT_SECRET = "${config.sops.placeholder.}"
+      OIDC_ENABLED = "true"
+      IGDB_CLIENT_ID = "${config.sops.placeholder.romm-igdb-client-id}"
+      IGDB_CLIENT_SECRET = "${config.sops.placeholder.romm-igdb-client-secret}"
+      HASHEOUS_API_ENABLED = "true"
+    '';
+    sops.templates."romm-db.env".content = ''
+      password = "${config.sops.placeholder.your-secret}"
+    '';
   */
 }

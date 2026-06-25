@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.obs = {
     enable = mkEnableOption "Enable obs flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {

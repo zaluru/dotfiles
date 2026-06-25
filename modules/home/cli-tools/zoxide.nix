@@ -25,7 +25,7 @@ in
         #options = [
         #  "--cmd cd"
         #];
-        # TODO: Maybe add this fish plugin - https://github.com/icezyclon/zoxide.fish 
+        # TODO: Maybe add this fish plugin - https://github.com/icezyclon/zoxide.fish
       };
     };
   };

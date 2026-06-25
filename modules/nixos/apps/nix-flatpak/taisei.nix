@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.taisei-project = {
     enable = mkEnableOption "Enable Taisei project flatpak. Taisei is an open clone of the Tōhō Project series.";
-    
+
   };
 
   config = mkIf cfg.enable {

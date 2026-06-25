@@ -14,7 +14,7 @@ in
 {
   options.mine.apps.nix-flatpak.shadps4 = {
     enable = mkEnableOption "Enable shadps4 flatpak";
-    
+
   };
 
   config = mkIf cfg.enable {
