@@ -53,7 +53,10 @@ in
 
       mine = {
         apps = {
-          steam = enabled;
+          steam = {
+            enable = true;
+            hide-games-desktop-entry = true;
+          };
           heroic-games-launcher = enabled;
           hamachi = {
             enable = true;
