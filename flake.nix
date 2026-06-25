@@ -7,7 +7,6 @@
     musnix.url = "github:musnix/musnix";
     nixarr.url = "github:rasmus-kirk/nixarr";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    #affinity-nix.url = "github:mrshmllow/affinity-nix";
     pelican-wings.url = "https://codeberg.org/zaluru/pelican-wings-flake/archive/master.tar.gz";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
@@ -39,13 +38,6 @@
       flake = false;
     };
 
-#    stylix = {
-#      url = "github:danth/stylix";
-#      inputs = {
-#        nixpkgs.follows = "nixpkgs";
-#     };
-#   };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,11 +45,6 @@
 
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,6 +76,20 @@
     # Pinned packages
     # You can find the nixpkgs reference easly at https://www.nixhub.io/
     davinci-resolve-pkgs.url = "github:nixos/nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d"; # version 20.3.2
+
+    #nixos-wsl = {
+    #  url = "github:nix-community/NixOS-WSL";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+
+    #stylix = {
+    #  url = "github:danth/stylix";
+    #  inputs = {
+    #    nixpkgs.follows = "nixpkgs";
+    # };
+    #};
+
+    #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs =
@@ -103,21 +104,21 @@
       plasma-manager,
       nix-flatpak,
       astronvim,
-      #stylix,
       disko,
       nixos-generators,
-      nixos-wsl,
       nix-index-database,
       nixvim,
       sops-nix,
       nixarr,
       nixos-hardware,
-      #affinity-nix,
       jovian,
       pelican-wings,
       microvm,
       quadlet-nix,
       proxmox-nixos,
+      #stylix,
+      #nixos-wsl,
+      #affinity-nix,
       ...
     }@inputs:
     let
