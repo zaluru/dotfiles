@@ -18,6 +18,7 @@ in
     ./hardware-configuration.nix
     ../../overlays/inputs
     (inputs.import-tree ../../modules)
+    inputs.nix-private-config.nixosModules.configs
   ];
 
   config = {

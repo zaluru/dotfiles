@@ -18,6 +18,7 @@ in
     (modulesPath + "/profiles/qemu-guest.nix")
     ../../overlays/inputs
     (inputs.import-tree ../../modules)
+    inputs.nix-private-config.nixosModules.configs
   ];
 
   config = {
