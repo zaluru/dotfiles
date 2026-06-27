@@ -109,6 +109,7 @@ in
         forgejo = enabled;
         #ente = enabled;
         cockpit = enabled;
+        perses = enabled;
       };
 
       system = {
