@@ -113,28 +113,20 @@ in
 
             ## Tools
             proton-plus = enabled;
-            bottles = enabled;
             onlyoffice = enabled;
+            bitwarden = enabled;
 
             ## Creative
             trenchbroom = enabled;
             krita = enabled;
             upscayl = enabled;
             blockbench = enabled;
-            digikam = enabled;
             material-maker = enabled;
             drawy = enabled;
 
-            bitwarden = enabled;
 
             ## Games
-            #pcsx2 = enabled;
-            #rpcs3 = enabled;
-            #shadps4 = enabled;
-            #duckstation = enabled;
             prism-launcher = enabled;
-            #ente-auth = enabled;
-            #vintage-story = enabled;
             beyond-all-reason = enabled;
             retrodeck = enabled;
             taisei-project = enabled;
