@@ -167,6 +167,7 @@ in
     mine = {
       user = {
         enable = true;
+        #guest = enabled;
         home-manager = enabled;
         shell.package = pkgs.fish;
         xdg-default-dirs = enabled;
