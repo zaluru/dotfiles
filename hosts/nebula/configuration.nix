@@ -243,6 +243,7 @@ in
         };
         boot = {
           grub = enabled;
+          plymouth = enabled;
         };
         fonts = enabled;
         networking = {
