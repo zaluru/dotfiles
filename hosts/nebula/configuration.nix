@@ -220,6 +220,7 @@ in
         quadlet-nix = {
           enable = false;
         };
+      };
 
       services = {
         beszel.agent = enabled;
