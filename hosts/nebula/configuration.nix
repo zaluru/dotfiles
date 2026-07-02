@@ -72,31 +72,20 @@ in
           alacritty = enabled;
           imv = enabled;
           signal-desktop = enabled;
-          #chromium = enabled;
           discord = enabled;
-          #element = enabled;
+          # TODO: very cool, browser profile in RAM: https://wiki.archlinux.org/title/Profile-sync-daemon
           firefox = enabled;
-          #flycast = enabled;
-          #freecad = enabled;
-          #ghostty = enabled;
           gimp = enabled;
-          #gthumb = enabled;
           inkscape = enabled;
-          #keybase = enabled;
-          #keymapp = enabled;
           obsidian = enabled;
-          #proton = enabled;
-          #prusa-slicer = enabled;
           #puddletag = enabled;
           vlc = enabled;
           mpv = enabled;
-          #vscodium = enabled;
           vscode = enabled;
           #zed = enabled;
           obs = enabled;
           blender = enabled;
           davinci-resolve = enabled;
-          #affinity = enabled;
           renoise = {
             enable = true;
             full-version = {
@@ -141,19 +130,6 @@ in
           };
           plasma-login = enabled;
           default-apps = enabled;
-          #cursor = enabled;
-          #fuzzel = enabled;
-          #hypridle = enabled;
-          #hyprland = {
-          #  enable = true;
-          #  home = true;
-          #};
-          #hyprlock = enabled;
-          #hyprpaper = enabled;
-          #screenshots = enabled;
-          #swaync = enabled;
-          #systemd = enabled;
-          #waybar = enabled;
         };
 
         system = {
@@ -203,7 +179,6 @@ in
         fzf = enabled;
         presenterm = enabled;
         ssh-config = enabled;
-        #zsh = enabled;
       };
 
       apps = {
@@ -238,29 +213,30 @@ in
           ageKeyFile.path = "/home/zaluru/.config/sops/age/keys.txt";
           defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/nebula.yaml";
         };
-        #vagrant = enabled;
       };
 
 
+      container = {
+        quadlet-nix = {
+          enable = false;
+        };
 
       services = {
         beszel.agent = enabled;
         kanidm-client = enabled;
-        #nixarr = enabled;
         cockpit = enabled;
         #nextdns = enabled;
         lact = enabled;
         sunshine = enabled;
         mpd = enabled;
         kdeconnect = enabled;
-        #};
         ssh-agent = enabled;
       };
 
       system = {
         audio = {
           pipewire = enabled;
-          musnix = enabled;
+          #musnix = enabled;
           qpwgraph = enabled;
         };
         boot = {
@@ -279,6 +255,7 @@ in
           flakes = enabled;
           nh = enabled;
           index = enabled;
+          #distributed-builds = enabled;
           github-access-token = enabled;
         };
         security.sudonopass = enabled;
@@ -287,10 +264,6 @@ in
           gamescope = enabled;
           #fix-8bitdo-ubc = enabled;
           fwupd = enabled;
-          #  bluetooth = {
-          #    enable = true;
-          #    applet = true;
-          #  };
           #  fix-suspend = enabled;
           #  input-remapper = enabled;
           #  keyring = enabled;
