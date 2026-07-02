@@ -114,6 +114,7 @@ in
             ## Tools
             proton-plus = enabled;
             bottles = enabled;
+            onlyoffice = enabled;
 
             ## Creative
             trenchbroom = enabled;
