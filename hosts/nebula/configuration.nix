@@ -31,6 +31,8 @@ in
       cores = 2;
     };
 
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+
     home-manager.users.${user.name} = {
       # https://wiki.archlinux.org/title/WirePlumber
       # usefull commands
