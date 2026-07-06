@@ -226,6 +226,7 @@ in
       };
 
       services = {
+        netbird.client.main = enabled;
         beszel.agent = enabled;
         kanidm.client = enabled;
         cockpit = enabled;
