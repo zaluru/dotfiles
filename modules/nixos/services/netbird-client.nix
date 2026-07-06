@@ -10,11 +10,11 @@ let
   inherit (lib) mkIf types;
   inherit (lib.zaluru) mkOpt;
   inherit (config.mine) user;
-  cfg = config.mine.services.netbird-client;
+  cfg = config.mine.services.netbird.client.main;
 
 in
 {
-  options.mine.services.netbird-client = {
+  options.mine.services.netbird.client.main = {
     enable = mkOpt types.bool false "Netbird client - zero trust network vpn";
   };
 

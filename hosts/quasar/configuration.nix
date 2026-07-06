@@ -105,7 +105,7 @@ in
           server = enabled;
           client = enabled;
         };
-        netbird-client = enabled;
+        netbird.client.main = enabled;
         #proxmox-nixos = enabled;
         incus = enabled;
         forgejo = enabled;
