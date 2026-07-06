@@ -227,7 +227,7 @@ in
 
       services = {
         beszel.agent = enabled;
-        kanidm-client = enabled;
+        kanidm.client = enabled;
         cockpit = enabled;
         #nextdns = enabled;
         lact = enabled;

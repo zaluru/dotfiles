@@ -101,8 +101,10 @@ in
           hub = enabled;
         };
         woodpecker-server = enabled;
-        kanidm-server = enabled;
-        kanidm-client = enabled;
+        kanidm = {
+          server = enabled;
+          client = enabled;
+        };
         netbird-client = enabled;
         #proxmox-nixos = enabled;
         incus = enabled;

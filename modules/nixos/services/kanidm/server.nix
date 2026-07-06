@@ -10,12 +10,12 @@ let
   inherit (lib) mkIf types;
   inherit (lib.zaluru) mkOpt;
   inherit (config.mine) user;
-  cfg = config.mine.services.kanidm-server;
+  cfg = config.mine.services.kanidm.server;
   certDirectory = config.security.acme.certs."${cfg.domainIdm}".directory;
 
 in
 {
-  options.mine.services.kanidm-server = {
+  options.mine.services.kanidm.server = {
     enable = mkOpt types.bool false "Kanidm server - simple identity management platform.";
     domainIdm = mkOpt types.str "idm.i.zaluru.com" "Domain on which the kanidm will be available";
     domainLdap =
