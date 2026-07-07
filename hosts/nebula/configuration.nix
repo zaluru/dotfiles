@@ -55,6 +55,12 @@ in
       };
 
       mine = {
+        trait = {
+          desktop = {
+            base = enabled;
+          };
+        };
+
         apps = {
           steam = {
             enable = true;
@@ -65,25 +71,10 @@ in
             enable = true;
             startOnBoot = false;
           };
-          java-web-start = enabled;
           waydroid = enabled;
           bruno = enabled;
-          keepassxc = enabled;
-          brave = enabled;
-          thunderbird = enabled;
-          alacritty = enabled;
-          imv = enabled;
-          signal-desktop = enabled;
-          discord = enabled;
-          # TODO: very cool, browser profile in RAM: https://wiki.archlinux.org/title/Profile-sync-daemon
-          firefox = enabled;
-          gimp = enabled;
-          inkscape = enabled;
-          obsidian = enabled;
           #puddletag = enabled;
           vlc = enabled;
-          mpv = enabled;
-          vscode = enabled;
           #zed = enabled;
           obs = enabled;
           blender = enabled;
@@ -96,16 +87,11 @@ in
             };
           };
           scarlett-gui = enabled;
-          remmina = enabled;
           losless-cut = enabled;
           vicinae = enabled;
           nix-flatpak = {
-            enable = true;
-
             ## Tools
             proton-plus = enabled;
-            onlyoffice = enabled;
-            bitwarden = enabled;
 
             ## Creative
             trenchbroom = enabled;
@@ -171,6 +157,7 @@ in
         cli = enabled;
         secrets.sops = enabled;
         base = enabled;
+        desktop.base = enabled;
       };
 
       user = {
@@ -200,7 +187,6 @@ in
         zellij = enabled;
         tealdeer = enabled;
         croc = enabled;
-        yt-dlp = enabled;
         man-nvim = enabled;
         bat = enabled;
       };
@@ -216,15 +202,11 @@ in
         #nextdns = enabled;
         lact = enabled;
         sunshine = enabled;
-        mpd = enabled;
-        kdeconnect = enabled;
       };
 
       system = {
         audio = {
-          pipewire = enabled;
           #musnix = enabled;
-          qpwgraph = enabled;
         };
         boot = {
           grub = enabled;
