@@ -170,14 +170,11 @@ in
       trait = {
         cli = enabled;
         secrets.sops = enabled;
+        base = enabled;
       };
 
       user = {
-        enable = true;
         #guest = enabled;
-        home-manager = enabled;
-        shell.package = pkgs.fish;
-        xdg-default-dirs = enabled;
       };
 
       home-manager = {
@@ -216,16 +213,11 @@ in
       };
 
       services = {
-        netbird.client.main = enabled;
-        beszel.agent = enabled;
-        kanidm.client = enabled;
-        cockpit = enabled;
         #nextdns = enabled;
         lact = enabled;
         sunshine = enabled;
         mpd = enabled;
         kdeconnect = enabled;
-        ssh-agent = enabled;
       };
 
       system = {
@@ -244,14 +236,10 @@ in
             enable = true;
             hostname = "nebula";
           };
-          firewall = enabled;
         };
         nix = {
-          unfree = enabled;
-          flakes = enabled;
           nh = enabled;
           index = enabled;
-          #distributed-builds = enabled;
           github-access-token = enabled;
         };
         security.sudonopass = enabled;
@@ -263,7 +251,6 @@ in
           #  fix-suspend = enabled;
           #  input-remapper = enabled;
           #  keyring = enabled;
-          openssh = enabled;
           #  sleep-on-lan = enabled;
         };
         utils = {
@@ -274,7 +261,6 @@ in
         #virtualisation = {
         #  libvirtd = enabled;
         #};
-        defaultLocales = enabled;
       };
     };
   };

@@ -49,14 +49,7 @@ in
       trait = {
         cli = enabled;
         secrets.sops = enabled;
-      };
-
-      user = {
-        enable = true;
-        home-manager = enabled;
-        #ghToken = enabled;
-        shell.package = pkgs.fish;
-        xdg-default-dirs = enabled;
+        base = enabled;
       };
 
       container = {
@@ -90,21 +83,13 @@ in
         #authentik = enabled;
         #romm = enabled;
 
-        beszel = {
-          agent = enabled;
-          hub = enabled;
-        };
+        beszel.hub = enabled;
         woodpecker-server = enabled;
-        kanidm = {
-          server = enabled;
-          client = enabled;
-        };
-        netbird.client.main = enabled;
+        kanidm.server = enabled;
         #proxmox-nixos = enabled;
         incus = enabled;
         forgejo = enabled;
         #ente = enabled;
-        cockpit = enabled;
         perses = enabled;
       };
 
@@ -114,11 +99,8 @@ in
             enable = true;
             hostname = "${hostname}";
           };
-          firewall = enabled;
         };
         nix = {
-          unfree = enabled;
-          flakes = enabled;
           nh = enabled;
           index = enabled;
         };
@@ -127,10 +109,6 @@ in
           dev = true;
           sysadmin = true;
         };
-        services = {
-          openssh = enabled;
-        };
-        defaultLocales = enabled;
       };
 
       defaults.web = {

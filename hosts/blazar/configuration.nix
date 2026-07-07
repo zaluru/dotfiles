@@ -43,14 +43,7 @@ in
       trait = {
         cli = enabled;
         secrets.sops = enabled;
-      };
-
-      user = {
-        enable = true;
-        home-manager = enabled;
-        #ghToken = enabled;
-        shell.package = pkgs.fish;
-        xdg-default-dirs = enabled;
+        base = enabled;
       };
 
       container = {
@@ -78,47 +71,30 @@ in
       };
 
       services = {
-        beszel = {
-          agent = enabled;
-          hub = enabled;
-        };
+        beszel.hub = enabled;
         woodpecker-server = enabled;
-        kanidm = {
-          client = enabled;
-          server = enabled;
-        };
-        netbird.client.main = enabled;
+        kanidm.server = enabled;
         #proxmox-nixos = enabled;
         incus = enabled;
         forgejo = enabled;
         #ente = enabled;
-        cockpit = enabled; 
       };
 
       system = {
         #boot = {
         #  grub = enabled;
         #};
-        fonts = enabled;
 
         networking = {
           networkmanager = {
             enable = true;
             hostname = "${hostname}";
           };
-          firewall = enabled;
-        };
-        nix = {
-          unfree = enabled;
-          flakes = enabled;
-          nh = enabled;
-          index = enabled;
         };
         security = {
           sudonopass = enabled;
         };
         services = {
-          openssh = enabled;
           fwupd = enabled;
           #krb5 = enabled;
         };
@@ -130,7 +106,7 @@ in
         virtualisation = {
           libvirtd = enabled;
         };
-        defaultLocales = enabled;
+        
       };
     };
   };
