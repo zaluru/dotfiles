@@ -167,6 +167,10 @@ in
     };
 
     mine = {
+      trait = {
+        cli = enabled;
+      };
+
       user = {
         enable = true;
         #guest = enabled;
@@ -176,12 +180,7 @@ in
       };
 
       home-manager = {
-        git = enabled;
-        zoxide = enabled;
-        atuin = enabled;
-        fzf = enabled;
         presenterm = enabled;
-        ssh-config = enabled;
       };
 
       apps = {
@@ -196,17 +195,13 @@ in
       cli-tools = {
         ansible = enabled;
         charm-freeze = enabled;
-        direnv = enabled;
         devbox = enabled;
-        just = enabled;
         #ncmpcpp = enabled;
         fastfetch = enabled;
         #nixvim = enabled;
         zellij = enabled;
         tealdeer = enabled;
         croc = enabled;
-        btop = enabled;
-        lsof = enabled;
         yt-dlp = enabled;
         man-nvim = enabled;
         bat = enabled;
