@@ -18,5 +18,23 @@ in
   };
 
   config = mkIf cfg.enable {
+    mine = {
+      apps = {
+        vicinae = enabled;
+      };
+      desktop = {
+        kde = {
+          enable = true;
+          launcher = "vicinae";
+        };
+        plasma-login = enabled;
+        default-apps = enabled;
+      };
+      system = {
+        services = {
+          keyring-pam-kde = enabled; 
+        };
+      };
+    };
   };
 }

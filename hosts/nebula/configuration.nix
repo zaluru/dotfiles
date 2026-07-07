@@ -89,7 +89,6 @@ in
           };
           scarlett-gui = enabled;
           losless-cut = enabled;
-          vicinae = enabled;
           nix-flatpak = {
             ## Tools
             proton-plus = enabled;
@@ -113,18 +112,7 @@ in
 
         desktop = {
           kde = {
-            enable = true;
             panel.screen = 1;
-            launcher = "vicinae";
-          };
-          plasma-login = enabled;
-          default-apps = enabled;
-        };
-
-        system = {
-          services = {
-            keyring-pam-kde = enabled;
-            #pam-u2f-totp = enabled;
           };
         };
       };
@@ -139,6 +127,11 @@ in
         };
       };
       mine = {
+
+        trait = {
+          desktop.base = enabled;
+        };
+
         desktop = {
           steam-ui = enabled;
         };
