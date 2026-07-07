@@ -46,15 +46,20 @@ in
 
       cli-tools = {
         yt-dlp = enabled;
+      };
+
+      services = {
         mpd = enabled;
         kdeconnect = enabled;
       };
 
-      audio = {
-        pipewire = enabled;
-        qpwgraph = enabled;
+      system = {
+        audio = {
+          pipewire = enabled;
+          qpwgraph = enabled;
+        };
+        fonts = enabled;
       };
-      fonts = enabled;
     };
   };
 }

@@ -57,6 +57,7 @@ in
       mine = {
         trait = {
           desktop = {
+            kde = enabled;
             base = enabled;
           };
         };
@@ -157,7 +158,6 @@ in
         cli = enabled;
         secrets.sops = enabled;
         base = enabled;
-        desktop.base = enabled;
       };
 
       user = {
@@ -212,7 +212,6 @@ in
           grub = enabled;
           plymouth = enabled;
         };
-        fonts = enabled;
         networking = {
           networkmanager = {
             enable = true;
