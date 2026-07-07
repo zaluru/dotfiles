@@ -39,6 +39,11 @@ in
     system.stateVersion = "25.11";
 
     mine = {
+
+      trait = {
+        cli = enabled;
+      };
+
       user = {
         enable = true;
         home-manager = enabled;
@@ -53,25 +58,18 @@ in
         };
       };
 
-      home-manager = {
-        git = enabled;
-        ssh-config = enabled;
-        #zsh = enabled;
-      };
+      #home-manager = {
+      #};
 
       apps = {
       };
 
       cli-tools = {
-        direnv = enabled;
-        just = enabled;
         fastfetch = enabled;
         #nixvim = enabled;
         zellij = enabled;
         tealdeer = enabled;
         croc = enabled;
-        btop = enabled;
-        lsof = enabled;
         bat = enabled;
         age = enabled; 
         sops-nix = {
