@@ -48,6 +48,7 @@ in
 
       trait = {
         cli = enabled;
+        secrets.sops = enabled;
       };
 
       user = {
@@ -75,11 +76,6 @@ in
         zellij = enabled;
         tealdeer = enabled;
         bat = enabled;
-        age = enabled; 
-        sops-nix = {
-          enable = true;
-          defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/${hostname}.yaml";
-        };
       };
 
       desktop = {

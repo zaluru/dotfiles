@@ -169,6 +169,7 @@ in
     mine = {
       trait = {
         cli = enabled;
+        secrets.sops = enabled;
       };
 
       user = {
@@ -205,12 +206,6 @@ in
         yt-dlp = enabled;
         man-nvim = enabled;
         bat = enabled;
-        age = enabled;
-        sops-nix = {
-          enable = true;
-          ageKeyFile.path = "/home/zaluru/.config/sops/age/keys.txt";
-          defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/nebula.yaml";
-        };
       };
 
 
