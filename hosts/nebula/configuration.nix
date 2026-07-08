@@ -59,6 +59,7 @@ in
           desktop = {
             kde = enabled;
             base = enabled;
+            base-flatpak = enabled;
           };
         };
 

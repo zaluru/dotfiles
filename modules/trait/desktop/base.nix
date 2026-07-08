@@ -36,12 +36,6 @@ in
         mpv = enabled;
         vscode = enabled;
         remmina = enabled;
-
-        nix-flatpak = {
-          enable = true;
-          onlyoffice = enabled;
-          bitwarden = enabled;
-        };
       };
 
       cli-tools = {
