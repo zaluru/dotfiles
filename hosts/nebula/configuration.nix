@@ -60,15 +60,11 @@ in
             kde = enabled;
             base = enabled;
             base-flatpak = enabled;
+            gaming = enabled;
           };
         };
 
         apps = {
-          steam = {
-            enable = true;
-            hide-games-desktop-entry = true;
-          };
-          heroic-games-launcher = enabled;
           hamachi = {
             enable = true;
             startOnBoot = false;
@@ -163,7 +159,6 @@ in
       };
 
       apps = {
-        mangohud = enabled;
         cables = enabled;
         syncthing = {
           enable = true;
@@ -219,8 +214,6 @@ in
         };
         security.sudonopass = enabled;
         services = {
-          gamemode = enabled;
-          gamescope = enabled;
           #fix-8bitdo-ubc = enabled;
           fwupd = enabled;
           #  fix-suspend = enabled;
