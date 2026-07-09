@@ -7,7 +7,7 @@
 }:
 let
 
-  inherit (lib) mkIf types;
+  inherit (lib) mkIf types mkOption;
   inherit (lib.zaluru) mkOpt;
   cfg = config.mine.defaults.web;
 
@@ -18,6 +18,11 @@ in
     acme = {
       acceptTerms = mkOpt types.bool false "Acme terms acceptance";
       email = mkOpt types.str "acme@changeme.local" "Default acme email used by all web services";
+    };
+    server = mkOption {
+      default = null;
+      description = "Choose the default web server: 'caddy' or 'nginx'";
+      type = types.enum [ "caddy" "nginx" ];
     };
   };
 
