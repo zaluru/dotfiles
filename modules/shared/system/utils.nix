@@ -33,7 +33,6 @@ let
       wakeonlan
     ]
     ++ optionals pkgs.stdenv.isLinux [
-      pinentry-all
       usbutils
     ];
 

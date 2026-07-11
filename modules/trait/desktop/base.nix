@@ -45,6 +45,7 @@ in
       services = {
         mpd = enabled;
         kdeconnect = enabled;
+        gpg-agent = enabled;
       };
 
       system = {

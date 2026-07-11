@@ -97,6 +97,12 @@ in
         };
         extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
       };
+      services.gpg-agent = {
+        pinentry = {
+          package = pkgs.pinentry-qt; 
+          program = "pinentry-qt";
+        };
+      };
 
       xdg.configFile = {
         "plasma-workspace/env/session-variables.sh".text = ''
