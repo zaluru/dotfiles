@@ -31,7 +31,9 @@ in
         cockpit = enabled;
         beszel.agent = enabled;
         kanidm.client = enabled;
-        ssh-agent = enabled;
+        # TODO: check if it's possible to run both ssh-agent and yubikey-agent
+        #ssh-agent = enabled;
+        yubikey-agent = enabled;
       };
 
 
