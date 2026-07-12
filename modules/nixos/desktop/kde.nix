@@ -97,6 +97,12 @@ in
         };
         extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
       };
+
+      qt = {
+        enable = true;
+        platformTheme.name = "kde";
+      };
+
       services.gpg-agent = {
         pinentry = {
           package = pkgs.pinentry-qt; 
