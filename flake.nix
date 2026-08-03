@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixflix = {
+      url = "github:kiriwalawren/nixflix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland = {
       url = "https://github.com/hyprwm/Hyprland";
       type = "git";
@@ -116,6 +121,7 @@
       microvm,
       quadlet-nix,
       proxmox-nixos,
+      nixflix,
       #stylix,
       #nixos-wsl,
       #affinity-nix,
