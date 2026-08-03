@@ -188,9 +188,14 @@ in
       };
 
       services = {
+        #nixarr = enabled;
+        #nixflix = enabled; 
         #nextdns = enabled;
         lact = enabled;
-        sunshine = enabled;
+        #sunshine = enabled;
+        yubikey-agent = enabled;
+        gpg-agent = enabled;
+        ssh-agent.enable = lib.mkForce false;
       };
 
       system = {
