@@ -17,6 +17,14 @@ in
     enable = mkEnableOption "libvirtd";
   };
 
+  # NOTE: in case of erro 243/CREDENTIALS:
+  # Failed at step CREDENTIALS spawning /nix/store/.../sbin/libvirtd: Bad message
+  # Check if file /var/lib/libvirt/secrets/secrets-encryption-key is not empty
+  # If it is, remove it and restart libvirt
+  # TODO: maybe add that to sops?
+  # https://libvirt.org/secretencryption.html#systemd-credentials-sealing
+  # also check the libvirt service deffinition
+
   # TODO: libvirtd in 25.11 dose not have the libvirtd.dbus option
   disabledModules = [
     "virtualisation/libvirtd.nix"
