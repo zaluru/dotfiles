@@ -128,6 +128,7 @@ in
         pkgs.exfatprogs # Required for partitionmanager to support exfat
         pkgs.unstable.klassy
         pkgs.kdePackages.qtmultimedia # For animated wallpapers with smart-video-wallpaper-reborn
+        pkgs.kdePackages.isoimagewriter
       ];
 
       # TODO: disable desktop icons when this is completed - https://github.com/nix-community/plasma-manager/issues/117
