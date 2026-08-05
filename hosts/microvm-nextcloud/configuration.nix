@@ -19,7 +19,9 @@ in
   ];
 
   config = {
-    networking.hostName = "my-microvm";
+    system.stateVersion = "26.05";
+
+    networking.hostName = "microvm-nextcloud";
     microvm = {
       hypervisor = "qemu";
 
@@ -29,6 +31,14 @@ in
         source = "/nix/store";
         mountPoint = "/nix/.ro-store";
       } ];
+    };
+
+    mine = {
+
+      trait = {
+        cli = enabled;
+        base = enabled;
+      };
     };
   };
 }
