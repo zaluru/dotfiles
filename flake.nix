@@ -171,6 +171,7 @@
             ./hosts/quasar/configuration.nix
             nix-index-database.nixosModules.nix-index
             disko.nixosModules.disko
+            microvm.nixosModules.host
           ];
         };
         "blazar" = nixpkgs.lib.nixosSystem {
@@ -205,6 +206,16 @@
             nix-index-database.nixosModules.nix-index
             disko.nixosModules.disko
             nixos-hardware.nixosModules.dell-latitude-e7240
+          ];
+        };
+        "microvm-nextcloud" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            ./hosts/microvm-nextcloud/configuration.nix
+            microvm.nixosModules.microvm
           ];
         };
         "installer-cloud" = nixpkgs.lib.nixosSystem {
