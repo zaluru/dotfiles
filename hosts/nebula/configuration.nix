@@ -16,6 +16,8 @@ in
     #inputs.nixos-zaluru.nixosModules.configs
     ./hardware-configuration.nix
     ./steam-config.nix
+    ./specialisation-kde.nix
+    ./specialisation-steam-ui.nix
     ../../overlays/inputs
     (inputs.import-tree ../../modules)
     inputs.nix-private-config.nixosModules.configs
@@ -46,103 +48,6 @@ in
       #};
     };
 
-    specialisation."kde".configuration = {
-      environment.etc."specialisation".text = "kde"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
-      system.nixos.tags = [ "with-kde" ];
-      home-manager.users.${user.name} = {
-        specialisation."kde".configuration = {
-          xdg.dataFile."home-manager/specialisation".text = "kde";
-        };
-      };
-
-      mine = {
-        trait = {
-          desktop = {
-            kde = enabled;
-            base = enabled;
-            base-flatpak = enabled;
-            gaming = enabled;
-          };
-        };
-
-        apps = {
-          hamachi = {
-            enable = true;
-            startOnBoot = false;
-          };
-          waydroid = enabled;
-          bruno = enabled;
-          #puddletag = enabled;
-          vlc = enabled;
-          #zed = enabled;
-          obs = enabled;
-          blender = enabled;
-          davinci-resolve = enabled;
-          renoise = {
-            enable = true;
-            full-version = {
-              enable = true;
-              version = "3.5.4";
-            };
-          };
-          scarlett-gui = enabled;
-          losless-cut = enabled;
-          nix-flatpak = {
-            ## Tools
-            proton-plus = enabled;
-
-            ## Creative
-            trenchbroom = enabled;
-            krita = enabled;
-            upscayl = enabled;
-            blockbench = enabled;
-            material-maker = enabled;
-            drawy = enabled;
-
-
-            ## Games
-            prism-launcher = enabled;
-            beyond-all-reason = enabled;
-            retrodeck = enabled;
-            taisei-project = enabled;
-          };
-        };
-
-        desktop = {
-          kde = {
-            panel.screen = 1;
-          };
-        };
-      };
-    };
-
-    specialisation."steam-ui".configuration = {
-      environment.etc."specialisation".text = "steam-ui"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
-      system.nixos.tags = [ "with-steam-ui" ];
-      home-manager.users.${user.name} = {
-        specialisation."steam-ui".configuration = {
-          xdg.dataFile."home-manager/specialisation".text = "steam-ui";
-        };
-      };
-      mine = {
-
-        trait = {
-          desktop.base = enabled;
-        };
-
-        desktop = {
-          steam-ui = enabled;
-        };
-        system = {
-          virtual-display = {
-            enable = true;
-            output-id = "HDMI-A-2";
-            resolution = "3840x2160";
-            refresh-rate = 60;
-          };
-        };
-      };
-    };
 
     mine = {
       trait = {
