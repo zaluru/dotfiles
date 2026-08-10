@@ -5,6 +5,7 @@ let
   inherit (config.mine) user;
 
   mangohud = (lib.getExe' pkgs.mangohud "mangohud");
+  gamemoderun = (lib.getExe' pkgs.gamemode "gamemoderun");
 
 in
 
@@ -39,7 +40,7 @@ in
             };
             wrappers = [
               mangohud
-              "gamemoderun"
+              gamemoderun
             ];
           };
         };
