@@ -20,7 +20,19 @@ in
     # https://nixos.wiki/wiki/Gamemode
     programs.gamemode = {
       enable = true;
-      settings.general.inhibit_screensaver = 0;
+      settings = {
+        general = {
+          desiredgov = "performance";
+          desiredprof = "performance";
+          renice = 11;
+          inhibit_screensaver = 0;
+        };
+
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+          end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+        };
+      };
     };
     users.users.${user.name}.extraGroups = mkIf user.enable [ "gamemode" ];
   };
