@@ -82,6 +82,11 @@
     # You can find the nixpkgs reference easly at https://www.nixhub.io/
     davinci-resolve-pkgs.url = "github:nixos/nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d"; # version 20.3.2
 
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #nixos-wsl = {
     #  url = "github:nix-community/NixOS-WSL";
     #  inputs.nixpkgs.follows = "nixpkgs";

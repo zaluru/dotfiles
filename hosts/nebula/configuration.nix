@@ -15,6 +15,7 @@ in
   imports = [
     #inputs.nixos-zaluru.nixosModules.configs
     ./hardware-configuration.nix
+    ./steam-config.nix
     ../../overlays/inputs
     (inputs.import-tree ../../modules)
     inputs.nix-private-config.nixosModules.configs
