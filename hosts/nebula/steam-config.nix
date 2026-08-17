@@ -43,6 +43,18 @@ in
               gamemoderun
             ];
           };
+          "Arma Reforger" = {
+            id = 1874880;
+            compatTool = "GE-Proton11-3";
+            env = {
+              LD_PRELOAD = "";
+              PROTON_ENABLE_WAYLAND = 1;
+            };
+            wrappers = [
+              mangohud
+              gamemoderun
+            ];
+          };
         };
       };
     };
