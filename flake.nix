@@ -165,6 +165,7 @@
             ./hosts/nebula/configuration.nix
             nix-index-database.nixosModules.nix-index
             disko.nixosModules.disko
+            microvm.nixosModules.host
           ];
         };
         "quasar" = nixpkgs.lib.nixosSystem {
