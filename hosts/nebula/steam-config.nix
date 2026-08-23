@@ -25,8 +25,8 @@ in
         #defaultCompatTool = "GE-Proton";
 
         apps = {
-          "Baldurs Gate 3" = {
-            id = 1086940;
+          "1086940" = {
+            name = "Baldurs Gate 3";
             compatTool = "GE-Proton11-3";
             args = [
               "--skip-launcher"
@@ -43,8 +43,8 @@ in
               gamemoderun
             ];
           };
-          "Arma Reforger" = {
-            id = 1874880;
+          "1874880" = {
+            name = "Arma Reforger";
             compatTool = "GE-Proton11-3";
             env = {
               LD_PRELOAD = "";
