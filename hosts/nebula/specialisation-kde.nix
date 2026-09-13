@@ -80,6 +80,9 @@ in
             panel.screen = 1;
           };
         };
+        system.services = {
+          opentabletdriver = enabled;
+        };
       };
     };
   };
