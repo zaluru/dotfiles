@@ -31,7 +31,7 @@ in
     # kanidm system domain set-image ~/downloads/multifactor-authenticator.svg
 
     services.kanidm = {
-      package = lib.mkDefault pkgs.kanidmWithSecretProvisioning_1_10;
+      package = lib.mkDefault pkgs.kanidmWithSecretProvisioning_1_11;
       server = {
         enable = true;
 

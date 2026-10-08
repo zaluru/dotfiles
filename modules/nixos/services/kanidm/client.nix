@@ -21,13 +21,13 @@ in
 
   config = mkIf cfg.enable {
     services.kanidm = {
-      package = lib.mkForce pkgs.kanidmWithSecretProvisioning_1_10;
+      package = lib.mkForce pkgs.kanidmWithSecretProvisioning_1_11;
       client = {
         enable = true;
         settings.uri = "https://${cfg.domainIdm}";
       };
     };
 
-    environment.systemPackages = [ pkgs.kanidmWithSecretProvisioning_1_10 ];
+    environment.systemPackages = [ pkgs.kanidmWithSecretProvisioning_1_11 ];
   };
 }
