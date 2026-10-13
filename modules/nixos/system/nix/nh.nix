@@ -16,7 +16,7 @@ in
     programs = {
       nh = {
         enable = true;
-        flake = "/home/zaluru/dev/dotfiles";
+        flake = "/home/zaluru/projects/infra/dotfiles";
         #TODO: make this an option so i can choose between the nix gc and nh clean
         clean = {
           enable = true;
