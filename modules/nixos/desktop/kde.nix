@@ -562,6 +562,8 @@ in
                         "org.kde.plasma.clipboard"
                         "org.kde.plasma.notifications"
                         "xdg-desktop-portal-kde"
+                        "Easy Effects"
+                        "Bitwarden_status_icon_1"
                         "A PipeWire Graph Qt GUI Interface" # qpwgraph
                         "org.kde.plasma.mediacontrolle"
                         "remmina-icon"
