@@ -19,28 +19,63 @@ in
   ];
 
   config = {
-    system.stateVersion = "26.05";
-    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-    networking.hostName = "microvm-nextcloud";
-
     microvm = {
       hypervisor = "qemu";
+      vcpu = 2;
+      mem = 3072;
 
-      shares = [ {
+      interfaces = [{
+        type = "tap";
+        id = "vm-webserver";
+        mac = "02:00:00:00:00:11";
+      }];
+
+      shares = [{
         proto = "virtiofs";
         tag = "ro-store";
         source = "/nix/store";
         mountPoint = "/nix/.ro-store";
-      } ];
+      }];
+
+      volumes = [{
+        image = "var.img";
+        mountPoint = "/var";
+        size = 10240; # MiB
+      }];
     };
 
-    mine = {
-
-      trait = {
-        cli = enabled;
-        base = enabled;
+    environment.etc."nextcloud-admin-pass".text = "zaq1@WSXzaq1@WSX";
+    services.nextcloud = {
+      enable = true;
+      hostName = "192.168.100.11";
+      config.adminpassFile = "/etc/nextcloud-admin-pass";
+      config.dbtype = "sqlite";
+      settings = {
+        maintenance_window_start = 1;
+        default_phone_region = "PL";
+        log_type = "systemd";
+        serverid = 0;
       };
     };
+
+    networking.hostName = "nextcloud-microvm";
+    networking.useNetworkd = true;
+    networking.firewall.allowedTCPPorts = [ 80 ];
+
+    systemd.network.enable = true;
+    systemd.network.networks."20-lan" = {
+      matchConfig.Type = "ether";
+      networkConfig = {
+        Address = [ "192.168.100.11/24" "fc00::2/64" ];
+        Gateway = [ "192.168.100.10" "fc00::1" ];
+        DNS = [ "1.1.1.1" "9.9.9.9" ];
+        IPv6AcceptRA = false;
+      };
+    };
+
+    services.resolved.enable = true;
+
+    system.stateVersion = "26.05";
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   };
 }
