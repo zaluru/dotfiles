@@ -146,12 +146,23 @@ in
             moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
           in
           {
+            # Docs: https://firefox-admin-docs.mozilla.org/reference/policies/extensionsettings/
+            # Install url is optional since firefox 153, if ommited it installs the extensions from addons.mozilla.org by id
+            # Retrive the extension ID on it's page with button 'Copy add-on ID'
+
             "*".installation_mode = "blocked";
 
             "uBlock0@raymondhill.net" = {
-              install_url = moz "ublock-origin";
               installation_mode = "force_installed";
-              updates_disabled = true;
+              updates_disabled = false;
+              private_browsing = true;
+            };
+
+            # Bitwarden
+            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+              installation_mode = "force_installed";
+              updates_disabled = false;
+              private_browsing = false;
             };
 
           };
