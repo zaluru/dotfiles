@@ -42,6 +42,7 @@ let
     "1062090".name = "Timberborn";
     "892970".name = "Valheim";
     "3393110".name = "AION 2";
+    "4436200".name = "FluxWerks";
   };
 in
 {
