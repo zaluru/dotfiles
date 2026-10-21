@@ -214,6 +214,16 @@
             nixos-hardware.nixosModules.dell-latitude-e7240
           ];
         };
+        "incus-nextcloud" = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit lib;
+          };
+          modules = [
+            "${inputs.nixpkgs}/nixos/modules/virtualisation/lxc-container.nix"
+            ./systems/incus/container/nextcloud/configuration.nix
+          ];
+        };
         "microvm-nextcloud" = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
