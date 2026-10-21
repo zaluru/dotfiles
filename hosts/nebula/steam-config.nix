@@ -13,7 +13,7 @@ let
   gamemoderun = lib.getExe' pkgs.gamemode "gamemoderun";
 
   defaults = {
-    compatTool = "GE-Proton11-9-x86_64";
+    compatTool = "GE-Proton11-11-x86_64";
     env = {
       LD_PRELOAD = "";
       PROTON_ENABLE_WAYLAND = 1;
