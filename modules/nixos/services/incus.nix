@@ -24,6 +24,10 @@ in
     virtualisation.incus = {
       enable = true;
       ui.enable = true;
+
+      package = pkgs.incus;
+      ui.package = pkgs.unstable.incus-ui-canonical;
+
       # To restart incus instant and allow pressed run:
       # sudo systemctl stop incus.service incus.socket incus-preseed.service
       # sudo rm -r /var/lib/incus
