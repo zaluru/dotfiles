@@ -16,7 +16,7 @@ in
   options.mine.services.perses = {
     enable = mkEnableOption "Enable Perses - observability visualization.";
     port = mkOpt types.int 8080 "Web interface port";
-    domain = mkOpt types.str "perses.${config.mine.system.networking.networkmanager.hostname}.h.zaluru.com" "Domain under which perses will be available";
+    domain = mkOpt types.str "perses.${config.mine.system.networking.hostName}.h.zaluru.com" "Domain under which perses will be available";
   };
 
   config = mkIf cfg.enable {

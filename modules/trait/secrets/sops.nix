@@ -24,7 +24,7 @@ in
         sops-nix = {
           enable = true;
           ageKeyFile.path = "/home/zaluru/.config/sops/age/keys.txt";
-          defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/${config.mine.system.networking.networkmanager.hostname}.yaml";
+          defaultSopsFile = inputs.nix-private-config.packages.${pkgs.stdenv.hostPlatform.system}.mySecrets + "/encrypted/${config.mine.system.networking.hostName}.yaml";
         };
       };
     };

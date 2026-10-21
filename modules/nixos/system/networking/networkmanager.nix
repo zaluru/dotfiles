@@ -15,13 +15,11 @@ in
 {
   options.mine.system.networking.networkmanager = {
     enable = mkEnableOption "Enable NetworkManager";
-    hostname = mkOpt types.str "" "Hostname";
     applet = mkEnableOption "Enable desktop applet";
   };
 
   config = mkIf cfg.enable {
     networking = {
-      hostName = "${cfg.hostname}";
       networkmanager = {
         enable = true;
         #wifi.macAddress = "random"

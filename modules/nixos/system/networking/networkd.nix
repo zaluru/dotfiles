@@ -9,7 +9,6 @@ in
 {
   options.mine.system.networking.networkd = {
     enable = mkEnableOption "Enable Systemd-Networkd";
-    hostname = mkOpt types.str "localhost" "Hostname";
   };
 
   config = mkIf cfg.enable {
@@ -18,7 +17,6 @@ in
     networking = {
       useDHCP = true;
       useNetworkd = true;
-      hostName = "${cfg.hostname}";
     };
   };
 }

@@ -34,7 +34,7 @@ in
       preseed = {
         config = {
           "core.https_address" =
-            "incus.${config.mine.system.networking.networkmanager.hostname}.h.zaluru.com:8888";
+            "incus.${config.mine.system.networking.hostName}.h.zaluru.com:8888";
 
           # BEGIN TLS
           # On client device
@@ -123,7 +123,7 @@ in
 
     users.users."zaluru".extraGroups = [ "incus-admin" ];
 
-    sops.secrets."kanidm-oauth2-incus-${config.mine.system.networking.networkmanager.hostname}-secret" =
+    sops.secrets."kanidm-oauth2-incus-${config.mine.system.networking.hostName}-secret" =
       { };
 
     networking.firewall.allowedTCPPorts = [ 8888 ];

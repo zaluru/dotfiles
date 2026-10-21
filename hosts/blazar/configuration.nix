@@ -10,7 +10,7 @@ let
   inherit (lib.zaluru) enabled;
   inherit (config.mine) user;
 
-  hostname = "blazar";
+  hostName = "blazar";
 
 in
 {
@@ -25,7 +25,7 @@ in
 
 
   # Boot into a nixos iso and install with 
-  # nix run github:nix-community/nixos-anywhere -- --flake '.#<hostname>' --target-host nixos@<ip>
+  # nix run github:nix-community/nixos-anywhere -- --flake '.#<hostName>' --target-host nixos@<ip>
 
 
     # yubikey
@@ -86,9 +86,9 @@ in
         #};
 
         networking = {
+          hostName = "${hostName}";
           networkmanager = {
             enable = true;
-            hostname = "${hostname}";
           };
         };
         security = {

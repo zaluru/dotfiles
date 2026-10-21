@@ -74,7 +74,7 @@ in
         networking = {
           networkmanager = {
             enable = true;
-            hostname = "nixos-cloud";
+            hostName = "nixos-cloud";
           };
           firewall = enabled;
         };

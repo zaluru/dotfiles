@@ -10,6 +10,8 @@ let
   inherit (lib.zaluru) enabled;
   inherit (config.mine) user;
 
+  hostName = "nebula";
+
 in
 {
   imports = [
@@ -113,9 +115,9 @@ in
           plymouth = enabled;
         };
         networking = {
+          hostName = "${hostName}";
           networkmanager = {
             enable = true;
-            hostname = "nebula";
           };
         };
         nix = {

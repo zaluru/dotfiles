@@ -11,7 +11,7 @@ let
   inherit (lib.zaluru) enabled;
   inherit (config.mine) user;
 
-  hostname = "quasar";
+  hostName = "quasar";
 
 in
 {
@@ -95,9 +95,9 @@ in
 
       system = {
         networking = {
+          hostName = "${hostName}";
           networkmanager = {
-            enable = true;
-            hostname = "${hostname}";
+            enable = false;
           };
         };
         nix = {
