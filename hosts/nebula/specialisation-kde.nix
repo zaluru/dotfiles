@@ -10,16 +10,18 @@ let
   inherit (lib.zaluru) enabled;
   inherit (config.mine) user;
 
+  specialisationName = "kde";
+
 in
 
 {
   config = {
-    specialisation."kde".configuration = {
-      environment.etc."specialisation".text = "kde"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
-      system.nixos.tags = [ "with-kde" ];
+    specialisation."${specialisationName}".configuration = {
+      environment.etc."specialisation".text = "${specialisationName}"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
+      system.nixos.tags = [ "with-${specialisationName}" ];
       home-manager.users.${user.name} = {
-        specialisation."kde".configuration = {
-          xdg.dataFile."home-manager/specialisation".text = "kde";
+        specialisation."${specialisationName}".configuration = {
+          xdg.dataFile."home-manager/specialisation".text = "${specialisationName}";
         };
       };
 

@@ -10,16 +10,18 @@ let
   inherit (lib.zaluru) enabled;
   inherit (config.mine) user;
 
+  specialisationName = "focus";
+
 in
 
 {
   config = {
-    specialisation."focus".configuration = {
-      environment.etc."specialisation".text = "focus"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
-      system.nixos.tags = [ "with-focus" ];
+    specialisation."${specialisationName}".configuration = {
+      environment.etc."specialisation".text = "${specialisationName}"; # Required for 'nh' to detect which specialization is currently running https://github.com/nix-community/nh?tab=readme-ov-file#specialisations-support
+      system.nixos.tags = [ "with-${specialisationName}" ];
       home-manager.users.${user.name} = {
-        specialisation."focus".configuration = {
-          xdg.dataFile."home-manager/specialisation".text = "focus";
+        specialisation."${specialisationName}".configuration = {
+          xdg.dataFile."home-manager/specialisation".text = "${specialisationName}";
         };
       };
 
