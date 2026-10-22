@@ -19,7 +19,8 @@ in
     ./hardware-configuration.nix
     ./steam-config.nix
     ./specialisation-kde.nix
-    ./specialisation-steam-ui.nix
+    ./specialisation-focus.nix
+    #./specialisation-steam-ui.nix
     ../../overlays/inputs
     (inputs.import-tree ../../modules)
     inputs.nix-private-config.nixosModules.configs
