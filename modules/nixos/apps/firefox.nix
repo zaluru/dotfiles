@@ -6,7 +6,7 @@
 }:
 let
 
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf mkOption types;
   inherit (config.mine) user;
   cfg = config.mine.apps.firefox;
 
@@ -14,6 +14,14 @@ in
 {
   options.mine.apps.firefox = {
     enable = mkEnableOption "Install Firefox";
+    blockedSites = mkOption {
+      type = types.listOf types.str;
+      default = [];
+      description = ''
+        Additional URL patterns to block in Firefox.
+        Uses Firefox WebsiteFilter URL pattern syntax.
+      '';
+    };
   };
 
   config = mkIf cfg.enable {
@@ -140,6 +148,10 @@ in
 
       # Documented at about:policies and https://firefox-admin-docs.mozilla.org/reference/policies/
       policies = {
+
+        WebsiteFilter = {
+          "Block" = cfg.blockedSites;
+        };
 
         ExtensionSettings =
           let
